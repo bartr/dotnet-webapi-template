@@ -107,7 +107,7 @@ namespace CSApp
         // Log startup messages
         private static void LogStartup(CseLog logger)
         {
-            logger.LogInformation($"IMDb Started", VersionExtension.Version);
+            logger.LogInformation($"CSApp Started", VersionExtension.Version);
         }
 
         // Build the web host
@@ -132,7 +132,7 @@ namespace CSApp
                         logger.AddFilter("Microsoft", Config.LogLevel)
                         .AddFilter("System", Config.LogLevel)
                         .AddFilter("Default", Config.LogLevel)
-                        .AddFilter("Imdb.Application", Config.LogLevel);
+                        .AddFilter("CSApp", Config.LogLevel);
                     }
                 });
 
