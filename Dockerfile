@@ -16,7 +16,7 @@ RUN dotnet publish -c Release -o /app
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine AS release
 
 ### if port is changed, also update value in Config
-EXPOSE {{klt.Port}}
+EXPOSE 8080
 WORKDIR /app
 
 ### create a user
@@ -31,4 +31,4 @@ USER kl
 ### copy the app
 COPY --from=build /app .
 
-ENTRYPOINT [ "dotnet",  "{{klt.AppName}}.dll" ]
+ENTRYPOINT [ "dotnet",  "app.dll" ]
