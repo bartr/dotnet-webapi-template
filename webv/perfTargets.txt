@@ -1,6 +1,0 @@
-{
-  "api":{"category":"api","quartiles":[10,20,40]},
-  "healthz":{"category":"healthz","quartiles":[100,200,400]},
-  "static":{"category":"static","quartiles":[40,80,160]}
-}
-
