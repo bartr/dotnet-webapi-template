@@ -1,6 +1,6 @@
 {
     "name": "webv",
-    "namespace": "klapp",
+    "namespace": "csapp",
     "imageName": "ghcr.io/cse-labs/webvalidate",
     "imageTag": "latest",
     "targets": [
@@ -28,4 +28,3 @@
     "generateDockerfile": false,
     "language": "docker"
   }
-  

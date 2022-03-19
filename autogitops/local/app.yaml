@@ -1,56 +1,76 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    name: csapp
+  name: csapp
+
+---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{gitops.name}}
-  namespace: {{gitops.namespace}}
+  name: csapp
+  namespace: csapp
+  labels:
+    app.kubernetes.io/name: csapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{gitops.name}}
+      app: csapp
   template:
     metadata:
       labels:
-        app: {{gitops.name}}
-      annotations:
-        prometheus.io/scrape: 'true'
-        prometheus.io/port: '{{gitops.port}}'
+        app: csapp
     spec:
       containers:
         - name: app
-          image: {{gitops.imageName}}:{{gitops.imageTag}}
+          image: k3d-registry.localhost:5500/csapp:local
           imagePullPolicy: Always
-
-          args: {{gitops.args}}
 
           ports:
             - name: http
-              containerPort: {{gitops.port}}
+              containerPort: 8080
               protocol: TCP
+
+          readinessProbe:
+            initialDelaySeconds: 5
+            failureThreshold: 60
+            periodSeconds: 2
+            httpGet:
+              path: /readyz
+              port: 8080
+
+          livenessProbe:
+            initialDelaySeconds: 60
+            periodSeconds: 60
+            httpGet:
+              path: /healthz
+              port: 8080
 
           resources:
             limits:
-              cpu: {{gitops.cpuLimit}}
-              memory: {{gitops.memoryLimit}}
+              cpu: 1000m
+              memory: 256Mi
             requests:
-              cpu: {{gitops.cpuRequest}}
-              memory: {{gitops.memoryRequest}}
+              cpu: 200m
+              memory: 64Mi
 
 ---
 
 apiVersion: v1
 kind: Service
+metadata:
+  name: csapp
+  namespace: csapp
 spec:
   type: NodePort
-  selector:
-    app: {{gitops.name}}
   ports:
-    - port: {{gitops.port}}
-      targetPort: {{gitops.port}}
-      nodePort: {{gitops.nodePort}}
-
-metadata:
-  namespace: {{gitops.namespace}}
-  labels:
-    app: {{gitops.name}}
-  name: {{gitops.name}}
+    - port: 8080
+      nodePort: 30080
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: csapp

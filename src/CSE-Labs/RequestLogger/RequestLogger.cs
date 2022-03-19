@@ -46,7 +46,7 @@ namespace CseLabs.Middleware
             }
 
             requestHistogram = Metrics.CreateHistogram(
-                        "KLAppDuration",
+                        "CSAppDuration",
                         "Histogram of app request duration",
                         new HistogramConfiguration
                         {
@@ -55,7 +55,7 @@ namespace CseLabs.Middleware
                         });
 
             requestSummary = Metrics.CreateSummary(
-                "KLAppSummary",
+                "CSAppSummary",
                 "Summary of app request duration",
                 new SummaryConfiguration
                 {
@@ -66,7 +66,7 @@ namespace CseLabs.Middleware
                 });
 
             cpuGauge = Metrics.CreateGauge(
-                "KLAppCpuPercent",
+                "CSAppCpuPercent",
                 "CPU Percent Used",
                 new GaugeConfiguration
                 {

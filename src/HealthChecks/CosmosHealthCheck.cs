@@ -20,7 +20,7 @@ namespace CseLabs
     /// </summary>
     public partial class CosmosHealthCheck : IHealthCheck
     {
-        public static readonly string ServiceId = "KLApp";
+        public static readonly string ServiceId = "CSApp";
         public static readonly string Description = "Test App Health Check";
 
         private static JsonSerializerOptions jsonOptions;
