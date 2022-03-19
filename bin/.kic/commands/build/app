@@ -9,3 +9,8 @@
 # build and push the local image
 docker build . -t k3d-registry.localhost:5500/csapp:local
 docker push k3d-registry.localhost:5500/csapp:local
+
+# build local webv
+cd webv || exit
+docker build . -t k3d-registry.localhost:5500/webv:local
+docker push k3d-registry.localhost:5500/webv:local
