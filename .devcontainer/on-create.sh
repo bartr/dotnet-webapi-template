@@ -8,10 +8,6 @@ echo "$(date +'%Y-%m-%d %H:%M:%S')    on-create start" >> "$HOME/status"
 # copy .vscode to root
 cp -r .devcontainer/.vscode .
 
-# clone repos
-git clone https://github.com/microsoft/webvalidate /workspaces/webvalidate
-git clone https://github.com/retaildevcrews/edge-gitops /workspaces/edge-gitops
-
 export REPO_BASE=$PWD
 export PATH="$PATH:$REPO_BASE/bin"
 
@@ -25,18 +21,11 @@ mkdir -p "$HOME/.oh-my-zsh/completions"
     echo "compinit"
 } >> "$HOME/.zshrc"
 
-# restore the repos
-dotnet restore /workspaces/webvalidate/src/webvalidate.sln
-
-# copy grafana.db to /grafana
-sudo cp .devcontainer/grafana.db /grafana
-sudo chown -R 472:0 /grafana
-
 # make sure everything is up to date
-sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt-get autoremove -y
-sudo apt-get clean -y
+# sudo apt-get update
+# sudo apt-get upgrade -y
+# sudo apt-get autoremove -y
+# sudo apt-get clean -y
 
 # create local registry
 docker network create k3d
@@ -47,7 +36,6 @@ docker network connect k3d k3d-registry.localhost
 docker pull mcr.microsoft.com/dotnet/aspnet:6.0-alpine
 docker pull mcr.microsoft.com/dotnet/sdk:6.0
 docker pull ghcr.io/cse-labs/webvalidate:latest
-docker pull ghcr.io/retaildevcrews/autogitops:beta
 
 # update the app name if a valid name
 export APP_NAME=$(echo ${PWD##*/})

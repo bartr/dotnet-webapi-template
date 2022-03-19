@@ -10,9 +10,5 @@ echo "$(date)    post-create start" >> "$HOME/status"
 # update oh-my-zsh
 git -C "$HOME/.oh-my-zsh" pull
 
-# update repos
-git -C ../webvalidate pull
-git -C ../edge-gitops pull
-
 echo "post-create complete"
 echo "$(date +'%Y-%m-%d %H:%M:%S')    post-create complete" >> "$HOME/status"
