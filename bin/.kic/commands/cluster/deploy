@@ -15,14 +15,14 @@ if [ ! -d ./deploy/bootstrap ]; then echo "./deploy/bootstrap directory not foun
 # build the app
 "$(dirname "${BASH_SOURCE[0]}")/../build/app"
 
-# create namespace
+# create namespaces
 kubectl apply -f deploy
+kubectl apply -f deploy/bootstrap
 
 # deploy csapp reference app
 kubectl apply -f deploy/csapp
 
 # deploy heartbeat, prometheus, grafana, and fluent bit
-kubectl apply -f deploy/bootstrap
 kubectl apply -R -f deploy/bootstrap
 
 "$(dirname "${BASH_SOURCE[0]}")/jumpbox"
