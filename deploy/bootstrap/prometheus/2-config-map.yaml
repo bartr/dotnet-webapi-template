@@ -99,17 +99,13 @@ data:
         static_configs:
           - targets: ['kube-state-metrics.kube-system.svc.cluster.local:8080']
 
-      - job_name: 'imdb'
+      - job_name: 'csapp'
         static_configs:
-          - targets: [ 'imdb.imdb.svc.cluster.local:8080' ]
+          - targets: [ 'csapp.csapp.svc.cluster.local:8080' ]
 
-      - job_name: 'webv-imdb'
+      - job_name: 'webv'
         static_configs:
-          - targets: [ 'webv.imdb.svc.cluster.local:8080' ]
-
-      - job_name: 'webv-heartbeat'
-        static_configs:
-          - targets: [ 'webv-heartbeat.heartbeat.svc.cluster.local:8080' ]
+          - targets: [ 'webv.csapp.svc.cluster.local:8080' ]
 
       - job_name: 'kubernetes-cadvisor'
 
