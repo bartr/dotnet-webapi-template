@@ -13,7 +13,7 @@ if [ ! -d ./deploy/csapp ]; then echo "./deploy/csapp directory not found. Pleas
 if [ ! -d ./deploy/bootstrap ]; then echo "./deploy/bootstrap directory not found. Please cd to an appropriate directory"; exit 1; fi
 
 # build the app
-"$(dirname "${BASH_SOURCE[0]}")/../build/app"
+"$(dirname "${BASH_SOURCE[0]}")/../app/build"
 
 # create namespaces
 kubectl apply -f deploy
@@ -22,9 +22,10 @@ kubectl apply -f deploy/bootstrap
 # deploy csapp reference app
 kubectl apply -f deploy/csapp
 
-# deploy heartbeat, prometheus, grafana, and fluent bit
+# deploy prometheus, grafana, and fluent bit
 kubectl apply -R -f deploy/bootstrap
 
+# deploy jumpbox
 "$(dirname "${BASH_SOURCE[0]}")/jumpbox"
 
 # deploy WebV after the app starts
