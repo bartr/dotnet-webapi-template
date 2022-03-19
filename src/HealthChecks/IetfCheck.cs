@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace CseLabs.Model
+namespace CSApp.Model
 {
     /// <summary>
     /// Health Check that supports IETF json

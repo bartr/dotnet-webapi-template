@@ -12,7 +12,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace CseLabs
+namespace CSApp
 {
     /// <summary>
     /// Main application class

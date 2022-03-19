@@ -7,13 +7,13 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
+using CSApp.Model;
 using CseLabs.Middleware;
-using CseLabs.Model;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
 
-namespace CseLabs
+namespace CSApp
 {
     /// <summary>
     /// Cosmos Health Check

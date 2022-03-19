@@ -5,11 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
-using CseLabs.Model;
+using CSApp.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace CseLabs
+namespace CSApp
 {
     /// <summary>
     /// Cosmos Health Check

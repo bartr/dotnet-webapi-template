@@ -13,7 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Prometheus;
 
-namespace CseLabs
+namespace CSApp
 {
     /// <summary>
     /// WebHostBuilder Startup

@@ -3,7 +3,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 
-namespace CseLabs.Controllers
+namespace CSApp.Controllers
 {
     /// <summary>
     /// Handle the /readyz requests

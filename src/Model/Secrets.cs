@@ -4,7 +4,7 @@
 using System;
 using System.IO;
 
-namespace CseLabs
+namespace CSApp
 {
     /// <summary>
     /// Application secrets
