@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: ghcr.io/cse-labs/webv-red:latest
+          image: k3d-registry.localhost:5500/webv:local
           imagePullPolicy: Always
 
           ports:
