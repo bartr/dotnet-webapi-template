@@ -18,7 +18,7 @@ command
 	short: Build local apps
 
 runCommand
-	path: build/csapp
+	path: build/app
 
 popCommand
 
