@@ -49,6 +49,28 @@ docker pull mcr.microsoft.com/dotnet/sdk:6.0
 docker pull ghcr.io/cse-labs/webvalidate:latest
 docker pull ghcr.io/retaildevcrews/autogitops:beta
 
+# update the app name if a valid name
+export APP_NAME=$(echo ${PWD##*/})
+export APP_LOWER=$(echo "$APP_NAME" | tr '[:upper:]' '[:lower:]')
+
+if [[ "$APP_NAME" =~ ^[A-Z][A-Za-z][A-Za-z][A-Za-z][A-Za-z]+$ ]]
+then
+  if [[ "$APP_NAME" != "$APP_LOWER" ]]
+  then
+    mv src/csapp.csproj "src/$APP_LOWER.csproj"
+    dotnet restore src
+
+    sed -i "s/csapp/$APP_LOWER/g" "$REPO_BASE/bin/.kic/commands/build/app"
+    sed -i "s/csapp/$APP_LOWER/g" Dockerfile
+    find . -name '*.*' -type f -exec sed -i "s/CSApp/TestApp/g" {} \;
+    find . -name '*.*' -type f -exec sed -i "s/csapp/$APP_LOWER/g" {} \;
+
+    git add .
+    git commit -am "updated application from template"
+    git push
+  fi
+fi
+
 echo "dowloading kic CLI"
 version=$(git ls-remote --refs --sort="version:refname" --tags https://github.com/retaildevcrews/akdc | cut -d/ -f3-|tail -n1)
 wget -O kic.tar.gz "https://github.com/retaildevcrews/akdc/releases/download/$version/kic-$version-linux-amd64.tar.gz"
