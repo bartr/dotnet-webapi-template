@@ -1,0 +1,45 @@
+###
+# vm commands and sub-commands
+###
+
+command
+	name: vm
+	short: Retail Edge Fleet Cluster CLI
+	long: Retail Edge CLI\n\n  A CLI for automating many Kubernetes development tasks on fleet clusters
+
+runCommand
+	path: vm/sync
+
+runCommand
+	path: vm/reset
+
+runCommand
+	path: vm/delete
+
+command
+	name: add
+	short: Add apps to the local cluster
+
+runCommand
+	path: vm/jumpbox
+
+popCommand
+
+command
+	name: check
+	short: Check status on the local cluster
+
+runCommand
+	path: vm/check/flux
+
+runCommand
+	path: vm/check/heartbeat
+
+runCommand
+	path: vm/check/logs
+
+runCommand
+	path: vm/check/aioa
+
+runCommand
+	path: vm/check/setup

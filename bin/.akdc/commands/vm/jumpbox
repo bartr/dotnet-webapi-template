@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# name: jumpbox
+# short: Create a jumpbox on the local cluster
+
+# change to this directory
+#cd "$(dirname "${BASH_SOURCE[0]}")" || exit
+
+kubectl delete pod jumpbox --ignore-not-found=true
+kubectl run jumpbox --image=ghcr.io/cse-labs/jumpbox --restart=Always
+kubectl wait pod jumpbox --for condition=ready --timeout=30s
+
+kubectl get pods -A

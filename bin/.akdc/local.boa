@@ -1,0 +1,84 @@
+###
+# local commands and sub-commands
+###
+
+command
+	name: local
+	short: Retail Edge Inner-loop CLI
+	long: Retail Edge CLI\n\n  A CLI for automating many inner-loop Kubernetes development tasks
+
+command
+	name: gitops
+	short: GitOps commands
+
+runCommand
+	path: sync
+
+runCommand
+	path: dev/gitops
+
+popCommand
+
+runCommand
+	path: pods
+
+runCommand
+	path: svc
+
+command
+	name: apps
+	short: Local apps commands
+
+runCommand
+	path: dev/imdb
+
+runCommand
+	path: dev/webv
+
+popCommand
+
+command
+	name: checks
+	short: Check status on the local k3d cluster
+
+runCommand
+	path: local-check/all
+
+runCommand
+	path: local-check/heartbeat
+
+runCommand
+	path: local-check/imdb
+
+runCommand
+	path: local-check/webv
+
+runCommand
+	path: local-check/grafana
+
+runCommand
+	path: local-check/prometheus
+
+popCommand
+
+command
+	name: cluster
+	short: k3d cluster commands
+
+runCommand
+	path: cluster/rebuild
+
+runCommand
+	path: cluster/create
+
+runCommand
+	path: cluster/delete
+
+runCommand
+	path: cluster/jumpbox
+
+runCommand
+	path: cluster/clean
+
+runCommand
+	path: cluster/deploy
