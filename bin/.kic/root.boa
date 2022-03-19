@@ -14,11 +14,14 @@ runCommand
 	path: svc
 
 command
-	name: build
-	short: Build local apps
+	name: app
+	short: Build and deploy your app
 
 runCommand
-	path: build/app
+	path: app/build
+
+runCommand
+	path: app/deploy
 
 popCommand
 
