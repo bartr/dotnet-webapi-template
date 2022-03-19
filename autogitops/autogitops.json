@@ -1,16 +1,14 @@
 {
-  "name": "dnapp",
-  "namespace": "dnapp",
-  "imageName": "dnapp",
+  "name": "csapp",
+  "namespace": "csapp",
+  "imageName": "ghcr.io/retaildevcrews/csapp",
   "imageTag": "latest",
-  "targets": [
-    "local"
-  ],
+  "targets": [ "demo" ],
   "args": [],
   "port": 8080,
   "nodePort": 30080,
-  "cpuLimit": "500m",
-  "memoryLimit": "128Mi",
+  "cpuLimit": "400m",
+  "memoryLimit": "96Mi",
   "cpuRequest": "200m",
   "memoryRequest": "64Mi",
   "readinessProbe": "/readyz",
