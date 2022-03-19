@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{klt.AppName}}
+  namespace: {{klt.Namespace}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{klt.AppName}}
+  template:
+    metadata:
+      labels:
+        app: {{klt.AppName}}
+        deploy: tag-{{klt.DeployTag}}
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '{{klt.Port}}'
+    spec:
+      containers:
+        - name: app
+          image: {{klt.ImageName}}:{{klt.ImageTag}}
+          imagePullPolicy: Always
+
+          args: {{klt.Args}}
+
+          ports:
+            - name: http
+              containerPort: {{klt.Port}}
+              protocol: TCP
+
+          resources:
+            limits:
+              cpu: {{klt.CpuLimit}}
+              memory: {{klt.MemoryLimit}}
+            requests:
+              cpu: {{klt.CpuRequest}}
+              memory: {{klt.MemoryRequest}}
+---
+
+apiVersion: v1
+kind: Service
+spec:
+  type: NodePort
+  selector:
+    app: {{klt.AppName}}
+  ports:
+    - port: {{klt.Port}}
+      targetPort: {{klt.Port}}
+      nodePort: {{klt.NodePort}}
+
+metadata:
+  namespace: {{klt.Namespace}}
+  labels:
+    app: {{klt.AppName}}
+  name: {{klt.AppName}}

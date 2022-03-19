@@ -1,0 +1,18 @@
+{
+  "name": "klapp",
+  "namespace": "klapp",
+  "imageName": "klapp",
+  "imageTag": "latest",
+  "targets": [
+    "local"
+  ],
+  "args": [],
+  "port": 8080,
+  "nodePort": 30080,
+  "cpuLimit": "500m",
+  "memoryLimit": "512Mi",
+  "cpuRequest": "250m",
+  "memoryRequest": "256Mi",
+  "readinessProbe": "/readyz",
+  "livenessProbe": "/healthz"
+}
