@@ -5,6 +5,9 @@
 echo "on-create start"
 echo "$(date +'%Y-%m-%d %H:%M:%S')    on-create start" >> "$HOME/status"
 
+# copy .vscode to root
+cp -r .devcontainer/.vscode .
+
 # clone repos
 git clone https://github.com/microsoft/webvalidate /workspaces/webvalidate
 git clone https://github.com/retaildevcrews/edge-gitops /workspaces/edge-gitops
