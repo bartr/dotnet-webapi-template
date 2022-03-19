@@ -7,7 +7,7 @@ echo "Checking Heartbeat"
 "$(dirname "${BASH_SOURCE[0]}")/heartbeat"
 
 echo "Checking IMDb"
-"$(dirname "${BASH_SOURCE[0]}")/imdb"
+"$(dirname "${BASH_SOURCE[0]}")/csapp"
 
 echo "Checking WebV"
 "$(dirname "${BASH_SOURCE[0]}")/webv"

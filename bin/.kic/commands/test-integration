@@ -10,4 +10,4 @@
 # you can call directly if you validate all of the WebV parameters
 #   or let WebV handle the errors
 
-docker run --net host --rm ghcr.io/cse-labs/webv-red:beta --server http://localhost:30080 "$@"
+webv --server http://localhost:30080 --summary tsv --files "$REPO_BASE/webv/baseline.json"
