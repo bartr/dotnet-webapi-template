@@ -20,13 +20,13 @@ EXPOSE 8080
 WORKDIR /app
 
 ### create a user
-RUN addgroup -S csapp && \
-    adduser -S csapp -G csapp && \
-    mkdir -p /home/csapp && \
-    chown -R csapp:csapp /home/csapp
+RUN addgroup -S app && \
+    adduser -S app -G app && \
+    mkdir -p /home/app && \
+    chown -R app:app /home/app
 
-### run as csapp user
-USER csapp
+### run as app user
+USER app
 
 ### copy the app
 COPY --from=build /app .
