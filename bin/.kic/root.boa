@@ -18,10 +18,7 @@ command
 	short: Build local apps
 
 runCommand
-	path: build/imdb
-
-runCommand
-	path: build/webv
+	path: build/csapp
 
 popCommand
 

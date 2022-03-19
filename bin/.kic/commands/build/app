@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#name: app
+#short: Build and deploy the CSharp template app to the local cluster
+
+# change to this directory
+#cd "$(dirname "${BASH_SOURCE[0]}")" || exit
+
+# build and push the local image
+docker build . -t k3d-registry.localhost:5500/csapp:local
+docker push k3d-registry.localhost:5500/csapp:local

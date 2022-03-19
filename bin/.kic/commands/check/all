@@ -9,9 +9,6 @@ echo "Checking Heartbeat"
 echo "Checking IMDb"
 "$(dirname "${BASH_SOURCE[0]}")/csapp"
 
-echo "Checking WebV"
-"$(dirname "${BASH_SOURCE[0]}")/webv"
-
 echo "Checking Grafana"
 "$(dirname "${BASH_SOURCE[0]}")/grafana"
 
