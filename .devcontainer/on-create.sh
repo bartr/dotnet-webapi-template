@@ -48,11 +48,13 @@ then
     mv src/csapp.csproj "src/$APP_LOWER.csproj"
     dotnet restore src
 
-    sed -i "s/csapp/$APP_LOWER/g" "$REPO_BASE/bin/.kic/commands/build/app"
+    sed -i "s/csapp/$APP_LOWER/g" "$REPO_BASE/bin/.kic/commands/app/build"
+    sed -i "s/csapp/$APP_LOWER/g" "$REPO_BASE/bin/.kic/commands/app/deploy"
     sed -i "s/csapp/$APP_LOWER/g" Dockerfile
-    find . -name '*.*' -type f -exec sed -i "s/CSApp/TestApp/g" {} \;
+    find . -name '*.*' -type f -exec sed -i "s/CSApp/$APP_NAME/g" {} \;
     find . -name '*.*' -type f -exec sed -i "s/csapp/$APP_LOWER/g" {} \;
 
+    git checkout .devcontainer/*.sh
     git add .
     git commit -am "updated application from template"
     git push

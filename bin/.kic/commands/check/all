@@ -4,7 +4,7 @@
 #short: Run all status checks on the local cluster
 
 echo "Checking App"
-"$(dirname "${BASH_SOURCE[0]}")/csapp"
+"$(dirname "${BASH_SOURCE[0]}")/app"
 
 echo "Checking Grafana"
 "$(dirname "${BASH_SOURCE[0]}")/grafana"

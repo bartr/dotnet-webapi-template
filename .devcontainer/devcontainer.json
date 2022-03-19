@@ -19,7 +19,7 @@
 	},
 
 	"hostRequirements": {
-		"cpus": 8
+		"cpus": 4
 	},
 
 	// forward ports for the app
@@ -32,7 +32,7 @@
 	// add labels
 	"portsAttributes": {
 		"30000": { "label": "Prometheus" },
-		"30080": { "label": "CS App" },
+		"30080": { "label": "CSApp" },
 		"32000": { "label": "Grafana" },
 	},
 
