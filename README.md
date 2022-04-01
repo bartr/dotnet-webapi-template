@@ -3,7 +3,12 @@
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
-- This is an application created from the `dotnet 6 WebAPI template`
+- Click `Use this template`
+- Enter new repo name / location
+  - Make sure to use a Pascal case name as it is used for the dotnet namespace
+  - TestApp works well
+- From the new repo
+  - Open in Codespaces
 
 ## Support
 
