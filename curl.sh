@@ -1,5 +1,9 @@
 #!/bin/bash
 
+###
+### you will need to update the URLs based on your test fleet
+###
+
 # curl heartbeat
 curl https://central-il-chi-101.cseretail.com/heartbeat/17; echo "   central-il-chi-101" &
 curl https://central-il-chi-102.cseretail.com/heartbeat/17; echo "   central-il-chi-102" &
