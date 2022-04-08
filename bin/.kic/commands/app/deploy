@@ -3,17 +3,17 @@
 #name: deploy
 #short: Deploy your app to the local cluster
 
-# change to this directory
-cd "$REPO_BASE" || exit
-
 # delete the existing apps
-kubectl delete -f deploy/webv --ignore-not-found=true
-kubectl delete -f deploy/app --ignore-not-found=true
+kubectl delete -f deploy/namespace.yaml
 
 # deploy the app
 kubectl apply -f deploy
 kubectl apply -f deploy/app
 
+# deploy bootstrap
+kubectl apply -f deploy/bootstrap
+kubectl apply -R -f deploy/bootstrap
+
 # deploy WebV after the app starts
-kubectl wait pod -l app=csapp -n csapp --for condition=ready --timeout=60s
+kubectl wait pod -l app=testapp -n testapp --for condition=ready --timeout=60s
 kubectl apply -f deploy/webv
