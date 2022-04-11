@@ -4,7 +4,7 @@
   "imageName": "ghcr.io/retaildevcrews/csapp",
   "imageTag": "beta",
   "targetDir": "deploy/apps",
-  "targets": [ "demo" ],
+  "targets": [],
   "args": [],
   "port": 8080,
   "nodePort": 30080,
