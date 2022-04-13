@@ -17,21 +17,28 @@ metadata:
 
 ---
 
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
 metadata:
-  name: {{gitops.name}}-https
-  namespace: default
+  name: {{gitops.name}}-vs
+  namespace: {{gitops.namespace}}
 spec:
-  entryPoints:
-    - websecure
-  routes:
-    - match: Host(`{{gitops.config.domain}}`)
-      kind: Rule
-      services:
-        - name: {{gitops.name}}
-          namespace: {{gitops.namespace}}
-          kind: Service
-          port: 8080
-  tls:
-    secretName: ssl-cert
+  hosts:
+    - "{{gitops.config.domain}}"
+  gateways:
+    - istio-system/istio-gateway
+  http:
+    - match:
+        - uri:
+            # The route to match on the externally facing URL
+            # Will match requests to https://yourdomain.com/sample and forward requests to to http://app.svc.cluster.local:8080/
+            prefix: "/sample"
+      rewrite:
+        # The path to forward within your application
+        # If the match and the rewrite are the same, you can safely remove the rewrite node.
+        uri: "/"
+      route:
+        - destination:
+            host: {{gitops.name}}
+            port:
+              number: 8080
