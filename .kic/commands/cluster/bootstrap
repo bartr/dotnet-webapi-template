@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# name: clean
-# short: Remove the apps from the local k3d cluster
+# name: bootstrap
+# short: Deploy monitoring and logging
 
 # change to this directory
 #cd "$(dirname "${BASH_SOURCE[0]}")" || exit
