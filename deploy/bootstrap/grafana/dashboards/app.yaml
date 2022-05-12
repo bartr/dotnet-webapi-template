@@ -100,9 +100,7 @@ data:
           "id": 2,
           "options": {
             "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "right"
+              "show": false
             },
             "tooltip": {
               "mode": "single"
@@ -112,9 +110,9 @@ data:
           "targets": [
             {
               "exemplar": true,
-              "expr": "sum(rate(CSAppDuration_count[1m])) by (mode)",
+              "expr": "sum(rate(CSAppDuration_count[1m]))",
               "interval": "",
-              "legendFormat": "{{category}}",
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -422,9 +420,7 @@ data:
           "id": 3,
           "options": {
             "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "right"
+              "show": false
             },
             "tooltip": {
               "mode": "single"
@@ -434,9 +430,9 @@ data:
           "targets": [
             {
               "exemplar": true,
-              "expr": "sum(rate(CSAppDuration_count{code != \"OK\"}[1m])) by (mode)",
+              "expr": "sum(rate(CSAppDuration_count{code != \"OK\"}[1m]))",
               "interval": "",
-              "legendFormat": "{{category}}",
+              "legendFormat": "",
               "refId": "A"
             }
           ],
