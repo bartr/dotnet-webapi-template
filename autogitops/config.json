@@ -3,7 +3,7 @@
   "namespace": "csapp",
   "imageName": "ghcr.io/retaildevcrews/csapp",
   "imageTag": "beta",
-  "targetDir": "deploy/apps",
+  "targetDir": "apps",
   "targets": [],
   "args": [],
   "port": 8080,

@@ -5,4 +5,6 @@
 
 cd "$REPO_BASE/csapp/webv" || exit
 
-webv --server http://localhost:30080 --files baseline.json --summary tsv
+webv --summary tsv --server http://localhost:30080 \
+--files baseline.json baseline.json baseline.json baseline.json baseline.json \
+        baseline.json baseline.json baseline.json baseline.json baseline.json
