@@ -3,8 +3,14 @@
 #name: all
 #short: Run all status checks on the local cluster
 
-echo "Checking App"
+echo "Checking Heartbeat"
+"$(dirname "${BASH_SOURCE[0]}")/heartbeat"
+
+echo "Checking IMDb"
 "$(dirname "${BASH_SOURCE[0]}")/app"
+
+echo "Checking WebV"
+"$(dirname "${BASH_SOURCE[0]}")/webv"
 
 echo "Checking Grafana"
 "$(dirname "${BASH_SOURCE[0]}")/grafana"

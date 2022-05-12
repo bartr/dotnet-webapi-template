@@ -1,13 +1,8 @@
 #!/bin/bash
 
-#name: test
-#short: Run a WebValidate test against the cluster
+#name: integration
+#short: Run an integration test
 
-# change to this directory
-cd "$(dirname "${BASH_SOURCE[0]}")" || exit
+cd "$REPO_BASE/csapp/webv" || exit
 
-# this is called by the kic API in Go which handles parameter validation
-# you can call directly if you validate all of the WebV parameters
-#   or let WebV handle the errors
-
-webv --server http://localhost:30080 --summary tsv --files webv/baseline.json
+webv --server http://localhost:30080 --files baseline.json --summary tsv

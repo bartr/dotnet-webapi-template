@@ -7,28 +7,18 @@
 #cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
 # validate directories
-if [ ! -d ./deploy ]; then echo "./deploy directory not found. Please cd to an appropriate directory"; exit 1; fi
-if [ ! -d ./deploy/webv ]; then echo "./deploy/webv directory not found. Please cd to an appropriate directory"; exit 1; fi
-if [ ! -d ./deploy/app ]; then echo "./deploy/app directory not found. Please cd to an appropriate directory"; exit 1; fi
-if [ ! -d ./deploy/bootstrap ]; then echo "./deploy/bootstrap directory not found. Please cd to an appropriate directory"; exit 1; fi
+if [ ! -d "$REPO_BASE/csapp/deploy" ]; then echo "deploy directory not found"; exit 1; fi
 
-# build the app
-"$(dirname "${BASH_SOURCE[0]}")/../app/build"
+# create namespace
+kubectl apply -f "$REPO_BASE/csapp/deploy"
+kubectl apply -f "$REPO_BASE/csapp/deploy/bootstrap"
+kubectl apply -R -f "$REPO_BASE/csapp/deploy/bootstrap"
+#kubectl apply -R -f "$REPO_BASE/csapp/deploy"
 
-# create namespaces
-kubectl apply -f deploy
-kubectl apply -f deploy/bootstrap
+kic build app &
+kic build webv
 
-# deploy app reference app
-kubectl apply -f deploy/app
+kic pods
 
-# deploy prometheus, grafana, and fluent bit
-kubectl apply -R -f deploy/bootstrap
-
-# deploy jumpbox
-"$(dirname "${BASH_SOURCE[0]}")/jumpbox"
-
-# deploy WebV after the app starts
-kubectl wait pod -l app=csapp -n csapp --for condition=ready --timeout=60s
-
-kubectl apply -f deploy/webv
+echo ""
+echo "run 'kic pods' until the pods are running"

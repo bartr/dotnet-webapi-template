@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#name: webv
+#short: Build and deploy WebValidate to the local cluster
+
+# change to this directory
+#cd "$(dirname "${BASH_SOURCE[0]}")" || exit
+
+cd "$REPO_BASE/csapp" || exit
+
+# delete local deployment
+kubectl delete -f deploy/webv --ignore-not-found=true --wait=false
+
+# build and push the local docker image
+docker build webv -t k3d-registry.localhost:5500/webv:local
+docker push k3d-registry.localhost:5500/webv:local
+
+# create deployment from webv-local
+kubectl apply -f deploy
+kubectl apply -f deploy/webv --wait=false
+
+kic pods

@@ -5,71 +5,19 @@
 root
 	name: kic
 	short: Kubernetes in Codespaces CLI
-	long: Kubernetes in Codespaces CLI\n\n  A CLI for automating many Kubernetes development tasks
+	long: Kubernetes in Codespaces CLI\n\n  A dynamic CLI for automating many Kubernetes development tasks
 
-runCommand
+boaCommand
 	path: pods
 
-runCommand
+boaCommand
 	path: svc
 
-command
-	name: app
-	short: Build and deploy your app
+boaCommand
+	path: ns
 
-runCommand
-	path: app/build
+boaCommand
+	path: events
 
-runCommand
-	path: app/deploy
-
-popCommand
-
-command
-	name: check
-	short: Check status on the local k3d cluster
-
-runCommand
-	path: check/all
-
-runCommand
-	path: check/app
-
-runCommand
-	path: check/imdb
-
-runCommand
-	path: check/grafana
-
-runCommand
-	path: check/prometheus
-
-popCommand
-
-command
-	name: cluster
-	short: k3d cluster commands
-
-runCommand
-	path: cluster/rebuild
-
-runCommand
-	path: cluster/create
-
-runCommand
-	path: cluster/delete
-
-runCommand
-	path: cluster/jumpbox
-
-runCommand
-	path: cluster/clean
-
-runCommand
-	path: cluster/deploy
-
-popCommand
-
-command
-	name: fleet
-	hidden: true
+boaCommand
+	path: env

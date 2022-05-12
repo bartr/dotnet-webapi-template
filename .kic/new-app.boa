@@ -1,0 +1,17 @@
+###
+# new app commands
+###
+
+command
+	name: new
+	short: Create a new application
+
+command
+	name: dotnet
+	short: Create a new dotnet 6 application
+
+boaCommand
+	path: /new/dotnet-webapi
+
+boaCommand
+	path: /new/dotnet-console
