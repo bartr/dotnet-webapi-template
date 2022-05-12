@@ -23,3 +23,6 @@ boaCommand
 
 boaCommand
 	path: cluster/deploy
+
+boaCommand
+	path: cluster/bootstrap
