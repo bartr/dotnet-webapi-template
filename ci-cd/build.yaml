@@ -1,4 +1,4 @@
-name: CsApp CI
+name: CSApp CI
 
 on:
   push:

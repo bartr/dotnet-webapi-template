@@ -1,4 +1,4 @@
-name: CsApp CD
+name: CSApp CD
 
 on:
   push:
