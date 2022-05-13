@@ -1,0 +1,36 @@
+name: CsApp CD
+
+on:
+  push:
+    branches:
+      - main
+
+    paths:
+    - 'csapp/autogitops/**'
+    - '.github/workflows/deploy.yaml'
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-20.04
+    env:
+      DOCKER_REPO: ghcr.io/cse-labs/csapp
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Docker pull
+      run: |
+        docker pull ghcr.io/retaildevcrews/autogitops:0.4.1
+
+    - name: GitOps Deploy
+      run: |
+        docker run \
+        --name ago \
+        --rm \
+        -v $(pwd)/csapp:/ago \
+        ghcr.io/retaildevcrews/autogitops:0.4.1 \
+        -r retaildevcrews/bartr-fleet \
+        -b demo \
+        -p ${{ secrets.GHCR_PAT }}
