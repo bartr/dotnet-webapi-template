@@ -16,5 +16,3 @@ kic build webv
 # create deployment from webv-local
 kubectl apply -f deploy
 kubectl apply -f deploy/webv --wait=false
-
-kic pods

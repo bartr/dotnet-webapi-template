@@ -13,11 +13,11 @@ if [ ! -d "$REPO_BASE/csapp/deploy" ]; then echo "deploy directory not found"; e
 kubectl apply -f "$REPO_BASE/csapp/deploy"
 kubectl apply -f "$REPO_BASE/csapp/deploy/bootstrap"
 kubectl apply -R -f "$REPO_BASE/csapp/deploy/bootstrap"
-#kubectl apply -R -f "$REPO_BASE/csapp/deploy"
 
-kic build app &
-kic build webv
+kic deploy app &
+kic deploy webv
 
+sleep 5
 kic pods
 
 echo ""
