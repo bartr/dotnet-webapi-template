@@ -1,22 +1,13 @@
 #!/bin/bash
 
 #name: app
-#short: Build and deploy the app to the local cluster
+#short: Build the app and push to the local registry
 
 # change to this directory
 #cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
 cd "$REPO_BASE/csapp" || exit
 
-# delete local deployment
-kubectl delete -f deploy/app --ignore-not-found=true --wait=false
-
 # build and push the local image
 docker build . -t k3d-registry.localhost:5500/csapp:local
 docker push k3d-registry.localhost:5500/csapp:local
-
-# deploy local app and re-deploy webv
-kubectl apply -f deploy
-kubectl apply -f deploy/app --wait=false
-
-kic pods
