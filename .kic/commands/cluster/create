@@ -15,5 +15,3 @@ echo ""
 echo "Creating cluster ..."
 
 k3d cluster create --registry-use k3d-registry.localhost:5500 --config "$REPO_BASE/.devcontainer/k3d.yaml"
-
-kic pods
