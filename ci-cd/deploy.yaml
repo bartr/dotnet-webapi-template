@@ -29,6 +29,6 @@ jobs:
         --rm \
         -v $(pwd)/csapp:/ago \
         ghcr.io/retaildevcrews/autogitops:0.4.1 \
-        -r retaildevcrews/bartr-fleet \
-        -b demo \
+        -r {{repo}} \
+        -b {{branch}} \
         -p ${{ secrets.GHCR_PAT }}
