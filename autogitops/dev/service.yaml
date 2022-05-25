@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: Service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: {{gitops.name}}
   ports:
     - port: {{gitops.port}}
-      targetPort: {{gitops.port}}
-      nodePort: {{gitops.nodePort}}
+      targetPort: http
+      protocol: TCP
+      name: http
 
 metadata:
   namespace: {{gitops.namespace}}
@@ -32,7 +33,7 @@ spec:
         - uri:
             # The route to match on the externally facing URL
             # Will match requests to https://yourdomain.com/sample and forward requests to to http://app.svc.cluster.local:8080/
-            prefix: "/sample"
+            prefix: "/"
       rewrite:
         # The path to forward within your application
         # If the match and the rewrite are the same, you can safely remove the rewrite node.
