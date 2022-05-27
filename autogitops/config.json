@@ -2,7 +2,7 @@
   "name": "csapp",
   "namespace": "csapp",
   "imageName": "ghcr.io/retaildevcrews/csapp",
-  "imageTag": "beta",
+  "imageTag": "latest",
   "targetDir": "apps",
   "targets": [],
   "args": [],
