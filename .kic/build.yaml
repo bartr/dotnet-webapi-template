@@ -6,7 +6,7 @@ commands:
 - name: build
   short: Build local apps
   scriptCommands:
-    - name: apps
+    - name: app
       short: Build your application
       path: build/app
 
