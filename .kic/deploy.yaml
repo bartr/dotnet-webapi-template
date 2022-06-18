@@ -1,0 +1,15 @@
+###
+# deploy commands
+###
+
+commands:
+- name: deploy
+  short: Deploy local apps
+  scriptCommands:
+    - name: app
+      short: deploy your application
+      path: deploy/app
+
+    - name: webv
+      short: Deploy WebV for your app
+      path: deploy/webv
