@@ -6,8 +6,8 @@
 echo "Checking Heartbeat"
 kic check heartbeat
 
-echo "Checking app"
-kic check app
+echo "Checking CSApp"
+kic check csapp
 
 echo "Checking WebV"
 kic check webv
