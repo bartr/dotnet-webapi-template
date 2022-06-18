@@ -1,0 +1,4 @@
+#!/bin/bash
+
+kubectl delete pod jumpbox --ignore-not-found=true
+kubectl run jumpbox --image=ghcr.io/cse-labs/jumpbox --restart=Always --wait=false

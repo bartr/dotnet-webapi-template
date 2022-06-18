@@ -17,3 +17,7 @@ commands:
     - name: bootstrap
       short: Deploy Heartbeat, Fluent Bit, Grafana, Prometheus
       path: deploy/bootstrap
+
+    - name: jumpbox
+      short: Deploy a jumpbox
+      path: deploy/jumpbox

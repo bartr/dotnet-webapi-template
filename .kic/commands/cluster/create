@@ -1,17 +1,21 @@
 #!/bin/bash
 
-# name: create
-# short: Create a new local k3d cluster
+# get path to k3d.yaml
+k3d="$(dirname "$(which kic)")/.kic/k3d.yaml"
 
-# change to this directory
-# cd "$(dirname "${BASH_SOURCE[0]}")" || exit
+# validate k3d.yaml
+if [ ! -f "$k3d" ]
+then
+    echo "File not found - $k3d"
+    exit 0
+fi
 
-# validate directories
-if [ ! -f "$REPO_BASE/.devcontainer/k3d.yaml" ]; then echo "File not found - \"$REPO_BASE\"/.devcontainer/k3d.yaml"; exit 1; fi
-
-"$(dirname "${BASH_SOURCE[0]}")/delete"
+kic cluster delete
 
 echo ""
 echo "Creating cluster ..."
 
-k3d cluster create --registry-use k3d-registry.localhost:5500 --config "$REPO_BASE/.devcontainer/k3d.yaml"
+k3d cluster create \
+    --registry-use k3d-registry.localhost:5500 \
+    --k3s-server-arg '--no-deploy=traefik' \
+    --config "$k3d"
