@@ -2,6 +2,12 @@
 
 cd "$REPO_BASE/csapp" || exit
 
+if [ ! -d deploy/webv ]
+then
+    echo "$PWD/deploy/webv directory not found"
+    exit 0
+fi
+
 # delete local deployment
 kubectl delete -f deploy/webv --ignore-not-found=true --wait=false
 

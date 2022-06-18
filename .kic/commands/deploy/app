@@ -2,6 +2,13 @@
 
 cd "$REPO_BASE/csapp" || exit
 
+if [ ! -d deploy/app ]
+then
+    echo "$PWD/deploy/app directory not found"
+    exit 0
+fi
+
+
 # delete local deployment
 kubectl delete -f deploy/app --ignore-not-found=true --wait=false
 
