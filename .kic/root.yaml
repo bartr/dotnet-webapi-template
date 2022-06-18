@@ -3,7 +3,8 @@
 ###
 
 name: kic
-short: Kubernetes in Codespaces CLI
+# short: Kubernetes in Codespaces CLI
 # long: "Kubernetes in Codespaces CLI\n\n  A dynamic CLI for automating many Kubernetes development tasks"
 
+short: kic template
 long: "kic template\n\n  kic from template"

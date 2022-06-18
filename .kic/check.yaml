@@ -6,7 +6,7 @@ commands:
 - name: check
   short: Check local apps
   scriptCommands:
-    - name: app
+    - name: csapp
       short: Check CSApp
       path: check/app
 

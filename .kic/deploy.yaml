@@ -6,14 +6,13 @@ commands:
 - name: deploy
   short: Deploy local apps
   scriptCommands:
-    - name: app
-      short: deploy your application
+    - name: csapp
+      short: Deploy CSApp
       path: deploy/app
 
     - name: webv
-      short: Deploy WebV for your app
+      short: Deploy WebValidate for CSApp
       path: deploy/webv
-
 
     - name: bootstrap
       short: Deploy Heartbeat, Fluent Bit, Grafana, Prometheus
