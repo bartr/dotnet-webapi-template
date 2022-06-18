@@ -16,4 +16,5 @@ kic build app
 
 # deploy local app and re-deploy webv
 kubectl apply -f deploy
-kubectl apply -f deploy/app --wait=false
+kubectl apply -f deploy/app
+kubectl apply -R -f deploy/app

@@ -13,3 +13,8 @@ commands:
     - name: webv
       short: Deploy WebV for your app
       path: deploy/webv
+
+
+    - name: bootstrap
+      short: Deploy Heartbeat, Fluent Bit, Grafana, Prometheus
+      path: deploy/bootstrap
