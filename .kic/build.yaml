@@ -1,0 +1,15 @@
+###
+# build commands
+###
+
+commands:
+- name: build
+  short: Build local apps
+  scriptCommands:
+    - name: apps
+      short: Build your application
+      path: build/app
+
+    - name: webv
+      short: Build WebV for your app
+      path: build/webv

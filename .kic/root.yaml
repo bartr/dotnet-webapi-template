@@ -1,0 +1,9 @@
+###
+# root description and commands
+###
+
+name: kic
+short: Kubernetes in Codespaces CLI
+# long: "Kubernetes in Codespaces CLI\n\n  A dynamic CLI for automating many Kubernetes development tasks"
+
+long: "kic template\n\n  kic from template"

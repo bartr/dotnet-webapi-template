@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#name: app
-#short: Build the app and push to the local registry
-
-# change to this directory
-#cd "$(dirname "${BASH_SOURCE[0]}")" || exit
-
 cd "$REPO_BASE/csapp" || exit
 
 # build and push the local image

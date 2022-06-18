@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#name: webv
-#short: Build and deploy WebValidate to the local cluster
-
-# change to this directory
-#cd "$(dirname "${BASH_SOURCE[0]}")" || exit
-
 cd "$REPO_BASE/csapp" || exit
 
 # delete local deployment
