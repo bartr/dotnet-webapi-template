@@ -12,7 +12,7 @@ fi
 # delete local deployment
 kubectl delete -f deploy/app --ignore-not-found=true --wait=false
 
-kic build app
+kic build csapp
 
 # deploy local app and re-deploy webv
 kubectl apply -f deploy
