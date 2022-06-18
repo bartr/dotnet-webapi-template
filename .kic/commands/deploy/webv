@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#name: webv
-#short: Build and deploy WebValidate to the local cluster
-
-# change to this directory
-#cd "$(dirname "${BASH_SOURCE[0]}")" || exit
-
 cd "$REPO_BASE/csapp" || exit
+
+if [ ! -d deploy/webv ]
+then
+    echo "$PWD/deploy/webv directory not found"
+    exit 0
+fi
 
 # delete local deployment
 kubectl delete -f deploy/webv --ignore-not-found=true --wait=false
@@ -15,4 +15,5 @@ kic build webv
 
 # create deployment from webv-local
 kubectl apply -f deploy
-kubectl apply -f deploy/webv --wait=false
+kubectl apply -f deploy/webv
+kubectl apply -R -f deploy/webv

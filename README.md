@@ -1,11 +1,11 @@
-# CSApp
+# PiB Application Template
 
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
-## Refactoring
+## Do not use this repo directly
 
-- This is being refactored and does not work
+- Follow the Pilot-in-a-Box instructions here: <https://github.com/retaildevcrews/pib-dev>
 
 ## Support
 

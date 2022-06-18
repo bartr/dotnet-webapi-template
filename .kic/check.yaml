@@ -1,0 +1,31 @@
+###
+# check commands
+###
+
+commands:
+- name: check
+  short: Check local apps
+  scriptCommands:
+    - name: csapp
+      short: Check CSApp
+      path: check/app
+
+    - name: webv
+      short: Check WebValidate
+      path: check/webv
+
+    - name: all
+      short: Check all services
+      path: check/all
+
+    - name: heartbeat
+      short: Check Heartbeat service
+      path: check/heartbeat
+
+    - name: prometheus
+      short: Check Prometheus service
+      path: check/prometheus
+
+    - name: grafana
+      short: Check Grafana service
+      path: check/grafana

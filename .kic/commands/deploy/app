@@ -1,18 +1,20 @@
 #!/bin/bash
 
-#name: app
-#short: Build and deploy the app to the local cluster
-
-# change to this directory
-#cd "$(dirname "${BASH_SOURCE[0]}")" || exit
-
 cd "$REPO_BASE/csapp" || exit
+
+if [ ! -d deploy/app ]
+then
+    echo "$PWD/deploy/app directory not found"
+    exit 0
+fi
+
 
 # delete local deployment
 kubectl delete -f deploy/app --ignore-not-found=true --wait=false
 
-kic build app
+kic build csapp
 
 # deploy local app and re-deploy webv
 kubectl apply -f deploy
-kubectl apply -f deploy/app --wait=false
+kubectl apply -f deploy/app
+kubectl apply -R -f deploy/app

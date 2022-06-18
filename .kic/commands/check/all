@@ -3,14 +3,17 @@
 #name: all
 #short: Run all status checks on the local cluster
 
-echo "Checking app"
-"$(dirname "${BASH_SOURCE[0]}")/app"
+echo "Checking Heartbeat"
+kic check heartbeat
+
+echo "Checking CSApp"
+kic check csapp
 
 echo "Checking WebV"
-"$(dirname "${BASH_SOURCE[0]}")/webv"
+kic check webv
 
 echo "Checking Grafana"
-"$(dirname "${BASH_SOURCE[0]}")/grafana"
+kic check grafana
 
 echo "Checking Prometheus"
-"$(dirname "${BASH_SOURCE[0]}")/prometheus"
+kic check prometheus

@@ -1,0 +1,23 @@
+###
+# deploy commands
+###
+
+commands:
+- name: deploy
+  short: Deploy local apps
+  scriptCommands:
+    - name: csapp
+      short: Deploy CSApp
+      path: deploy/app
+
+    - name: webv
+      short: Deploy WebValidate for CSApp
+      path: deploy/webv
+
+    - name: bootstrap
+      short: Deploy Heartbeat, Fluent Bit, Grafana, Prometheus
+      path: deploy/bootstrap
+
+    - name: jumpbox
+      short: Deploy a jumpbox
+      path: deploy/jumpbox

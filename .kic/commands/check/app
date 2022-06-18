@@ -1,9 +1,3 @@
 #!/bin/bash
 
-#name: app
-#short: Check app reference app status on the local cluster
-
-# change to this directory
-#cd "$(dirname "${BASH_SOURCE[0]}")" || exit
-
 http localhost:30080/version
