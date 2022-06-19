@@ -7,7 +7,7 @@ on:
     - 'csapp/Dockerfile'
     - 'csapp/**.csproj'
     - 'csapp/**.cs'
-    - '.github/workflows/build.yaml'
+    - '.github/workflows/docker-build.yaml'
 
   env:
     DOCKER_REPO: ghcr.io/retaildevcrews/csapp
