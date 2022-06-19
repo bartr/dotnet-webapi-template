@@ -1,23 +1,22 @@
-name: CSApp CI
+name: Docker-Build
 
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - main
-
     paths:
     - 'csapp/Dockerfile'
     - 'csapp/**.csproj'
     - 'csapp/**.cs'
     - '.github/workflows/build.yaml'
 
+  env:
+    DOCKER_REPO: ghcr.io/retaildevcrews/csapp
+
 jobs:
 
   build:
 
     runs-on: ubuntu-20.04
-    env:
-      DOCKER_REPO: ghcr.io/retaildevcrews/csapp
 
     steps:
     - uses: actions/checkout@v2
