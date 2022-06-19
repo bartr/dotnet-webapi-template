@@ -8,6 +8,8 @@ then
     exit 0
 fi
 
+cd deploy/flux || exit
+
 kubectl apply -f namespace.yaml
 
 repo="$(git remote get-url origin | sed "s|^.*github.com/||" | tr -d '\n')"
@@ -18,5 +20,3 @@ flux create secret git gitops -n flux-system --url "https://github.com/$repo" -u
 kubectl apply -f controllers.yaml
 kubectl apply -f source.yaml
 kubectl apply -f kustomization-flux.yaml
-
-kic sync
