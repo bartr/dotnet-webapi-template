@@ -4,17 +4,16 @@ cd "$REPO_BASE/csapp" || exit
 
 if [ ! -d deploy/app ]
 then
-    echo "$PWD/deploy/app directory not found"
+    echo "$PWD/deploy/app/app directory not found"
     exit 0
 fi
 
 
 # delete local deployment
-kubectl delete -f deploy/app --ignore-not-found=true --wait=false
+kubectl delete -f deploy/app/app --ignore-not-found=true --wait=false
 
 kic build csapp
 
 # deploy local app and re-deploy webv
-kubectl apply -f deploy
 kubectl apply -f deploy/app
-kubectl apply -R -f deploy/app
+kubectl apply -R -f deploy/app/app

@@ -2,18 +2,17 @@
 
 cd "$REPO_BASE/csapp" || exit
 
-if [ ! -d deploy/webv ]
+if [ ! -d deploy/app/webv ]
 then
-    echo "$PWD/deploy/webv directory not found"
+    echo "$PWD/deploy/app/webv directory not found"
     exit 0
 fi
 
 # delete local deployment
-kubectl delete -f deploy/webv --ignore-not-found=true --wait=false
+kubectl delete -f deploy/app/webv --ignore-not-found=true --wait=false
 
 kic build webv
 
 # create deployment from webv-local
-kubectl apply -f deploy
-kubectl apply -f deploy/webv
-kubectl apply -R -f deploy/webv
+kubectl apply -f deploy/app
+kubectl apply -f deploy/app/webv
