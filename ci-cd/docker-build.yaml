@@ -9,12 +9,12 @@ on:
     - 'csapp/**.cs'
     - '.github/workflows/docker-build.yaml'
 
-  env:
-    DOCKER_REPO: ghcr.io/retaildevcrews/csapp
-
 jobs:
 
   build:
+
+    env:
+      DOCKER_REPO: ghcr.io/retaildevcrews/myapp
 
     runs-on: ubuntu-20.04
 
