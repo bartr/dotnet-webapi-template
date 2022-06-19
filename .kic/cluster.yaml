@@ -9,3 +9,7 @@ commands:
     - name: delete
       short: Delete the local cluster
       path: cluster/delete
+
+    - name: flux-install
+      short: Install Flux on the local cluster
+      path: cluster/flux

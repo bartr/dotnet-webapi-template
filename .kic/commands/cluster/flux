@@ -1,0 +1,22 @@
+#!/bin/bash
+
+cd "$REPO_BASE/csapp" || exit
+
+if [ ! -d deploy/flux ]
+then
+    echo "$PWD/deploy/flux directory not found"
+    exit 0
+fi
+
+kubectl apply -f namespace.yaml
+
+repo="$(git remote get-url origin | sed "s|^.*github.com/||" | tr -d '\n')"
+
+flux create secret git flux-system -n flux-system --url "https://github.com/$repo" -u gitops -p "$GITHUB_TOKEN"
+flux create secret git gitops -n flux-system --url "https://github.com/$repo" -u gitops -p "$GITHUB_TOKEN"
+
+kubectl apply -f controllers.yaml
+kubectl apply -f source.yaml
+kubectl apply -f kustomization-flux.yaml
+
+kic sync
