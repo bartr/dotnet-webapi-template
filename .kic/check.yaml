@@ -29,3 +29,7 @@ commands:
     - name: grafana
       short: Check Grafana service
       path: check/grafana
+
+    - name: flux
+      short: Check Flux service
+      path: check/flux
