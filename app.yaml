@@ -1,18 +1,19 @@
-app: csapp
-name: csapp
-namespace: csapp
-workspacespace: csapp
-image: ghcr.io/retaildevcrews/csapp:latest
-imageName: ghcr.io/retaildevcrews/csapp
-imageTag: latest
-target: dev
 template: pib-service
-targets: []
-port: 8080
-nodePort: 30080
-cpuLimit: 500m
-memoryLimit: 128Mi
-cpuRequest: 300m
-memoryRequest: 64Mi
-readinessProbe: /readyz
-livenessProbe: /healthz
+deployments:
+  dev:
+    target: dev
+    values:
+      app: csapp
+      name: csapp
+      namespace: csapp
+      workspacespace: csapp
+      image: ghcr.io/retaildevcrews/csapp:latest
+      targets: []
+      port: 8080
+      nodePort: 30080
+      cpuLimit: 500m
+      memoryLimit: 128Mi
+      cpuRequest: 300m
+      memoryRequest: 64Mi
+      readinessProbe: /readyz
+      livenessProbe: /healthz
