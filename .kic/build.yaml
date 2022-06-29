@@ -7,7 +7,7 @@ commands:
   short: Build local apps
   scriptCommands:
     - name: csapp
-      short: Build CSAPP
+      short: Build CSApp
       path: build/app
 
     - name: webv
