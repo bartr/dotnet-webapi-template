@@ -14,7 +14,7 @@ jobs:
   build:
 
     env:
-      DOCKER_REPO: ghcr.io/retaildevcrews/myapp
+      DOCKER_REPO: $PIB_GHCR/csapp
 
     runs-on: ubuntu-20.04
 
