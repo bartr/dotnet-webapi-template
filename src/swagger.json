@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "CSE Labs Web API",
+    "title": "CSApp Web API",
     "version": "1.0"
   },
   "paths": {
@@ -14,7 +14,7 @@
           {
             "name": "size",
             "in": "path",
-            "description": "Size of Beanchmark data.<br><br>`valid: 0 < size <= 1MB (1,048,576)`<br>",
+            "description": "Size of Benchmark data.<br><br>`valid: 0 < size <= 1MB (1,048,576)`<br>",
             "required": true,
             "style": "simple",
             "explode": false,
