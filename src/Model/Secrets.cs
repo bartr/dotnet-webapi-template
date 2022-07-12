@@ -16,6 +16,7 @@ namespace CSApp
         public string CosmosKey { get; set; }
         public string CosmosDatabase { get; set; }
         public string CosmosCollection { get; set; }
+        public Dictionary<string, string> SecretsDictionary { get; set; }
 
         /// <summary>
         /// Get the secrets from the k8s volume
@@ -43,11 +44,26 @@ namespace CSApp
                 CosmosDatabase = GetSecretFromFile(volume, "CosmosDatabase"),
                 CosmosKey = "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF", // TODO GetSecretFromFile(volume, "CosmosKey"),
                 CosmosServer = GetSecretFromFile(volume, "CosmosUrl"),
+                SecretsDictionary = GetAllSecrets(volume),
             };
 
             ValidateSecrets(volume, sec);
 
             return sec;
+        }
+
+        // get all secrets in secrets volume
+        private static Dictionary<string, string> GetAllSecrets(string volume)
+        {
+            Dictionary<string, string> secrets = new Dictionary<string, string>();
+
+            foreach (var key in Directory.EnumerateFiles(volume))
+            {
+                var value = File.ReadAllText(key).Trim();
+                secrets.Add(Path.GetFileName(key), value);
+            }
+
+            return secrets;
         }
 
         // basic validation of Cosmos values
