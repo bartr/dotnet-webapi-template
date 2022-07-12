@@ -43,7 +43,10 @@ namespace CSApp.Controllers
                     }
                 }
 
-                return NotFound();
+                return new ObjectResult("secret not found")
+                {
+                    StatusCode = (int)HttpStatusCode.NotFound,
+                };
             }
             catch (Exception ex)
             {

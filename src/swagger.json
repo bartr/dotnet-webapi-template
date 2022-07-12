@@ -50,6 +50,51 @@
         }
       }
     },
+    "{urlPrefix}/api/secret/{key}": {
+      "get": {
+        "tags": [ "Secret" ],
+        "summary": "Get secret",
+        "description": "Returns a text/plain value of secret value",
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Key name for secret (case sensitive)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "MySecretName"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "`string`",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "mysecretvalue"
+              }
+            }
+          },
+          "404": {
+            "description": "Secret Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "secret not found"
+              }
+            }
+          }
+        }
+      }
+    },
     "{urlPrefix}/readyz": {
       "get": {
         "tags": [ "Readiness Check" ],
