@@ -85,7 +85,7 @@ namespace CSApp.Controllers
         {
             Dictionary<string, object> data = new ()
             {
-                { "type", ValidationError.GetErrorLink(path) },
+                { "type", "ParameterValidationError" },
                 { "title", "Parameter validation error" },
                 { "detail", "One or more invalid parameters were specified." },
                 { "status", (int)HttpStatusCode.BadRequest },
