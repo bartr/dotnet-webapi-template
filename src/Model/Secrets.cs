@@ -57,9 +57,9 @@ namespace CSApp
         {
             Dictionary<string, string> secrets = new ();
 
-            foreach (var key in Directory.EnumerateFiles(Volume))
+            foreach (string key in Directory.EnumerateFiles(Volume))
             {
-                var value = File.ReadAllText(key).Trim();
+                string value = File.ReadAllText(key).Trim();
                 secrets.Add(Path.GetFileName(key), value);
             }
 
