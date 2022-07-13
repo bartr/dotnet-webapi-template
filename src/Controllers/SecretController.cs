@@ -34,7 +34,7 @@ namespace CSApp.Controllers
                 if (!string.IsNullOrWhiteSpace(key))
                 {
                     string secret = string.Empty;
-                    if (App.Config.Secrets.SecretsDictionary.TryGetValue(key.Trim(), out secret))
+                    if (App.Config.Secrets.GetSecretsFromVolume().TryGetValue(key.Trim(), out secret))
                     {
                         if (!string.IsNullOrWhiteSpace(secret))
                         {

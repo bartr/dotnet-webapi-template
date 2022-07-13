@@ -42,7 +42,7 @@ namespace CSApp
         // load secrets from volume
         private static void LoadSecrets()
         {
-            Config.Secrets = Secrets.GetSecretsFromVolume(Config.SecretsVolume);
+            Config.Secrets = new () { Volume = Config.SecretsVolume };
         }
 
         // display Ascii Art

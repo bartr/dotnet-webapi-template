@@ -313,10 +313,10 @@ namespace CSApp
 
             Console.WriteLine($"Request Timeout    {Config.Timeout}");
 
-            Console.WriteLine($"Cosmos Server      {Config.Secrets.CosmosServer}");
-            Console.WriteLine($"Cosmos Database    {Config.Secrets.CosmosDatabase}");
-            Console.WriteLine($"Cosmos Collection  {Config.Secrets.CosmosCollection}");
-            Console.WriteLine($"Cosmos Key         Length({Config.Secrets.CosmosKey.Length})");
+            //Console.WriteLine($"Cosmos Server      {Config.Secrets.CosmosServer}");
+            //Console.WriteLine($"Cosmos Database    {Config.Secrets.CosmosDatabase}");
+            //Console.WriteLine($"Cosmos Collection  {Config.Secrets.CosmosCollection}");
+            //Console.WriteLine($"Cosmos Key         Length({Config.Secrets.CosmosKey.Length})");
             Console.WriteLine($"Cosmos Retries     {Config.Retries}");
             Console.WriteLine($"Request Timeout    {Config.Timeout}");
             Console.WriteLine($"Secrets Volume     {Config.Secrets.Volume}");

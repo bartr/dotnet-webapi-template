@@ -72,7 +72,7 @@ namespace CSApp.Controllers
             return res;
         }
 
-        private async Task<string> GetBenchmarkDataAsync(int size)
+        private static async Task<string> GetBenchmarkDataAsync(int size)
         {
             if (string.IsNullOrEmpty(benchmarkData))
             {

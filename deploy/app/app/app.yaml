@@ -55,6 +55,7 @@ spec:
         secret:
           secretName: app-secrets
           defaultMode: 444
+          optional: true
 
 ---
 
