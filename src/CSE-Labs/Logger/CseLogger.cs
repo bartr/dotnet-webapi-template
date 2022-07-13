@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using Microsoft.AspNetCore.Http;
-using Microsoft.CorrelationVector;
 using Microsoft.Extensions.Logging;
 
 namespace CseLabs.Middleware
@@ -92,20 +91,10 @@ namespace CseLabs.Middleware
 
                 for (int i = list.Count - 1; i >= 0; i--)
                 {
-                    // get correlation vector from HttpContext.Items
+                    // todo - can we remove this? get correlation vector from HttpContext.Items
                     if (c == null && list[i].Value is HttpContext)
                     {
                         c = list[i].Value as HttpContext;
-
-                        if (c != null && c.Items != null)
-                        {
-                            CorrelationVector cv = CorrelationVectorExtensions.GetCorrelationVectorFromContext(c);
-
-                            if (cv != null)
-                            {
-                                d.Add("CVector", cv.Value);
-                            }
-                        }
                     }
                     else
                     {
