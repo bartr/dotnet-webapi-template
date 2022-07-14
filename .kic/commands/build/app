@@ -8,5 +8,5 @@ docker push k3d-registry.localhost:5500/csapp:local
 
 if [ "$1" == "--deploy" ]
 then
-    kic deploy app
+    kic deploy csapp
 fi
