@@ -91,10 +91,12 @@ namespace CseLabs.Middleware
 
                 for (int i = list.Count - 1; i >= 0; i--)
                 {
-                    // todo - can we remove this? get correlation vector from HttpContext.Items
+                    // add from HttpContext.Items
                     if (c == null && list[i].Value is HttpContext)
                     {
                         c = list[i].Value as HttpContext;
+
+                        // add specific items here
                     }
                     else
                     {

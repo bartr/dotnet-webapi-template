@@ -11,9 +11,9 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 namespace CSApp
 {
     /// <summary>
-    /// Cosmos Health Check
+    /// Benchmark Health Check
     /// </summary>
-    public partial class CosmosHealthCheck : IHealthCheck
+    public partial class BenchmarkHealthCheck : IHealthCheck
     {
         private const int MaxResponseTime = 200;
         private readonly Stopwatch stopwatch = new ();

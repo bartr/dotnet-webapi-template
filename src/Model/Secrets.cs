@@ -65,45 +65,5 @@ namespace CSApp
 
             return secrets;
         }
-
-        // basic validation of Cosmos values
-        //private void ValidateCosmosSecrets(Secrets sec)
-        //{
-        //    if (sec == null)
-        //    {
-        //        throw new Exception($"Unable to read secrets from volume: {volume}");
-        //    }
-
-        //    if (string.IsNullOrWhiteSpace(sec.CosmosCollection))
-        //    {
-        //        throw new Exception($"CosmosCollection cannot be empty");
-        //    }
-
-        //    if (string.IsNullOrWhiteSpace(sec.CosmosDatabase))
-        //    {
-        //        throw new Exception($"CosmosDatabase cannot be empty");
-        //    }
-
-        //    if (string.IsNullOrWhiteSpace(sec.CosmosKey))
-        //    {
-        //        throw new Exception($"CosmosKey cannot be empty");
-        //    }
-
-        //    if (string.IsNullOrWhiteSpace(sec.CosmosServer))
-        //    {
-        //        throw new Exception($"CosmosUrl cannot be empty");
-        //    }
-
-        //    if (!sec.CosmosServer.StartsWith("https://", StringComparison.OrdinalIgnoreCase) ||
-        //        !sec.CosmosServer.Contains(".documents.azure.com", StringComparison.OrdinalIgnoreCase))
-        //    {
-        //        throw new Exception($"Invalid value for CosmosUrl: {sec.CosmosServer}");
-        //    }
-
-        //    if (sec.CosmosKey.Length < 64)
-        //    {
-        //        throw new Exception($"Invalid value for CosmosKey: {sec.CosmosKey}");
-        //    }
-        //}
     }
 }

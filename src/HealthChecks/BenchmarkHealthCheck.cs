@@ -9,16 +9,15 @@ using System.Threading;
 using System.Threading.Tasks;
 using CSApp.Model;
 using CseLabs.Middleware;
-using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
 
 namespace CSApp
 {
     /// <summary>
-    /// Cosmos Health Check
+    /// Benchmark Health Check
     /// </summary>
-    public partial class CosmosHealthCheck : IHealthCheck
+    public partial class BenchmarkHealthCheck : IHealthCheck
     {
         public static readonly string ServiceId = "CSApp";
         public static readonly string Description = "Test App Health Check";
@@ -28,11 +27,11 @@ namespace CSApp
         private readonly ILogger logger;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CosmosHealthCheck"/> class.
+        /// Initializes a new instance of the <see cref="BenchmarkHealthCheck"/> class.
         /// </summary>
         /// <param name="logger">ILogger</param>
         /// <param name="dal">IDAL</param>
-        public CosmosHealthCheck(ILogger<CosmosHealthCheck> logger)
+        public BenchmarkHealthCheck(ILogger<BenchmarkHealthCheck> logger)
         {
             // save to member vars
             this.logger = logger;
@@ -94,15 +93,6 @@ namespace CSApp
 
                 // return the result
                 return new HealthCheckResult(status, Description, data: data);
-            }
-            catch (CosmosException ce)
-            {
-                // log and return Unhealthy
-                logger.LogError($"{ce}\nCosmosException:Healthz:{ce.StatusCode}:{ce.ActivityId}:{ce.Message}");
-
-                data.Add("CosmosException", ce.Message);
-
-                return new HealthCheckResult(HealthStatus.Unhealthy, Description, ce, data);
             }
             catch (Exception ex)
             {

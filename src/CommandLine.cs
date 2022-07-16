@@ -101,8 +101,6 @@ namespace CSApp
             root.AddOption(EnvVarOption(new string[] { "--region", "-r" }, "Region for log", "dev"));
             root.AddOption(EnvVarOption(new string[] { "--log-level", "-l" }, "Log Level", LogLevel.Error));
             root.AddOption(EnvVarOption(new string[] { "--cache-duration" }, "Cache for duration (seconds)", 60, 1));
-            root.AddOption(EnvVarOption(new string[] { "--retries" }, "Cosmos 429 retries", 10, 0));
-            root.AddOption(EnvVarOption(new string[] { "--timeout" }, "Request timeout", 10, 1));
             root.AddOption(EnvVarOption(new string[] { "--secrets-volume", "-v" }, "Secrets Volume Path", "secrets"));
             root.AddOption(new Option<bool>(new string[] { "--dry-run", "-d" }, "Validates configuration"));
 
@@ -310,15 +308,6 @@ namespace CSApp
         private static int DoDryRun()
         {
             Console.WriteLine($"Version            {VersionExtension.Version}");
-
-            Console.WriteLine($"Request Timeout    {Config.Timeout}");
-
-            //Console.WriteLine($"Cosmos Server      {Config.Secrets.CosmosServer}");
-            //Console.WriteLine($"Cosmos Database    {Config.Secrets.CosmosDatabase}");
-            //Console.WriteLine($"Cosmos Collection  {Config.Secrets.CosmosCollection}");
-            //Console.WriteLine($"Cosmos Key         Length({Config.Secrets.CosmosKey.Length})");
-            Console.WriteLine($"Cosmos Retries     {Config.Retries}");
-            Console.WriteLine($"Request Timeout    {Config.Timeout}");
             Console.WriteLine($"Secrets Volume     {Config.Secrets.Volume}");
 
             Console.WriteLine($"Region             {Config.Region}");

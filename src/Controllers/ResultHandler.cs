@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using CseLabs.Middleware;
 using CseLabs.Middleware.Validation;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.Cosmos;
 
 namespace CSApp.Controllers
 {
@@ -21,7 +20,7 @@ namespace CSApp.Controllers
         /// Handle an IActionResult request from a controller
         /// </summary>
         /// <typeparam name="T">type of result</typeparam>
-        /// <param name="task">async task (usually the Cosmos query)</param>
+        /// <param name="task">async task (usually the query)</param>
         /// <param name="logger">NgsaLog</param>
         /// <returns>IActionResult</returns>
         public static async Task<IActionResult> Handle<T>(Task<T> task, CseLog logger)
@@ -41,19 +40,6 @@ namespace CSApp.Controllers
             {
                 // return an OK object result
                 return new OkObjectResult(await task.ConfigureAwait(false));
-            }
-            catch (CosmosException ce)
-            {
-                // log and return Cosmos status code
-                if (ce.StatusCode == HttpStatusCode.NotFound)
-                {
-                    logger.LogWarning("Handle<T>", logger.NotFoundError, new LogEventId((int)ce.StatusCode, string.Empty));
-                    return CreateResult(logger.NotFoundError, ce.StatusCode);
-                }
-
-                logger.LogError("Handle<T>", ce.ActivityId, new LogEventId((int)ce.StatusCode, "CosmosException"), ex: ce);
-
-                return CreateResult(logger.ErrorMessage, ce.StatusCode);
             }
             catch (Exception ex)
             {
