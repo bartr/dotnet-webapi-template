@@ -21,7 +21,7 @@ namespace CSApp.Controllers
         /// </summary>
         /// <typeparam name="T">type of result</typeparam>
         /// <param name="task">async task (usually the query)</param>
-        /// <param name="logger">NgsaLog</param>
+        /// <param name="logger">Log</param>
         /// <returns>IActionResult</returns>
         public static async Task<IActionResult> Handle<T>(Task<T> task, CseLog logger)
         {
