@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text.Json;
 using Microsoft.AspNetCore.Http;
-using Microsoft.CorrelationVector;
 using Microsoft.Extensions.Logging;
 
 namespace CseLabs.Middleware
@@ -136,16 +135,6 @@ namespace CseLabs.Middleware
             if (context != null && context.Items != null)
             {
                 data.Add("Path", RequestLogger.GetPathAndQuerystring(context.Request));
-
-                if (context.Items != null)
-                {
-                    CorrelationVector cv = CorrelationVectorExtensions.GetCorrelationVectorFromContext(context);
-
-                    if (cv != null)
-                    {
-                        data.Add("CVector", cv.Value);
-                    }
-                }
             }
 
             // add LogEventId

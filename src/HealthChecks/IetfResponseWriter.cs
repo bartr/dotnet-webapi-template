@@ -12,9 +12,9 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 namespace CSApp
 {
     /// <summary>
-    /// Cosmos Health Check
+    /// Benchmark Health Check
     /// </summary>
-    public partial class CosmosHealthCheck : IHealthCheck
+    public partial class BenchmarkHealthCheck : IHealthCheck
     {
         /// <summary>
         /// Write the health check results as json
@@ -88,7 +88,7 @@ namespace CSApp
 
             // Convert the HealthCheckResult to a HealthReport
             HealthReport rpt = new (
-                new Dictionary<string, HealthReportEntry> { { CosmosHealthCheck.ServiceId, new HealthReportEntry(res.Status, res.Description, totalTime, res.Exception, res.Data) } },
+                new Dictionary<string, HealthReportEntry> { { BenchmarkHealthCheck.ServiceId, new HealthReportEntry(res.Status, res.Description, totalTime, res.Exception, res.Data) } },
                 totalTime);
 
             // call the response writer

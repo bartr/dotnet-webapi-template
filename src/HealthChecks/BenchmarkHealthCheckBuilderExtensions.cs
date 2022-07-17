@@ -7,16 +7,16 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace CSApp
 {
-    public static class CosmosHealthCheckBuilderExtensions
+    public static class BenchmarkHealthCheckBuilderExtensions
     {
-        public static IHealthChecksBuilder AddCosmosHealthCheck(
+        public static IHealthChecksBuilder AddBenchmarkHealthCheck(
             this IHealthChecksBuilder builder,
             string name,
             HealthStatus? failureStatus = null,
             IEnumerable<string> tags = null)
         {
-            // Register a check of type Cosmos
-            return builder.AddCheck<CosmosHealthCheck>(name, failureStatus ?? HealthStatus.Degraded, tags);
+            // Register a check of type Benchmark
+            return builder.AddCheck<BenchmarkHealthCheck>(name, failureStatus ?? HealthStatus.Degraded, tags);
         }
     }
 }

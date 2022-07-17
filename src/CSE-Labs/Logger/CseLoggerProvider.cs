@@ -17,7 +17,7 @@ namespace CseLabs.Middleware
         /// <summary>
         /// Initializes a new instance of the <see cref="CseLoggerProvider"/> class.
         /// </summary>
-        /// <param name="loggerConfig">NgsaLoggerConfig</param>
+        /// <param name="loggerConfig">JSON Logger Config</param>
         public CseLoggerProvider(CseLoggerConfiguration loggerConfig)
         {
             config = loggerConfig;

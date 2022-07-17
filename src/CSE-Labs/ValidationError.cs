@@ -45,36 +45,5 @@ namespace CseLabs.Middleware.Validation
                 _ => $"Unknown parameter: {fieldName}",
             };
         }
-
-        /// <summary>
-        /// Get the doc link based on request URL
-        /// </summary>
-        /// <param name="path">full request path</param>
-        /// <returns>link to doc</returns>
-        public static string GetErrorLink(string path)
-        {
-            string s = "https://github.com/retaildevcrews/ngsa/blob/main/docs/ParameterValidation.md";
-
-            path = path.ToLowerInvariant();
-
-            if (path.StartsWith("/api/movies?") || path.StartsWith("/api/movies/?"))
-            {
-                s += "#movies-api";
-            }
-            else if (path.StartsWith("/api/movies"))
-            {
-                s += "#movies-direct-read";
-            }
-            else if (path.StartsWith("/api/actors?") || path.StartsWith("/api/actors/?"))
-            {
-                s += "#actors-api";
-            }
-            else if (path.StartsWith("/api/actors"))
-            {
-                s += "#actors-direct-read";
-            }
-
-            return s;
-        }
     }
 }

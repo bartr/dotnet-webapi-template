@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using System.Web;
 using CSApp;
 using Microsoft.AspNetCore.Http;
-using Microsoft.CorrelationVector;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Prometheus;
@@ -115,8 +114,6 @@ namespace CseLabs.Middleware
             DateTime dtStart = DateTime.Now;
             double duration = 0;
 
-            CorrelationVector cv = CorrelationVectorExtensions.Extend(context);
-
             // Invoke next handler
             if (next != null)
             {
@@ -128,11 +125,11 @@ namespace CseLabs.Middleware
             // compute request duration
             duration = Math.Round(DateTime.Now.Subtract(dtStart).TotalMilliseconds, 2);
 
-            LogRequest(context, cv, duration);
+            LogRequest(context, duration);
         }
 
         // log the request
-        private static void LogRequest(HttpContext context, CorrelationVector cv, double duration)
+        private static void LogRequest(HttpContext context, double duration)
         {
             DateTime dt = DateTime.UtcNow;
 
@@ -155,8 +152,6 @@ namespace CseLabs.Middleware
                     { "ClientIP", GetClientIp(context, out string xff) },
                     { "XFF", xff },
                     { "UserAgent", context.Request.Headers["User-Agent"].ToString() },
-                    { "CVector", cv.Value },
-                    { "CVectorBase", cv.GetBase() },
                     { "Category", category },
                     { "Subcategory", subCategory },
                     { "Mode", mode },

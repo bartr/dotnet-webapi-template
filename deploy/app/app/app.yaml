@@ -47,6 +47,15 @@ spec:
             requests:
               cpu: 200m
               memory: 64Mi
+          volumeMounts:
+            - name: secrets
+              mountPath: "/app/secrets"
+      volumes:
+        - name: secrets
+          secret:
+            secretName: app-secrets
+            defaultMode: 444
+            optional: true
 
 ---
 

@@ -2,6 +2,7 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace CSApp
@@ -12,95 +13,57 @@ namespace CSApp
     public class Secrets
     {
         public string Volume { get; set; }
-        public string CosmosServer { get; set; }
-        public string CosmosKey { get; set; }
-        public string CosmosDatabase { get; set; }
-        public string CosmosCollection { get; set; }
 
         /// <summary>
         /// Get the secrets from the k8s volume
         /// </summary>
         /// <param name="volume">k8s volume name</param>
         /// <returns>Secrets or null</returns>
-        public static Secrets GetSecretsFromVolume(string volume)
+        public Dictionary<string, string> GetSecretsFromVolume()
         {
-            if (string.IsNullOrWhiteSpace(volume))
+            if (string.IsNullOrWhiteSpace(Volume))
             {
-                throw new ArgumentNullException(nameof(volume));
+                throw new ArgumentNullException(nameof(Volume));
+            }
+
+            return GetAllSecrets();
+        }
+
+        public string GetSecretFromFile(string key)
+        {
+            if (string.IsNullOrWhiteSpace(Volume))
+            {
+                throw new Exception("Volume is empty");
             }
 
             // thow exception if volume doesn't exist
-            if (!Directory.Exists(volume))
+            if (!Directory.Exists(Volume))
             {
-                throw new Exception($"Volume '{volume}' does not exist");
+                throw new Exception($"Volume does not exist: {Volume}");
             }
 
-            // get k8s secrets from volume
-            Secrets sec = new ()
+            string path = Path.Combine(Volume, key);
+
+            if (!File.Exists(path))
             {
-                Volume = volume,
-                CosmosCollection = GetSecretFromFile(volume, "CosmosCollection"),
-                CosmosDatabase = GetSecretFromFile(volume, "CosmosDatabase"),
-                CosmosKey = "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF", // TODO GetSecretFromFile(volume, "CosmosKey"),
-                CosmosServer = GetSecretFromFile(volume, "CosmosUrl"),
-            };
+                throw new Exception($"Secret not found: {key}");
+            }
 
-            ValidateSecrets(volume, sec);
-
-            return sec;
+            return File.ReadAllText(path).Trim();
         }
 
-        // basic validation of Cosmos values
-        private static void ValidateSecrets(string volume, Secrets sec)
+        // get all secrets in secrets volume
+        private Dictionary<string, string> GetAllSecrets()
         {
-            if (sec == null)
+            Dictionary<string, string> secrets = new ();
+
+            foreach (string key in Directory.EnumerateFiles(Volume))
             {
-                throw new Exception($"Unable to read secrets from volume: {volume}");
+                string value = File.ReadAllText(key).Trim();
+                secrets.Add(Path.GetFileName(key), value);
             }
 
-            if (string.IsNullOrWhiteSpace(sec.CosmosCollection))
-            {
-                throw new Exception($"CosmosCollection cannot be empty");
-            }
-
-            if (string.IsNullOrWhiteSpace(sec.CosmosDatabase))
-            {
-                throw new Exception($"CosmosDatabase cannot be empty");
-            }
-
-            if (string.IsNullOrWhiteSpace(sec.CosmosKey))
-            {
-                throw new Exception($"CosmosKey cannot be empty");
-            }
-
-            if (string.IsNullOrWhiteSpace(sec.CosmosServer))
-            {
-                throw new Exception($"CosmosUrl cannot be empty");
-            }
-
-            if (!sec.CosmosServer.StartsWith("https://", StringComparison.OrdinalIgnoreCase) ||
-                !sec.CosmosServer.Contains(".documents.azure.com", StringComparison.OrdinalIgnoreCase))
-            {
-                throw new Exception($"Invalid value for CosmosUrl: {sec.CosmosServer}");
-            }
-
-            if (sec.CosmosKey.Length < 64)
-            {
-                throw new Exception($"Invalid value for CosmosKey: {sec.CosmosKey}");
-            }
-        }
-
-        // read a secret from a k8s volume
-        private static string GetSecretFromFile(string volume, string key)
-        {
-            string val = string.Empty;
-
-            if (File.Exists($"{volume}/{key}"))
-            {
-                val = File.ReadAllText($"{volume}/{key}").Trim();
-            }
-
-            return val;
+            return secrets;
         }
     }
 }

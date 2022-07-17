@@ -20,7 +20,7 @@ namespace CSApp.Controllers
     public class HealthzController : Controller
     {
         private readonly ILogger logger;
-        private readonly ILogger<CosmosHealthCheck> hcLogger;
+        private readonly ILogger<BenchmarkHealthCheck> hcLogger;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HealthzController"/> class.
@@ -28,7 +28,7 @@ namespace CSApp.Controllers
         /// <param name="logger">logger</param>
         /// <param name="dal">data access layer</param>
         /// <param name="hcLogger">HealthCheck logger</param>
-        public HealthzController(ILogger<HealthzController> logger, ILogger<CosmosHealthCheck> hcLogger)
+        public HealthzController(ILogger<HealthzController> logger, ILogger<BenchmarkHealthCheck> hcLogger)
         {
             this.logger = logger;
             this.hcLogger = hcLogger;
@@ -46,7 +46,7 @@ namespace CSApp.Controllers
             // get list of genres as list of string
             logger.LogInformation(nameof(RunHealthzAsync));
 
-            HealthCheckResult res = await RunCosmosHealthCheck().ConfigureAwait(false);
+            HealthCheckResult res = await RunBenchmarkHealthCheck().ConfigureAwait(false);
 
             HttpContext.Items.Add(typeof(HealthCheckResult).ToString(), res);
 
@@ -65,27 +65,27 @@ namespace CSApp.Controllers
         /// <returns>IActionResult</returns>
         [HttpGet("ietf")]
         [Produces("application/health+json")]
-        [ProducesResponseType(typeof(CosmosHealthCheck), 200)]
+        [ProducesResponseType(typeof(BenchmarkHealthCheck), 200)]
         public async Task RunIetfAsync()
         {
             logger.LogInformation(nameof(RunHealthzAsync));
 
             DateTime dt = DateTime.UtcNow;
 
-            HealthCheckResult res = await RunCosmosHealthCheck().ConfigureAwait(false);
+            HealthCheckResult res = await RunBenchmarkHealthCheck().ConfigureAwait(false);
 
             HttpContext.Items.Add(typeof(HealthCheckResult).ToString(), res);
 
-            await CosmosHealthCheck.IetfResponseWriter(HttpContext, res, DateTime.UtcNow.Subtract(dt)).ConfigureAwait(false);
+            await BenchmarkHealthCheck.IetfResponseWriter(HttpContext, res, DateTime.UtcNow.Subtract(dt)).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Run the health check
         /// </summary>
         /// <returns>HealthCheckResult</returns>
-        private async Task<HealthCheckResult> RunCosmosHealthCheck()
+        private async Task<HealthCheckResult> RunBenchmarkHealthCheck()
         {
-            CosmosHealthCheck chk = new (hcLogger);
+            BenchmarkHealthCheck chk = new (hcLogger);
 
             return await chk.CheckHealthAsync(new HealthCheckContext()).ConfigureAwait(false);
         }

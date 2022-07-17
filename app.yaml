@@ -6,7 +6,7 @@ deployments:
       app: csapp
       name: csapp
       namespace: csapp
-      workspacespace: csapp
+      workspace: csapp
       image: ghcr.io/cse-labs/csapp:latest
       targets: []
       port: 8080

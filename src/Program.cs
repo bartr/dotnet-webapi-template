@@ -42,7 +42,7 @@ namespace CSApp
         // load secrets from volume
         private static void LoadSecrets()
         {
-            Config.Secrets = Secrets.GetSecretsFromVolume(Config.SecretsVolume);
+            Config.Secrets = new () { Volume = Config.SecretsVolume };
         }
 
         // display Ascii Art
@@ -123,7 +123,7 @@ namespace CSApp
                     // log to XML
                     // this can be replaced when the dotnet XML logger is available
                     logger.ClearProviders();
-                    logger.AddNgsaLogger(config => { config.LogLevel = Config.LogLevel; });
+                    logger.AddJsonLogger(config => { config.LogLevel = Config.LogLevel; });
 
                     // if you specify the --log-level option, it will override the appsettings.json options
                     // remove any or all of the code below that you don't want to override

@@ -29,8 +29,6 @@
     <PackageReference Include="prometheus-net.AspNetCore" Version="6.0.0" />
     <PackageReference Include="System.CommandLine" Version="2.0.0-beta1.21308.1" />
     <PackageReference Include="System.Runtime.Caching" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.26.1" />
-    <PackageReference Include="Microsoft.CorrelationVector" Version="1.0.42" />
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -39,8 +37,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.3.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="6.3.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.3.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="6.3.2" />
   </ItemGroup>
 
   <ItemGroup>
