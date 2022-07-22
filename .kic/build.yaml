@@ -6,6 +6,10 @@ commands:
 - name: build
   short: Build local apps
   scriptCommands:
+    - name: all
+      short: Build CSApp and WebV
+      path: build/all
+
     - name: csapp
       short: Build CSApp
       path: build/app

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+kic build csapp
+kic build webv
+
+if [ "$1" == "--deploy" ]
+then
+    kic deploy csapp
+    kic deploy webv
+fi

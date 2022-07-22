@@ -6,6 +6,10 @@ commands:
 - name: deploy
   short: Deploy local apps
   scriptCommands:
+    - name: all
+      short: Deploy bootstrap, CSApp, and webv
+      path: deploy/all
+
     - name: csapp
       short: Deploy CSApp
       path: deploy/app
