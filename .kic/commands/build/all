@@ -5,6 +5,7 @@ kic build webv
 
 if [ "$1" == "--deploy" ]
 then
+    kic deploy bootstrap
     kic deploy csapp
     kic deploy webv
 fi
