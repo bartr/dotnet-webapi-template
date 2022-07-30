@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd "$REPO_BASE/csapp" || exit
+cd "$PIB_BASE/csapp" || exit
 
 if [ ! -d deploy/app/webv ]
 then

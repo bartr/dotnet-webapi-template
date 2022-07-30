@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd "$REPO_BASE/csapp" || exit
+cd "$PIB_BASE/csapp" || exit
 
 # build and push the local image
 docker build . -t k3d-registry.localhost:5500/csapp:local
