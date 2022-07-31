@@ -4,11 +4,9 @@ deployments:
     target: dev
     values:
       app: csapp
-      name: csapp
       namespace: csapp
       workspace: csapp
       image: ghcr.io/cse-labs/csapp:latest
-      targets: []
       port: 8080
       nodePort: 30080
       cpuLimit: 500m
@@ -17,3 +15,4 @@ deployments:
       memoryRequest: 64Mi
       readinessProbe: /readyz
       livenessProbe: /healthz
+      targets: []
