@@ -10,9 +10,11 @@ scriptCommands:
   short: Flux sync (reconcile)
   path: sync
 
-commands:
 - name: env
-  hidden: true
+  path: env
+  short: Display environment variables
+
+commands:
 - name: new
   hidden: true
 - name: targets
