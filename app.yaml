@@ -13,6 +13,7 @@ deployments:
       memoryLimit: 128Mi
       cpuRequest: 300m
       memoryRequest: 64Mi
+      ingressPrefix: /
       readinessProbe: /readyz
       livenessProbe: /healthz
       targets: []
