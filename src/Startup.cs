@@ -78,7 +78,7 @@ namespace CSApp
             app.Use(async (context, next) =>
             {
                 // matches /
-                if (context.Request.Path.Equals("/") || 
+                if (context.Request.Path.Equals("/") ||
                     context.Request.Path.Equals(App.Config.UrlPrefix) ||
                     context.Request.Path.Equals(App.Config.UrlPrefix + "/"))
                 {
