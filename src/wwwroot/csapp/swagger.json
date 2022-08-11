@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "{urlPrefix}/api/benchmark/{size}": {
+    "/csapp/api/benchmark/{size}": {
       "get": {
         "tags": [ "Benchmark" ],
         "summary": "Get benchmark data",
@@ -50,7 +50,7 @@
         }
       }
     },
-    "{urlPrefix}/api/secret/{key}": {
+    "/csapp/api/secret/{key}": {
       "get": {
         "tags": [ "Secret" ],
         "summary": "Get secret",
@@ -95,7 +95,7 @@
         }
       }
     },
-    "{urlPrefix}/readyz": {
+    "/csapp/readyz": {
       "get": {
         "tags": [ "Readiness Check" ],
         "summary": "Readiness Check",
@@ -115,7 +115,7 @@
         }
       }
     },
-    "{urlPrefix}/healthz": {
+    "/csapp/healthz": {
       "get": {
         "tags": [ "Health Check" ],
         "summary": "Health Check (simple)",
@@ -135,7 +135,7 @@
         }
       }
     },
-    "{urlPrefix}/healthz/ietf": {
+    "/csapp/healthz/ietf": {
       "get": {
         "tags": [ "Health Check" ],
         "summary": "Health Check (IETF)",

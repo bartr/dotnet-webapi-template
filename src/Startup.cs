@@ -20,7 +20,7 @@ namespace CSApp
     /// </summary>
     public class Startup
     {
-        private const string SwaggerTitle = "Test App";
+        private const string SwaggerTitle = "CSApp Web API";
         private const string SwaggerPath = "swagger.json";
 
         /// <summary>
@@ -78,10 +78,10 @@ namespace CSApp
             app.Use(async (context, next) =>
             {
                 // matches /
-                if (context.Request.Path.Equals("/"))
+                if (context.Request.Path.Equals("/csapp") || context.Request.Path.Equals("/csapp/"))
                 {
                     // return the version info
-                    context.Response.Redirect($"{App.Config.UrlPrefix}/index.html", true);
+                    context.Response.Redirect($"/csapp/index.html", true);
                     return;
                 }
                 else
@@ -96,14 +96,14 @@ namespace CSApp
                 .UseEndpoints(ep =>
                 {
                     ep.MapControllers();
-                    ep.MapMetrics();
+                    ep.MapMetrics("/csapp/metrics");
                 })
                 .UseSwaggerUI(c =>
                 {
                     c.SwaggerEndpoint(SwaggerPath, SwaggerTitle);
-                    c.RoutePrefix = string.Empty;
+                    c.RoutePrefix = "csapp";
                 })
-                .UseSwaggerReplaceJson(SwaggerPath, App.Config.UrlPrefix)
+                .UseStaticFiles()
                 .UseVersion();
         }
 

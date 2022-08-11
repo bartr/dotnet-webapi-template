@@ -11,7 +11,7 @@ namespace CSApp.Controllers
     /// <summary>
     /// Handle secret requests
     /// </summary>
-    [Route("api/[controller]")]
+    [Route("csapp/api/[controller]")]
     public class SecretController : Controller
     {
         private static readonly CseLog Logger = new ()

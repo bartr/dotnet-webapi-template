@@ -32,7 +32,6 @@ namespace CSApp
         public int Retries { get; set; } = 10;
         public int Timeout { get; set; } = 10;
         public LogLevel RequestLogLevel { get; set; } = LogLevel.Information;
-        public string UrlPrefix { get; set; }
 
         public void SetConfig(Config config)
         {
@@ -43,13 +42,6 @@ namespace CSApp
             Port = config.Port;
             Retries = config.Retries;
             Timeout = config.Timeout;
-            UrlPrefix = string.IsNullOrWhiteSpace(config.UrlPrefix) ? string.Empty : config.UrlPrefix;
-
-            // remove trailing / if present
-            if (UrlPrefix.EndsWith('/'))
-            {
-                UrlPrefix = UrlPrefix[0..^1];
-            }
 
             // LogLevel.Information is the min
             LogLevel = config.LogLevel <= LogLevel.Information ? LogLevel.Information : config.LogLevel;

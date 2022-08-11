@@ -9,7 +9,7 @@ namespace CSApp.Controllers
     /// Handle the /readyz requests
     ///
     /// </summary>
-    [Route("[controller]")]
+    [Route("csapp/[controller]")]
     public class ReadyzController : Controller
     {
         /// <summary>
