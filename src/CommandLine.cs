@@ -123,7 +123,7 @@ namespace CSApp
             try
             {
                 // get the values to validate
-                string urlPrefix = result.Children.FirstOrDefault(c => c.Symbol.Name == "urlPrefix") is OptionResult urlRes ? urlRes.GetValueOrDefault<string>() : string.Empty;
+                string urlPrefix = result.Children.FirstOrDefault(c => c.Symbol.Name == "url-prefix") is OptionResult urlRes ? urlRes.GetValueOrDefault<string>() : string.Empty;
 
                 // validate url-prefix
                 if (!string.IsNullOrWhiteSpace(urlPrefix))
@@ -132,17 +132,17 @@ namespace CSApp
 
                     if (urlPrefix.Length < 2)
                     {
-                        msg += "--url-prefix is invalid";
+                        msg += "--url-prefix is invalid\n";
                     }
 
                     if (!urlPrefix.StartsWith('/'))
                     {
-                        msg += "--url-prefix must start with /";
+                        msg += "--url-prefix must start with /\n";
                     }
 
                     if (urlPrefix.EndsWith('/'))
                     {
-                        msg += "--url-prefix cannot end with /";
+                        msg += "--url-prefix cannot end with /\n";
                     }
                 }
             }

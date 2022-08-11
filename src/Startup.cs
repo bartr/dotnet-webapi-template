@@ -102,7 +102,7 @@ namespace CSApp
                     ep.MapControllerRoute("healthz-ietf", App.Config.UrlPrefix + "/{controller=Healthz}/ietf/{action=RunIetf}", null, null, null);
                     ep.MapControllerRoute("benchmark", App.Config.UrlPrefix + "/api/{controller=Benchmark}/{size}/{action=GetData}", null, null, null);
                     ep.MapControllerRoute("secret", App.Config.UrlPrefix + "/api/{controller=Secret}/{key}/{action=GetSecret}", null, null, null);
-                    ep.MapMetrics();
+                    ep.MapMetrics(App.Config.UrlPrefix + "/metrics");
                 })
                 .UseSwaggerUI(c =>
                 {
