@@ -29,6 +29,11 @@ namespace CseLabs.Middleware
         /// <returns>ApplicationBuilder</returns>
         public static IApplicationBuilder UseSwaggerReplaceJson(this IApplicationBuilder builder, string jsonPath, string urlPrefix)
         {
+            if (jsonPath.StartsWith('/'))
+            {
+                jsonPath = jsonPath[1..];
+            }
+
             FileInfo fi = new (jsonPath);
 
             if (!fi.Exists)
@@ -64,7 +69,7 @@ namespace CseLabs.Middleware
             // cache the file
             responseBytes = Encoding.UTF8.GetBytes(File.ReadAllText(jsonPath).Replace("{urlPrefix}", urlPrefix));
 
-            match = "/" + fi.Name;
+            match = urlPrefix + "/" + fi.Name;
 
             // implement the middleware
             builder.Use(async (context, next) =>

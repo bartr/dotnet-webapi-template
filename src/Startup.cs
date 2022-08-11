@@ -21,7 +21,7 @@ namespace CSApp
     public class Startup
     {
         private const string SwaggerTitle = "Test App";
-        private const string SwaggerPath = "swagger.json";
+        private const string SwaggerPath = "/swagger.json";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Startup"/> class.
@@ -78,7 +78,7 @@ namespace CSApp
             app.Use(async (context, next) =>
             {
                 // matches /
-                if (context.Request.Path.Equals("/"))
+                if (context.Request.Path.Equals("/") || context.Request.Path.Equals(App.Config.UrlPrefix))
                 {
                     // return the version info
                     context.Response.Redirect($"{App.Config.UrlPrefix}/index.html", true);
@@ -95,16 +95,28 @@ namespace CSApp
             app.UseRouting()
                 .UseEndpoints(ep =>
                 {
-                    ep.MapControllers();
+                    ep.MapControllerRoute("readyz", App.Config.UrlPrefix + "/{controller=Readyz}/{action=RunReadyz}", null, null, null);
+                    ep.MapControllerRoute("healthz", App.Config.UrlPrefix + "/{controller=Healthz}/{action=RunHealthz}", null, null, null);
+                    ep.MapControllerRoute("healthz-ietf", App.Config.UrlPrefix + "/{controller=Healthz}/ietf/{action=RunIetf}", null, null, null);
+                    ep.MapControllerRoute("benchmark", App.Config.UrlPrefix + "/api/{controller=Benchmark}/{size}/{action=GetData}", null, null, null);
+                    ep.MapControllerRoute("secret", App.Config.UrlPrefix + "/api/{controller=Secret}/{key}/{action=GetSecret}", null, null, null);
                     ep.MapMetrics();
                 })
                 .UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint(SwaggerPath, SwaggerTitle);
-                    c.RoutePrefix = string.Empty;
+                    c.SwaggerEndpoint(App.Config.UrlPrefix + SwaggerPath, SwaggerTitle);
+
+                    if (string.IsNullOrWhiteSpace(App.Config.UrlPrefix))
+                    {
+                        c.RoutePrefix = string.Empty;
+                    }
+                    else
+                    {
+                        c.RoutePrefix = App.Config.UrlPrefix[1..];
+                    }
                 })
                 .UseSwaggerReplaceJson(SwaggerPath, App.Config.UrlPrefix)
-                .UseVersion();
+                .UseVersion(App.Config.UrlPrefix);
         }
 
         /// <summary>

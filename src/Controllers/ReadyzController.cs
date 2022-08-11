@@ -9,7 +9,6 @@ namespace CSApp.Controllers
     /// Handle the /readyz requests
     ///
     /// </summary>
-    [Route("[controller]")]
     public class ReadyzController : Controller
     {
         /// <summary>
@@ -19,7 +18,7 @@ namespace CSApp.Controllers
         [HttpGet]
         [Produces("text/plain")]
         [ProducesResponseType(typeof(string), 200)]
-        public IActionResult RunReadyzAsync()
+        public IActionResult RunReadyz()
         {
             return Ok("ready");
         }

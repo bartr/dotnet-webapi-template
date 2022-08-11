@@ -15,7 +15,6 @@ namespace CSApp.Controllers
     ///
     /// Cache results to prevent monitoring from overloading service
     /// </summary>
-    [Route("[controller]")]
     [ResponseCache(Duration = 60)]
     public class HealthzController : Controller
     {
@@ -41,10 +40,10 @@ namespace CSApp.Controllers
         [HttpGet]
         [Produces("text/plain")]
         [ProducesResponseType(typeof(string), 200)]
-        public async Task<IActionResult> RunHealthzAsync()
+        public async Task<IActionResult> RunHealthz()
         {
             // get list of genres as list of string
-            logger.LogInformation(nameof(RunHealthzAsync));
+            logger.LogInformation(nameof(RunHealthz));
 
             HealthCheckResult res = await RunBenchmarkHealthCheck().ConfigureAwait(false);
 
@@ -63,12 +62,12 @@ namespace CSApp.Controllers
         /// Returns an IETF (draft) health+json representation of the full Health Check
         /// </summary>
         /// <returns>IActionResult</returns>
-        [HttpGet("ietf")]
+        [HttpGet]
         [Produces("application/health+json")]
         [ProducesResponseType(typeof(BenchmarkHealthCheck), 200)]
-        public async Task RunIetfAsync()
+        public async Task RunIetf()
         {
-            logger.LogInformation(nameof(RunHealthzAsync));
+            logger.LogInformation(nameof(RunIetf));
 
             DateTime dt = DateTime.UtcNow;
 

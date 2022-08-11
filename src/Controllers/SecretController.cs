@@ -11,7 +11,6 @@ namespace CSApp.Controllers
     /// <summary>
     /// Handle secret requests
     /// </summary>
-    [Route("api/[controller]")]
     public class SecretController : Controller
     {
         private static readonly CseLog Logger = new ()
@@ -26,7 +25,9 @@ namespace CSApp.Controllers
         /// <param name="key">key for secret</param>
         /// <response code="200">text/plain with secret value</response code>
         /// <returns>IActionResult</returns>
-        [HttpGet("{key}")]
+        [HttpGet]
+        [Produces("text/plain")]
+        [ProducesResponseType(typeof(string), 200)]
         public IActionResult GetSecret([FromRoute] string key)
         {
             try

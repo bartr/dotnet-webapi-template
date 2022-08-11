@@ -49,12 +49,18 @@ namespace CseLabs.Middleware
         /// Middleware extension method to handle /version request
         /// </summary>
         /// <param name="builder">this IApplicationBuilder</param>
+        /// <param name="urlPrefix">url prefix or string.empty</param>
         /// <returns>IApplicationBuilder</returns>
-        public static IApplicationBuilder UseVersion(this IApplicationBuilder builder)
+        public static IApplicationBuilder UseVersion(this IApplicationBuilder builder, string urlPrefix)
         {
             if (string.IsNullOrWhiteSpace(version))
             {
                 Init();
+            }
+
+            if (string.IsNullOrWhiteSpace(urlPrefix))
+            {
+                urlPrefix = string.Empty;
             }
 
             responseBytes = System.Text.Encoding.UTF8.GetBytes(version);
@@ -62,7 +68,7 @@ namespace CseLabs.Middleware
             // implement the middleware
             builder.Use(async (context, next) =>
             {
-                string path = "/version";
+                string path = urlPrefix + "/version";
 
                 // matches /version
                 if (context.Request.Path.StartsWithSegments(path, StringComparison.OrdinalIgnoreCase))

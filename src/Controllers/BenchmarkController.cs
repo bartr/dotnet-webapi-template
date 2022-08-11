@@ -2,6 +2,7 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using System.Collections.Generic;
+using System.Drawing;
 using System.Threading.Tasks;
 using CseLabs.Middleware;
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +12,6 @@ namespace CSApp.Controllers
     /// <summary>
     /// Handle benchmark requests
     /// </summary>
-    [Route("api/[controller]")]
     public class BenchmarkController : Controller
     {
         private static readonly CseLog Logger = new ()
@@ -28,11 +28,11 @@ namespace CSApp.Controllers
         /// <param name="size">size of return</param>
         /// <response code="200">text/plain of size</response>
         /// <returns>IActionResult</returns>
-        [HttpGet("{size}")]
-        public async Task<IActionResult> GetDataAsync([FromRoute] int size)
+        [HttpGet]
+        [Produces("text/plain")]
+        [ProducesResponseType(typeof(string), 200)]
+        public async Task<IActionResult> GetData([FromRoute] int size = 16)
         {
-            IActionResult res;
-
             // validate size
             if (size < 1)
             {
@@ -45,7 +45,7 @@ namespace CSApp.Controllers
                     },
                 };
 
-                Logger.LogWarning(nameof(GetDataAsync), "Invalid Size", CseLog.LogEvent400, HttpContext);
+                Logger.LogWarning(nameof(GetData), "Invalid Size", CseLog.LogEvent400, HttpContext);
 
                 return ResultHandler.CreateResult(list, RequestLogger.GetPathAndQuerystring(Request));
             }
@@ -61,15 +61,13 @@ namespace CSApp.Controllers
                     },
                 };
 
-                Logger.LogWarning(nameof(GetDataAsync), "Invalid Size", CseLog.LogEvent400, HttpContext);
+                Logger.LogWarning(nameof(GetData), "Invalid Size", CseLog.LogEvent400, HttpContext);
 
                 return ResultHandler.CreateResult(list, RequestLogger.GetPathAndQuerystring(Request));
             }
 
             // return exact byte size
-            res = await ResultHandler.Handle(GetBenchmarkDataAsync(size), Logger).ConfigureAwait(false);
-
-            return res;
+            return await ResultHandler.Handle(GetBenchmarkDataAsync(size), Logger).ConfigureAwait(false);
         }
 
         private static async Task<string> GetBenchmarkDataAsync(int size)
