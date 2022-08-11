@@ -20,7 +20,7 @@ commands:
 
     - name: monitoring
       short: Deploy Heartbeat, Fluent Bit, Grafana, Prometheus
-      path: deploy/bootstrap
+      path: deploy/monitoring
 
     - name: jumpbox
       short: Deploy a jumpbox
