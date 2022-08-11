@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd "$PIB_BASE/csapp" || exit
+
+if [ ! -d deploy/monitoring ]
+then
+    echo "$PWD/deploy/monitoring directory not found"
+    exit 0
+fi
+
+# create deployment from webv-local
+kubectl apply -f deploy/monitoring
+kubectl apply -R -f deploy/monitoring

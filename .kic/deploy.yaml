@@ -7,7 +7,7 @@ commands:
   short: Deploy local apps
   scriptCommands:
     - name: all
-      short: Deploy bootstrap, CSApp, and webv
+      short: Deploy monitoring, CSApp, and webv
       path: deploy/all
 
     - name: csapp
@@ -18,7 +18,7 @@ commands:
       short: Deploy WebValidate for CSApp
       path: deploy/webv
 
-    - name: bootstrap
+    - name: monitoring
       short: Deploy Heartbeat, Fluent Bit, Grafana, Prometheus
       path: deploy/bootstrap
 
