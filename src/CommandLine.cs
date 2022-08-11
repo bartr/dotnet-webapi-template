@@ -139,6 +139,11 @@ namespace CSApp
                     {
                         msg += "--url-prefix must start with /";
                     }
+
+                    if (urlPrefix.EndsWith('/'))
+                    {
+                        msg += "--url-prefix cannot end with /";
+                    }
                 }
             }
             catch
