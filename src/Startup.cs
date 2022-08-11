@@ -78,7 +78,9 @@ namespace CSApp
             app.Use(async (context, next) =>
             {
                 // matches /
-                if (context.Request.Path.Equals("/") || context.Request.Path.Equals(App.Config.UrlPrefix))
+                if (context.Request.Path.Equals("/") || 
+                    context.Request.Path.Equals(App.Config.UrlPrefix) ||
+                    context.Request.Path.Equals(App.Config.UrlPrefix + "/"))
                 {
                     // return the version info
                     context.Response.Redirect($"{App.Config.UrlPrefix}/index.html", true);
