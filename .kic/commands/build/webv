@@ -3,7 +3,7 @@
 cd "$PIB_BASE/csapp" || exit
 
 # build and push the local docker image
-docker build webv-csapp -t k3d-registry.localhost:5500/webv:local
+docker build webv -t k3d-registry.localhost:5500/webv-csapp:local
 docker push k3d-registry.localhost:5500/webv-csapp:local
 
 if [ "$1" == "--deploy" ]
