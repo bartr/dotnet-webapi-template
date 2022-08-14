@@ -7,7 +7,7 @@ k3d="$(dirname "$(which kic)")/.kic/k3d.yaml"
 if [ ! -f "$k3d" ]
 then
     echo "File not found - $k3d"
-    exit 0
+    exit 1
 fi
 
 kic cluster delete
