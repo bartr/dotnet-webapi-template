@@ -4,26 +4,24 @@
 
 image: k3d-registry.localhost:5500/webv:local
 server:  http://localhost:30080
+logformat: TsvMin
+verbose: false
+verboseerrors: false
+timeout: 30
+region: ""
+zone: ""
+tag: ""
 
 integration:
   files: baseline.json
   sleep: 0
-  logformat: TsvMin
-  maxErrors: 10
+  maxerrors: 10
   summary: Tsv
-  region: ""
-  zone: ""
-  tag: ""
-  verbose: false
 
 load:
   files: benchmark.json
   sleep: 10
-  logformat: TsvMin
   duration: 30
-  region: ""
-  zone: ""
-  tag: ""
   delaystart: 0
   random: false
-  verbose: false
+  port: 8080
