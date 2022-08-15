@@ -22,6 +22,5 @@ load:
   files: benchmark.json
   sleep: 10
   duration: 30
-  delaystart: 0
   random: false
   port: 8080
