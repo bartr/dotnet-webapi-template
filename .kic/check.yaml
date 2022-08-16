@@ -18,10 +18,6 @@ commands:
       short: Check all services
       path: check/all
 
-    - name: heartbeat
-      short: Check Heartbeat service
-      path: check/heartbeat
-
     - name: prometheus
       short: Check Prometheus service
       path: check/prometheus
