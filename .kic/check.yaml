@@ -14,10 +14,6 @@ commands:
       short: Check WebValidate
       path: check/webv
 
-    - name: all
-      short: Check all services
-      path: check/all
-
     - name: prometheus
       short: Check Prometheus service
       path: check/prometheus
