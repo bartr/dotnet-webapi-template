@@ -1,8 +1,0 @@
-#!/bin/bash
-
-#name: integration
-#short: Run an integration test
-
-cd "$PIB_BASE/csapp/webv" || exit
-
-webv --verbose --summary tsv --server http://localhost:30080 --files integration.json
