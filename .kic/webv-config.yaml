@@ -13,13 +13,13 @@ zone: ""
 tag: ""
 
 integration:
-  files: baseline.json
+  files: integration.json
   sleep: 0
   maxerrors: 10
   summary: Tsv
 
 load:
-  files: benchmark.json
+  files: load.json
   sleep: 10
   duration: 30
   random: false

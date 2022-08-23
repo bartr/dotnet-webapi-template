@@ -5,4 +5,4 @@
 
 cd "$PIB_BASE/csapp/webv" || exit
 
-webv --server http://localhost:30080 -f benchmark.json -r -l 10 --duration 30
+webv --server http://localhost:30080 -f load.json -r -l 10 --duration 30

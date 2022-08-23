@@ -5,4 +5,4 @@
 
 cd "$PIB_BASE/csapp/webv" || exit
 
-webv --verbose --summary tsv --server http://localhost:30080 --files baseline.json
+webv --verbose --summary tsv --server http://localhost:30080 --files integration.json
