@@ -62,7 +62,7 @@ spec:
           - --server
           - http://csapp:8080
           - --files
-          - benchmark.json
+          - load.json
           - --zone
           - dev
           - --region
