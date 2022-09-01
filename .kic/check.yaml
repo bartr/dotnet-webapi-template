@@ -5,6 +5,9 @@
 commands:
 - name: check
   short: Check local apps
+  commands:
+    - name: heartbeat
+      hidden: true
   scriptCommands:
     - name: csapp
       short: Check CSApp
