@@ -8,6 +8,8 @@ commands:
   commands:
     - name: heartbeat
       hidden: true
+    - name: imdb
+      hidden: true
   scriptCommands:
     - name: csapp
       short: Check CSApp
