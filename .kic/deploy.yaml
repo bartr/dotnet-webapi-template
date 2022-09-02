@@ -19,7 +19,7 @@ commands:
       path: deploy/webv
 
     - name: monitoring
-      short: Deploy Heartbeat, Fluent Bit, Grafana, Prometheus
+      short: Deploy Fluent Bit, Grafana, Prometheus
       path: deploy/monitoring
 
     - name: jumpbox

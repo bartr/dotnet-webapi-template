@@ -5,6 +5,11 @@
 commands:
 - name: check
   short: Check local apps
+  commands:
+    - name: heartbeat
+      hidden: true
+    - name: imdb
+      hidden: true
   scriptCommands:
     - name: csapp
       short: Check CSApp
@@ -13,14 +18,6 @@ commands:
     - name: webv
       short: Check WebValidate
       path: check/webv
-
-    - name: all
-      short: Check all services
-      path: check/all
-
-    - name: heartbeat
-      short: Check Heartbeat service
-      path: check/heartbeat
 
     - name: prometheus
       short: Check Prometheus service

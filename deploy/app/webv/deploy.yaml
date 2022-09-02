@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webv-heartbeat
-  namespace: heartbeat
+  name: webv
+  namespace: csapp
   labels:
-    app.kubernetes.io/name: webv-heartbeat
+    app.kubernetes.io/name: webv
 spec:
   replicas: 1
   strategy:
@@ -14,16 +14,17 @@ spec:
        maxUnavailable: 1
   selector:
     matchLabels:
-      app: webv-heartbeat
+      app: webv
   template:
     metadata:
       labels:
-        app: webv-heartbeat
+        app: webv
     spec:
       containers:
         - name: app
-          image: ghcr.io/cse-labs/pib-webv:latest
+          image: k3d-registry.localhost:5500/webv-csapp:local
           imagePullPolicy: Always
+
           ports:
             - name: http
               containerPort: 8080
@@ -37,43 +38,44 @@ spec:
             periodSeconds: 60
           startupProbe:
             httpGet:
-              path: /readyz
+              path: /healthz
               port: http
             initialDelaySeconds: 5
             failureThreshold: 60
             periodSeconds: 2
+
           resources:
             limits:
-              memory: "256Mi"
+              memory: "512Mi"
               cpu: "500m"
             requests:
-              memory: "128Mi"
+              memory: "256Mi"
               cpu: "250m"
           args:
           - --sleep
-          - "5000"
+          - "100"
           - --prometheus
           - --run-loop
           - --verbose
+          - --log-format
+          - Json
           - --server
-          - http://heartbeat:8080
+          - http://csapp:8080
           - --files
-          - heartbeat-benchmark.json
+          - load.json
           - --zone
           - dev
           - --region
           - dev
-          - --log-format
-          - Json
----
 
+---
 apiVersion: v1
 kind: Service
 metadata:
-  name: webv-heartbeat
-  namespace: heartbeat
+  name: webv
+  namespace: csapp
   labels:
-    app: webv-heartbeat
+    app: webv
 spec:
   type: ClusterIP
   ports:
@@ -82,4 +84,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: webv-heartbeat
+    app: webv
