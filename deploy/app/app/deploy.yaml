@@ -68,7 +68,7 @@ spec:
   type: NodePort
   ports:
     - port: 8080
-      nodePort: 30080
+      nodePort: {{nodePort}}
       targetPort: http
       protocol: TCP
       name: http
