@@ -13,7 +13,7 @@ deployments:
       memoryLimit: 128Mi
       cpuRequest: 300m
       memoryRequest: 64Mi
-      ingressPrefix: /csapp
+      ingressPrefix: /csapp/
       readinessProbe: /csapp/readyz
       livenessProbe: /csapp/healthz
       targets: []
