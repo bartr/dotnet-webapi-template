@@ -8,12 +8,12 @@ deployments:
       workspace: csapp
       image: ghcr.io/cse-labs/csapp:latest
       port: 8080
-      nodePort: 30080
+      nodePort: {{nodePort}}
       cpuLimit: 500m
       memoryLimit: 128Mi
       cpuRequest: 300m
       memoryRequest: 64Mi
-      ingressPrefix: /
-      readinessProbe: /readyz
-      livenessProbe: /healthz
+      ingressPrefix: /csapp
+      readinessProbe: /csapp/readyz
+      livenessProbe: /csapp/healthz
       targets: []
