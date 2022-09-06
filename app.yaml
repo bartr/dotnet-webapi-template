@@ -8,7 +8,6 @@ deployments:
       workspace: csapp
       image: ghcr.io/cse-labs/csapp:latest
       port: 8080
-      nodePort: {{nodePort}}
       cpuLimit: 500m
       memoryLimit: 128Mi
       cpuRequest: 300m
