@@ -11,6 +11,7 @@ timeout: 30
 region: ""
 zone: ""
 tag: ""
+urlprefix: ""
 
 integration:
   files: integration.json
