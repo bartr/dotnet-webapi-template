@@ -1,4 +1,4 @@
-template: pib-service
+template: .gitops
 deployments:
   dev:
     target: dev
