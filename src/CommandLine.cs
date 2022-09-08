@@ -95,7 +95,6 @@ namespace CSApp
             };
 
             // add the options
-            root.AddOption(EnvVarOption(new string[] { "--url-prefix", "-u" }, "URL prefix for ingress mapping", string.Empty));
             root.AddOption(EnvVarOption(new string[] { "--port", "-p" }, "Listen Port", 8080, 1, (64 * 1024) - 1));
             root.AddOption(EnvVarOption(new string[] { "--zone", "-z" }, "Zone for log", "dev"));
             root.AddOption(EnvVarOption(new string[] { "--region", "-r" }, "Region for log", "dev"));
@@ -118,32 +117,6 @@ namespace CSApp
             if (EnvVarErrors.Count > 0)
             {
                 msg += string.Join('\n', EnvVarErrors) + '\n';
-            }
-
-            try
-            {
-                // get the values to validate
-                string urlPrefix = result.Children.FirstOrDefault(c => c.Symbol.Name == "urlPrefix") is OptionResult urlRes ? urlRes.GetValueOrDefault<string>() : string.Empty;
-
-                // validate url-prefix
-                if (!string.IsNullOrWhiteSpace(urlPrefix))
-                {
-                    urlPrefix = urlPrefix.Trim();
-
-                    if (urlPrefix.Length < 2)
-                    {
-                        msg += "--url-prefix is invalid";
-                    }
-
-                    if (!urlPrefix.StartsWith('/'))
-                    {
-                        msg += "--url-prefix must start with /";
-                    }
-                }
-            }
-            catch
-            {
-                // system.commandline will catch and display parse exceptions
             }
 
             // return error message(s) or string.empty

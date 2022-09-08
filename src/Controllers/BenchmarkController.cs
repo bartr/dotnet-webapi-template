@@ -11,7 +11,7 @@ namespace CSApp.Controllers
     /// <summary>
     /// Handle benchmark requests
     /// </summary>
-    [Route("api/[controller]")]
+    [Route("csapp/api/[controller]")]
     public class BenchmarkController : Controller
     {
         private static readonly CseLog Logger = new ()

@@ -62,7 +62,7 @@ namespace CseLabs.Middleware
             // implement the middleware
             builder.Use(async (context, next) =>
             {
-                string path = "/version";
+                string path = "/csapp/version";
 
                 // matches /version
                 if (context.Request.Path.StartsWithSegments(path, StringComparison.OrdinalIgnoreCase))

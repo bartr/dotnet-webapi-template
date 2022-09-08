@@ -3,7 +3,7 @@
 ###
 
 image: k3d-registry.localhost:5500/webv-csapp:local
-server:  http://localhost:30080
+server:  http://localhost:{{nodePort}}
 logformat: TsvMin
 verbose: false
 verboseerrors: false
@@ -11,6 +11,7 @@ timeout: 30
 region: ""
 zone: ""
 tag: ""
+urlprefix: ""
 
 integration:
   files: integration.json

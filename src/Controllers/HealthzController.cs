@@ -15,7 +15,7 @@ namespace CSApp.Controllers
     ///
     /// Cache results to prevent monitoring from overloading service
     /// </summary>
-    [Route("[controller]")]
+    [Route("csapp/[controller]")]
     [ResponseCache(Duration = 60)]
     public class HealthzController : Controller
     {
