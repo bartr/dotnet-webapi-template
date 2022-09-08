@@ -4,6 +4,7 @@ deployments:
     target: dev
     values:
       app: csapp
+      containerArgs: ' ' # example: '[--log-level, Warning
       namespace: csapp
       workspace: csapp
       image: ghcr.io/cse-labs/csapp:latest
