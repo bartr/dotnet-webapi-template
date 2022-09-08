@@ -100,6 +100,7 @@ data:
           - targets: ['kube-state-metrics.kube-system.svc.cluster.local:8080']
 
       - job_name: 'csapp'
+        metrics_path: '/csapp/metrics'
         static_configs:
           - targets: [ 'csapp.csapp.svc.cluster.local:8080' ]
 
