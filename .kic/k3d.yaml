@@ -1,39 +1,47 @@
-apiVersion: k3d.io/v1alpha2
+apiVersion: k3d.io/v1alpha4
 kind: Simple
-servers: 1
-network: k3d
 kubeAPI:
-  hostIP: "0.0.0.0"
+  hostIP: 0.0.0.0
   hostPort: "6443"
-volumes:
-  - volume: /prometheus:/prometheus
-    nodeFilters:
-      - server[0]
-  - volume: /grafana:/grafana
-    nodeFilters:
-      - server[0]
-ports:
-  - port: 30000:30000
-    nodeFilters:
-      - server[0]
-  - port: 30080:30080
-    nodeFilters:
-      - server[0]
-  - port: 31080:31080
-    nodeFilters:
-      - server[0]
-  - port: 32000:32000
-    nodeFilters:
-      - server[0]
-
+metadata: {}
+network: k3d
 options:
   k3d:
-    wait: true
+    disableImageVolume: false
+    disableLoadbalancer: false
+    disableRollback: false
+    loadbalancer: {}
     timeout: "60s"
+    wait: true
   k3s:
-    extraServerArgs:
-      - --tls-san=127.0.0.1
-    extraAgentArgs: []
+    extraArgs:
+    - arg: --tls-san=127.0.0.1
+      nodeFilters:
+      - server:*
   kubeconfig:
-    updateDefaultKubeconfig: true
     switchCurrentContext: true
+    updateDefaultKubeconfig: true
+  runtime:
+    HostPidMode: false
+ports:
+- nodeFilters:
+  - server:0
+  port: 30000:30000
+- nodeFilters:
+  - server:0
+  port: 30080:30080
+- nodeFilters:
+  - server:0
+  port: 31080:31080
+- nodeFilters:
+  - server:0
+  port: 32000:32000
+registries: {}
+servers: 1
+volumes:
+- nodeFilters:
+  - server:0
+  volume: /prometheus:/prometheus
+- nodeFilters:
+  - server:0
+  volume: /grafana:/grafana
