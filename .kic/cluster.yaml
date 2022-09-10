@@ -2,13 +2,10 @@ commands:
 - name: cluster
   short: Local cluster commands
   scriptCommands:
+    ## todo - remove create
     - name: create
       short: Create a local cluster
       path: cluster/create
-
-    - name: delete
-      short: Delete the local cluster
-      path: cluster/delete
 
     - name: flux-install
       short: Install Flux on the local cluster
