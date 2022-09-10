@@ -4,7 +4,7 @@ cpuLimit: 500m
 cpuRequest: 300m
 environment: dev
 image: ghcr.io/cse-labs/myapp:latest
-ingressPrefix: /
+ingressPrefix: /csapp/
 livenessProbe: /csapp/healthz
 memoryLimit: 128Mi
 memoryRequest: 64Mi
