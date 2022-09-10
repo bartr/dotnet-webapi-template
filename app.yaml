@@ -1,14 +1,14 @@
-app: myapp
+app: csapp
 containerArgs: []
 cpuLimit: 500m
 cpuRequest: 300m
 environment: dev
-image: ghcr.io/cse-labs/myapp:latest
+image: ghcr.io/cse-labs/csapp:latest
 ingressPrefix: /csapp/
 livenessProbe: /csapp/healthz
 memoryLimit: 128Mi
 memoryRequest: 64Mi
-namespace: myapp
+namespace: csapp
 nodePort: {{nodePort}}
 port: 8080
 readinessProbe: /csapp/readyz
