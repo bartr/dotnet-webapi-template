@@ -2,13 +2,13 @@
 
 cd "$PIB_BASE/csapp" || exit 1
 
-if [ ! -d deploy/flux ]
+if [ ! -d flux ]
 then
-    echo "$PWD/deploy/flux directory not found"
+    echo "$PWD/flux directory not found"
     exit 1
 fi
 
-cd deploy/flux || exit 1
+cd flux || exit 1
 
 kubectl apply -f namespace.yaml
 
