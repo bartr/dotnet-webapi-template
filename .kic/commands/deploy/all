@@ -1,6 +1,0 @@
-#!/bin/bash
-
-kic deploy monitoring
-kic deploy jumpbox
-kic deploy csapp
-kic deploy webv

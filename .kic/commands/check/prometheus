@@ -1,3 +1,0 @@
-#!/bin/bash
-
-http localhost:30000/-/healthy
