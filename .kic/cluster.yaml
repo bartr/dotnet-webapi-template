@@ -1,7 +1,0 @@
-commands:
-- name: cluster
-  short: Local cluster commands
-  scriptCommands:
-    - name: flux-install
-      short: Install Flux on the local cluster
-      path: cluster/flux-install

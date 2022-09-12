@@ -13,5 +13,3 @@ scriptCommands:
 commands:
 - name: new
   hidden: true
-- name: targets
-  hidden: true
