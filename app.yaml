@@ -1,19 +1,16 @@
+app: csapp
+containerArgs: []
+cpuLimit: 500m
+cpuRequest: 300m
+environment: dev
+image: ghcr.io/cse-labs/csapp:latest
+ingressPrefix: /csapp/
+livenessProbe: /csapp/healthz
+memoryLimit: 128Mi
+memoryRequest: 64Mi
+namespace: csapp
+nodePort: {{nodePort}}
+port: 8080
+readinessProbe: /csapp/readyz
+targets: []
 template: pib-service
-deployments:
-  dev:
-    target: dev
-    values:
-      app: csapp
-      containerArgs: ' ' # example: '[--log-level, Warning
-      namespace: csapp
-      workspace: csapp
-      image: ghcr.io/cse-labs/csapp:latest
-      port: 8080
-      cpuLimit: 500m
-      memoryLimit: 128Mi
-      cpuRequest: 300m
-      memoryRequest: 64Mi
-      ingressPrefix: /csapp/
-      readinessProbe: /csapp/readyz
-      livenessProbe: /csapp/healthz
-      targets: []

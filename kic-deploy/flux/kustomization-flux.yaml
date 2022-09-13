@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./apps/csapp/deploy/flux
+  path: ./apps/csapp/kic-deploy/flux
   prune: true
   sourceRef:
     kind: GitRepository
