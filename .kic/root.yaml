@@ -9,7 +9,3 @@ scriptCommands:
 - name: sync
   short: Flux sync (reconcile)
   path: sync
-
-commands:
-- name: new
-  hidden: true
