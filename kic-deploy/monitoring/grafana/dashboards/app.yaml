@@ -202,7 +202,7 @@ data:
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Application Dashboard",
+          "title": "Application",
           "type": "stat"
         },
         {
