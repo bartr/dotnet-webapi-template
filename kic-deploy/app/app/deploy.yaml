@@ -43,10 +43,10 @@ spec:
           resources:
             limits:
               cpu: 1000m
-              memory: 256Mi
+              memory: 512Mi
             requests:
-              cpu: 200m
-              memory: 64Mi
+              cpu: 500m
+              memory: 256Mi
       #     volumeMounts:
       #       - name: secrets
       #         mountPath: "/app/secrets"
