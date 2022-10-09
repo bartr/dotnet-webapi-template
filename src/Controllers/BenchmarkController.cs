@@ -4,6 +4,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CseLabs.Middleware;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CSApp.Controllers
@@ -26,9 +27,11 @@ namespace CSApp.Controllers
         /// Returns a string value of benchmark data
         /// </summary>
         /// <param name="size">size of return</param>
-        /// <response code="200">text/plain of size</response>
+        /// <response code="200"></response>
         /// <returns>IActionResult</returns>
         [HttpGet("{size}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetDataAsync([FromRoute] int size)
         {
             IActionResult res;
@@ -72,8 +75,10 @@ namespace CSApp.Controllers
             return res;
         }
 
+        // get benchmark data
         private static async Task<string> GetBenchmarkDataAsync(int size)
         {
+            // create the string
             if (string.IsNullOrEmpty(benchmarkData))
             {
                 benchmarkData = "0123456789ABCDEF";
@@ -85,6 +90,7 @@ namespace CSApp.Controllers
                 }
             }
 
+            // return a slice based on size
             return await Task<string>.Factory.StartNew(() =>
             {
                 return benchmarkData[0..size];

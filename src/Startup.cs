@@ -21,7 +21,7 @@ namespace CSApp
     public class Startup
     {
         private const string SwaggerTitle = "CSApp Web API";
-        private const string SwaggerPath = "swagger.json";
+        private const string SwaggerPath = "/swagger/v1/swagger.json";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Startup"/> class.
@@ -98,6 +98,7 @@ namespace CSApp
                     ep.MapControllers();
                     ep.MapMetrics("/csapp/metrics");
                 })
+                .UseSwagger()
                 .UseSwaggerUI(c =>
                 {
                     c.SwaggerEndpoint(SwaggerPath, SwaggerTitle);
@@ -114,7 +115,8 @@ namespace CSApp
         public static void ConfigureServices(IServiceCollection services)
         {
             // set json serialization defaults and api behavior
-            services.AddControllers()
+            services.AddSwaggerGen()
+                .AddControllers()
                 .AddJsonOptions(options =>
                 {
                     options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
