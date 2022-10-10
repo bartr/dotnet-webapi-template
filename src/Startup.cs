@@ -103,6 +103,7 @@ namespace CSApp
                 .UseSwagger()
                 .UseSwaggerUI(c =>
                 {
+                    c.DocumentTitle = SwaggerTitle;
                     c.SwaggerEndpoint(SwaggerPath, SwaggerTitle);
                     c.RoutePrefix = "csapp";
                 })
@@ -117,9 +118,16 @@ namespace CSApp
         public static void ConfigureServices(IServiceCollection services)
         {
             // set json serialization defaults and api behavior
-            services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(options =>
                     {
-                        c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, $"{Assembly.GetExecutingAssembly().GetName().Name}.xml"));
+                        options.SwaggerDoc(
+                            "v1",
+                            new Microsoft.OpenApi.Models.OpenApiInfo
+                            {
+                                Title = SwaggerTitle,
+                                Version = "1.0"
+                            });
+                        options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, $"{Assembly.GetExecutingAssembly().GetName().Name}.xml"));
                     })
                 .AddControllers()
                 .AddJsonOptions(options =>
