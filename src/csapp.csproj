@@ -21,6 +21,10 @@
     <DefineConstants>TRACE;DEBUG;EXPERIMENTAL</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <AdditionalFiles Include="CSE-Labs\stylecop.json" />
   </ItemGroup>

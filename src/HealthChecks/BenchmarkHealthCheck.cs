@@ -30,7 +30,6 @@ namespace CSApp
         /// Initializes a new instance of the <see cref="BenchmarkHealthCheck"/> class.
         /// </summary>
         /// <param name="logger">ILogger</param>
-        /// <param name="dal">IDAL</param>
         public BenchmarkHealthCheck(ILogger<BenchmarkHealthCheck> logger)
         {
             // save to member vars

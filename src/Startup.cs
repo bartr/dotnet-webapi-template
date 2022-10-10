@@ -2,6 +2,8 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using System;
+using System.IO;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using CseLabs.Middleware;
@@ -115,7 +117,10 @@ namespace CSApp
         public static void ConfigureServices(IServiceCollection services)
         {
             // set json serialization defaults and api behavior
-            services.AddSwaggerGen()
+            services.AddSwaggerGen(c =>
+                    {
+                        c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, $"{Assembly.GetExecutingAssembly().GetName().Name}.xml"));
+                    })
                 .AddControllers()
                 .AddJsonOptions(options =>
                 {

@@ -17,7 +17,6 @@ namespace CSApp
         /// <summary>
         /// Get the secrets from the k8s volume
         /// </summary>
-        /// <param name="volume">k8s volume name</param>
         /// <returns>Secrets or null</returns>
         public Dictionary<string, string> GetSecretsFromVolume()
         {

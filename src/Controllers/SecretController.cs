@@ -25,7 +25,7 @@ namespace CSApp.Controllers
         /// Returns the Key Vault secret mounted in the secrets volume
         /// </summary>
         /// <param name="key">key for secret</param>
-        /// <response code="200"></response code>
+        /// <response code="200"></response>
         /// <returns>IActionResult</returns>
         [HttpGet("{key}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
