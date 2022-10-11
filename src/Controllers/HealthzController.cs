@@ -26,7 +26,6 @@ namespace CSApp.Controllers
         /// Initializes a new instance of the <see cref="HealthzController"/> class.
         /// </summary>
         /// <param name="logger">logger</param>
-        /// <param name="dal">data access layer</param>
         /// <param name="hcLogger">HealthCheck logger</param>
         public HealthzController(ILogger<HealthzController> logger, ILogger<BenchmarkHealthCheck> hcLogger)
         {

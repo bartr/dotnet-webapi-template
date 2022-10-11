@@ -21,6 +21,10 @@
     <DefineConstants>TRACE;DEBUG;EXPERIMENTAL</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <AdditionalFiles Include="CSE-Labs\stylecop.json" />
   </ItemGroup>
@@ -37,11 +41,16 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.3.2" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="6.3.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
+
+    <None Include=".editorconfig" />
+
     <Content Update="appsettings.json">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -52,10 +61,6 @@
 
     <None Include="secrets\**">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-
-    <None Include="wwwroot\**">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

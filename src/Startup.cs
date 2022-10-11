@@ -2,6 +2,8 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using System;
+using System.IO;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using CseLabs.Middleware;
@@ -21,7 +23,7 @@ namespace CSApp
     public class Startup
     {
         private const string SwaggerTitle = "CSApp Web API";
-        private const string SwaggerPath = "swagger.json";
+        private const string SwaggerPath = "/swagger/v1/swagger.json";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Startup"/> class.
@@ -98,8 +100,10 @@ namespace CSApp
                     ep.MapControllers();
                     ep.MapMetrics("/csapp/metrics");
                 })
+                .UseSwagger()
                 .UseSwaggerUI(c =>
                 {
+                    c.DocumentTitle = SwaggerTitle;
                     c.SwaggerEndpoint(SwaggerPath, SwaggerTitle);
                     c.RoutePrefix = "csapp";
                 })
@@ -114,7 +118,18 @@ namespace CSApp
         public static void ConfigureServices(IServiceCollection services)
         {
             // set json serialization defaults and api behavior
-            services.AddControllers()
+            services.AddSwaggerGen(options =>
+                    {
+                        options.SwaggerDoc(
+                            "v1",
+                            new Microsoft.OpenApi.Models.OpenApiInfo
+                            {
+                                Title = SwaggerTitle,
+                                Version = "1.0"
+                            });
+                        options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, $"{Assembly.GetExecutingAssembly().GetName().Name}.xml"));
+                    })
+                .AddControllers()
                 .AddJsonOptions(options =>
                 {
                     options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;

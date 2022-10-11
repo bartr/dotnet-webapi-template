@@ -4,6 +4,7 @@
 using System;
 using System.Net;
 using CseLabs.Middleware;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CSApp.Controllers
@@ -24,13 +25,17 @@ namespace CSApp.Controllers
         /// Returns the Key Vault secret mounted in the secrets volume
         /// </summary>
         /// <param name="key">key for secret</param>
-        /// <response code="200">text/plain with secret value</response code>
+        /// <response code="200"></response>
         /// <returns>IActionResult</returns>
         [HttpGet("{key}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult GetSecret([FromRoute] string key)
         {
             try
             {
+                // return the value of secret if found
                 if (!string.IsNullOrWhiteSpace(key))
                 {
                     string secret = string.Empty;
@@ -43,10 +48,7 @@ namespace CSApp.Controllers
                     }
                 }
 
-                return new ObjectResult("secret not found")
-                {
-                    StatusCode = (int)HttpStatusCode.NotFound,
-                };
+                return NotFound("secret not found");
             }
             catch (Exception ex)
             {
