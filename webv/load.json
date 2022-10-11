@@ -3,8 +3,8 @@
   [
     {"path":"/version","perfTarget":{"category":"static"}},
     {"path":"/readyz","perfTarget":{"category":"healthz"},"validation":{"contentType":"text/plain","exactMatch":"ready"}},
-    {"path":"/index.html","perfTarget":{"category":"static"},"validation":{"contentType":"text/html","contains":["<title>Swagger UI</title>","<div id=\"swagger-ui\">"]}},
-    {"path":"/swagger.json","perfTarget":{"category":"static"},"validation":{"jsonObject":[{"field":"openapi"},{"field":"info"},{"field":"paths"},{"field":"components"}]}},
+    {"path":"/index.html","perfTarget":{"category":"static"},"validation":{"contentType":"text/html","contains":["<div id=\"swagger-ui\">"]}},
+    {"path":"/swagger/v1/swagger.json","perfTarget":{"category":"static"},"validation":{"jsonObject":[{"field":"openapi"},{"field":"info"},{"field":"paths"},{"field":"components"}]}},
     {"path":"/healthz","perfTarget":{"category":"healthz"},"validation":{"contentType":"text/plain","notContains":["fail"]}},
     {"path":"/api/benchmark/1","perfTarget":{"category":"api"},"validation":{"contentType":"text/plain","exactMatch":"0"}},
     {"path":"/api/benchmark/16","perfTarget":{"category":"api"},"validation":{"contentType":"text/plain","exactMatch":"0123456789ABCDEF"}},
