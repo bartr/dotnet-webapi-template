@@ -1,0 +1,40 @@
+{
+  "requests":
+  [
+    {"path":"/version","perfTarget":{"category":"static"}},
+    {"path":"/index.html","perfTarget":{"category":"static"},"validation":{"contentType":"text/html","contains":["<title>ObjectModel Web API</title>","<div id=\"swagger-ui\">"]}},
+    {"path":"/swagger/v1/swagger.json","perfTarget":{"category":"static"},"validation":{"jsonObject":[{"field":"openapi"},{"field":"info"},{"field":"paths"},{"field":"components"}]}},
+    {"path":"/api/v1/deploy","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+
+    {"path":"/api/v1/apps","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/apps/flux-system","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/apps/heartbeat","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/apps/redis","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/apps/imdb","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/apps/dogs-cats","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+
+    {"path":"/api/v1/clusters","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/clusters/az-central-101","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/clusters/az-east-102","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/clusters/az-west-103","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+
+    {"path":"/api/v1/groups","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/groups/central","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/groups/east","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/groups/west","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/groups/all","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/groups/az-central","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/groups/gcp-west","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+
+    {"path":"/api/v1/namespaces","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/namespaces/flux-system","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/namespaces/heartbeat","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/namespaces/redis","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/namespaces/imdb","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+    {"path":"/api/v1/namespaces/dogs-cats","perfTarget":{"category":"api"},"validation":{"contentType":"application/json"}},
+
+    {"path":"/readyz","perfTarget":{"category":"healthz"},"validation":{"contentType":"text/plain","exactMatch":"ready"}},
+    {"path":"/healthz","perfTarget":{"category":"healthz"},"validation":{"contentType":"text/plain","notContains":["fail"]}},
+    {"path":"/healthz/ietf","perfTarget":{"category":"healthz"},"validation":{"contentType":"application/health+json","notContains":["fail"]}},
+  ]
+}

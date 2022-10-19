@@ -1,0 +1,547 @@
+{
+  "Namespaces": {
+    "flux-system": {
+      "NamespaceId": "flux-system",
+      "Name": "flux-system",
+      "Environment": "dev",
+      "CpuLimit": 1,
+      "MemoryLimit": 2048,
+      "SubGroups": [ { "GroupId": "all" } ]
+    },
+    "redis": {
+      "NamespaceId": "redis",
+      "Name": "redis",
+      "Environment": "dev",
+      "CpuLimit": 1,
+      "MemoryLimit": 2048,
+      "SubGroups": [ { "GroupId": "all" } ]
+    },
+    "heartbeat": {
+      "NamespaceId": "heartbeat",
+      "Name": "heartbeat",
+      "Environment": "dev",
+      "CpuLimit": 0.5,
+      "MemoryLimit": 1024,
+      "SubGroups": [ { "GroupId": "all" } ]
+    },
+    "imdb": {
+      "NamespaceId": "imdb",
+      "Name": "imdb",
+      "Environment": "dev",
+      "CpuLimit": 1,
+      "MemoryLimit": 2048,
+      "Take": 4,
+      "SubGroups": [ { "GroupId": "all" } ]
+    },
+    "dogs-cats": {
+      "NamespaceId": "dogs-cats",
+      "Name": "dogs-cats",
+      "Environment": "dev",
+      "CpuLimit": 0.5,
+      "MemoryLimit": 1024,
+      "SubGroups": [ { "GroupId": "one-per-cloud-region" } ]
+    },
+    "myapp": {
+      "NamespaceId": "myapp",
+      "Name": "myapp",
+      "Environment": "dev",
+      "CpuLimit": 4,
+      "MemoryLimit": 8192,
+      "Take": 3,
+      "SubGroups": [ { "GroupId": "east" } ]
+    },
+    "yourapp": {
+      "NamespaceId": "yourapp",
+      "Name": "yourapp",
+      "Environment": "dev",
+      "CpuLimit": 8,
+      "MemoryLimit": 16384,
+      "Take": 3,
+      "SubGroups": [ { "GroupId": "east" } ]
+    }
+  },
+  "Apps": {
+    "flux-system": {
+      "AppId": "flux-system",
+      "Environment": "dev",
+      "Name": "flux-system",
+      "Namespace": "flux-system",
+      "Repo": "./apps/flux-system",
+      "CpuLimit": 1.0,
+      "MemoryLimit": 2048
+    },
+    "redis": {
+      "AppId": "redis",
+      "Environment": "dev",
+      "Name": "redis",
+      "Namespace": "redis",
+      "Repo": "./apps/redis",
+      "CpuLimit": 1.0,
+      "MemoryLimit": 2048
+    },
+    "heartbeat": {
+      "AppId": "heartbeat",
+      "Environment": "dev",
+      "Name": "heartbeat",
+      "Namespace": "heartbeat",
+      "Repo": "./apps/heartbeat",
+      "CpuLimit": 0.5,
+      "MemoryLimit": 1024
+    },
+    "imdb": {
+      "AppId": "imdb",
+      "Environment": "dev",
+      "Name": "imdb",
+      "Namespace": "imdb",
+      "Repo": "./apps/imdb",
+      "CpuLimit": 1.0,
+      "MemoryLimit": 2048
+    },
+    "dogs-cats": {
+      "AppId": "dogs-cats",
+      "Environment": "dev",
+      "Name": "dogs-cats",
+      "Namespace": "dogs-cats",
+      "Repo": "./apps/dogs-cats",
+      "CpuLimit": 0.5,
+      "MemoryLimit": 1024
+    },
+    "myapp": {
+      "AppId": "myapp",
+      "Environment": "dev",
+      "Name": "myapp",
+      "Namespace": "myapp",
+      "Repo": "./apps/myapp",
+      "CpuLimit": 4,
+      "MemoryLimit": 8192
+    },
+    "yourapp": {
+      "AppId": "yourapp",
+      "Environment": "dev",
+      "Name": "yourapp",
+      "Namespace": "yourapp",
+      "Repo": "./apps/myapp",
+      "CpuLimit": 8,
+      "MemoryLimit": 16384
+    }
+  },
+  "Groups": {
+    "all": {
+      "GroupId": "all",
+      "Name": "all",
+      "Environment": "dev",
+      "SubGroups": [ { "GroupId": "central" }, { "GroupId": "east" }, { "GroupId": "west" } ]
+    },
+    "central": {
+      "GroupId": "central",
+      "Name": "central",
+      "Environment": "dev",
+      "SubGroups": [ { "GroupId": "az-central" }, { "GroupId": "gcp-central" } ]
+    },
+    "east": {
+      "GroupId": "east",
+      "Name": "east",
+      "Environment": "dev",
+      "SubGroups": [ { "GroupId": "az-east" }, { "GroupId": "gcp-east" } ]
+    },
+    "west": {
+      "GroupId": "west",
+      "Name": "west",
+      "Environment": "dev",
+      "SubGroups": [ { "GroupId": "az-west" }, { "GroupId": "gcp-west" } ]
+    },
+    "one-per-cloud-region": {
+      "GroupId": "one-per-cloud-region",
+      "Name": "one-per-cloud-region",
+      "Environment": "dev",
+      "SubGroups": [
+        { "GroupId": "az-central", "Take": 1 },
+        { "GroupId": "az-east", "Take": 1 },
+        { "GroupId": "az-west", "Take": 1 },
+        { "GroupId": "gcp-central", "Take": 1 },
+        { "GroupId": "gcp-east", "Take": 1 },
+        { "GroupId": "gcp-west", "Take": 1 }
+      ]
+    },
+    "one-per-region": {
+      "GroupId": "one-per-region",
+      "Name": "one-per-region",
+      "Environment": "dev",
+      "SubGroups": [
+        { "GroupId": "central", "Take": 1 },
+        { "GroupId": "east", "Take": 1 },
+        { "GroupId": "west", "Take": 1 }
+      ]
+    },
+    "one-per-az-region": {
+      "GroupId": "one-per-az-region",
+      "Name": "one-per-az-region",
+      "Environment": "dev",
+      "SubGroups": [
+        { "GroupId": "az-central", "Take": 1 },
+        { "GroupId": "az-east", "Take": 1 },
+        { "GroupId": "az-west", "Take": 1 }
+      ]
+    },
+    "one-per-gcp-region": {
+      "GroupId": "one-per-gcp-region",
+      "Name": "one-per-gcp-region",
+      "Environment": "dev",
+      "SubGroups": [
+        { "GroupId": "gcp-central", "Take": 1 },
+        { "GroupId": "gcp-east", "Take": 1 },
+        { "GroupId": "gcp-west", "Take": 1 }
+      ]
+    },
+    "az-central": {
+      "GroupId": "az-central",
+      "Environment": "dev",
+      "Name": "az-central",
+      "Clusters": [
+        "az-central-101",
+        "az-central-102",
+        "az-central-103"
+      ]
+    },
+    "az-east": {
+      "GroupId": "az-east",
+      "Environment": "dev",
+      "Name": "az-east",
+      "Clusters": [
+        "az-east-101",
+        "az-east-102",
+        "az-east-103"
+      ]
+    },
+    "az-west": {
+      "GroupId": "az-west",
+      "Environment": "dev",
+      "Name": "az-west",
+      "Clusters": [
+        "az-west-101",
+        "az-west-102",
+        "az-west-103"
+      ]
+    },
+    "gcp-central": {
+      "GroupId": "gcp-central",
+      "Environment": "dev",
+      "Name": "gcp-central",
+      "Clusters": [
+        "gcp-central-101",
+        "gcp-central-102",
+        "gcp-central-103"
+      ]
+    },
+    "gcp-east": {
+      "GroupId": "gcp-east",
+      "Environment": "dev",
+      "Name": "gcp-east",
+      "Clusters": [
+        "gcp-east-101",
+        "gcp-east-102",
+        "gcp-east-103"
+      ]
+    },
+    "gcp-west": {
+      "GroupId": "gcp-west",
+      "Environment": "dev",
+      "Name": "gcp-west",
+      "Clusters": [
+        "gcp-west-101",
+        "gcp-west-102",
+        "gcp-west-103"
+      ]
+    }
+  },
+  "Clusters": {
+    "az-east-101": {
+      "ClusterId": "az-east-101",
+      "Name": "az-east-101",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "east",
+        "zone": "az-east",
+        "cloud": "az",
+        "domain": "az-east-101"
+      }
+    },
+    "az-east-102": {
+      "ClusterId": "az-east-102",
+      "Name": "az-east-102",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "east",
+        "zone": "az-east",
+        "cloud": "az",
+        "domain": "az-east-102"
+      }
+    },
+    "az-east-103": {
+      "ClusterId": "az-east-103",
+      "Name": "az-east-103",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "east",
+        "zone": "az-east",
+        "cloud": "az",
+        "domain": "az-east-103"
+      }
+    },
+    "az-central-101": {
+      "ClusterId": "az-central-101",
+      "Name": "az-central-101",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "central",
+        "zone": "az-central",
+        "cloud": "az",
+        "domain": "az-central-101"
+      }
+    },
+    "az-central-102": {
+      "ClusterId": "az-central-102",
+      "Name": "az-central-102",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "central",
+        "zone": "az-central",
+        "cloud": "az",
+        "domain": "az-central-102"
+      }
+    },
+    "az-central-103": {
+      "ClusterId": "az-central-103",
+      "Name": "az-central-103",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "central",
+        "zone": "az-central",
+        "cloud": "az",
+        "domain": "az-central-103"
+      }
+    },
+    "az-west-101": {
+      "ClusterId": "az-west-101",
+      "Name": "az-west-101",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "west",
+        "zone": "az-west",
+        "cloud": "az",
+        "domain": "az-west-101"
+      }
+    },
+    "az-west-102": {
+      "ClusterId": "az-west-102",
+      "Name": "az-west-102",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "west",
+        "zone": "az-west",
+        "cloud": "az",
+        "domain": "az-west-102"
+      }
+    },
+    "az-west-103": {
+      "ClusterId": "az-west-103",
+      "Name": "az-west-103",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "west",
+        "zone": "az-west",
+        "cloud": "az",
+        "domain": "az-west-103"
+      }
+    },
+    "gcp-east-101": {
+      "ClusterId": "gcp-east-101",
+      "Name": "gcp-east-101",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "east",
+        "zone": "gcp-east",
+        "cloud": "gcp",
+        "domain": "gcp-east-101"
+      }
+    },
+    "gcp-east-102": {
+      "ClusterId": "gcp-east-102",
+      "Name": "gcp-east-102",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "east",
+        "zone": "gcp-east",
+        "cloud": "gcp",
+        "domain": "gcp-east-102"
+      }
+    },
+    "gcp-east-103": {
+      "ClusterId": "gcp-east-103",
+      "Name": "gcp-east-103",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "east",
+        "zone": "gcp-east",
+        "cloud": "gcp",
+        "domain": "gcp-east-103"
+      }
+    },
+    "gcp-central-101": {
+      "ClusterId": "gcp-central-101",
+      "Name": "gcp-central-101",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "central",
+        "zone": "gcp-central",
+        "cloud": "gcp",
+        "domain": "gcp-central-101"
+      }
+    },
+    "gcp-central-102": {
+      "ClusterId": "gcp-central-102",
+      "Name": "gcp-central-102",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "central",
+        "zone": "gcp-central",
+        "cloud": "gcp",
+        "domain": "gcp-central-102"
+      }
+    },
+    "gcp-central-103": {
+      "ClusterId": "gcp-central-103",
+      "Name": "gcp-central-103",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "central",
+        "zone": "gcp-central",
+        "cloud": "gcp",
+        "domain": "gcp-central-103"
+      }
+    },
+    "gcp-west-101": {
+      "ClusterId": "gcp-west-101",
+      "Name": "gcp-west-101",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "west",
+        "zone": "gcp-west",
+        "cloud": "gcp",
+        "domain": "gcp-west-101"
+      }
+    },
+    "gcp-west-102": {
+      "ClusterId": "gcp-west-102",
+      "Name": "gcp-west-102",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "west",
+        "zone": "gcp-west",
+        "cloud": "gcp",
+        "domain": "gcp-west-102"
+      }
+    },
+    "gcp-west-103": {
+      "ClusterId": "gcp-west-103",
+      "Name": "gcp-west-103",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "west",
+        "zone": "gcp-west",
+        "cloud": "gcp",
+        "domain": "gcp-west-103"
+      }
+    }
+  }
+}

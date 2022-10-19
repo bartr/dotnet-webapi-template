@@ -1,0 +1,3364 @@
+{
+  "Clusters": {
+    "az-east-101": {
+      "CoresAllocated": 7,
+      "MemoryAllocated": 14336,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "dogs-cats": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-east-101",
+            "az-west-101",
+            "gcp-central-101",
+            "gcp-east-101",
+            "gcp-west-101"
+          ],
+          "Apps": {},
+          "NamespaceId": "dogs-cats",
+          "Name": "dogs-cats",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "one-per-cloud-region"
+            }
+          ],
+          "Data": {}
+        },
+        "myapp": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "gcp-east-103",
+            "az-east-101",
+            "gcp-east-101"
+          ],
+          "Apps": {},
+          "NamespaceId": "myapp",
+          "Name": "myapp",
+          "Environment": "dev",
+          "CpuLimit": 4,
+          "MemoryLimit": 8192,
+          "Take": 3,
+          "SubGroups": [
+            {
+              "GroupId": "east"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "az-east-101",
+      "Name": "az-east-101",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "east",
+        "zone": "az-east",
+        "cloud": "az",
+        "domain": "az-east-101"
+      }
+    },
+    "az-east-102": {
+      "CoresAllocated": 10.5,
+      "MemoryAllocated": 21504,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "yourapp": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-102"
+          ],
+          "Apps": {},
+          "NamespaceId": "yourapp",
+          "Name": "yourapp",
+          "Environment": "dev",
+          "CpuLimit": 8,
+          "MemoryLimit": 16384,
+          "Take": 3,
+          "SubGroups": [
+            {
+              "GroupId": "east"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "az-east-102",
+      "Name": "az-east-102",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "east",
+        "zone": "az-east",
+        "cloud": "az",
+        "domain": "az-east-102"
+      }
+    },
+    "az-east-103": {
+      "CoresAllocated": 10.5,
+      "MemoryAllocated": 21504,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "yourapp": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-102"
+          ],
+          "Apps": {},
+          "NamespaceId": "yourapp",
+          "Name": "yourapp",
+          "Environment": "dev",
+          "CpuLimit": 8,
+          "MemoryLimit": 16384,
+          "Take": 3,
+          "SubGroups": [
+            {
+              "GroupId": "east"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "az-east-103",
+      "Name": "az-east-103",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "east",
+        "zone": "az-east",
+        "cloud": "az",
+        "domain": "az-east-103"
+      }
+    },
+    "az-central-101": {
+      "CoresAllocated": 3,
+      "MemoryAllocated": 6144,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "dogs-cats": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-east-101",
+            "az-west-101",
+            "gcp-central-101",
+            "gcp-east-101",
+            "gcp-west-101"
+          ],
+          "Apps": {},
+          "NamespaceId": "dogs-cats",
+          "Name": "dogs-cats",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "one-per-cloud-region"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "az-central-101",
+      "Name": "az-central-101",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "central",
+        "zone": "az-central",
+        "cloud": "az",
+        "domain": "az-central-101"
+      }
+    },
+    "az-central-102": {
+      "CoresAllocated": 2.5,
+      "MemoryAllocated": 5120,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "imdb": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-102",
+            "gcp-central-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "imdb",
+          "Name": "imdb",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "Take": 4,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "az-central-102",
+      "Name": "az-central-102",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "central",
+        "zone": "az-central",
+        "cloud": "az",
+        "domain": "az-central-102"
+      }
+    },
+    "az-central-103": {
+      "CoresAllocated": 2.5,
+      "MemoryAllocated": 5120,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "imdb": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-102",
+            "gcp-central-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "imdb",
+          "Name": "imdb",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "Take": 4,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "az-central-103",
+      "Name": "az-central-103",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "central",
+        "zone": "az-central",
+        "cloud": "az",
+        "domain": "az-central-103"
+      }
+    },
+    "az-west-101": {
+      "CoresAllocated": 3,
+      "MemoryAllocated": 6144,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "dogs-cats": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-east-101",
+            "az-west-101",
+            "gcp-central-101",
+            "gcp-east-101",
+            "gcp-west-101"
+          ],
+          "Apps": {},
+          "NamespaceId": "dogs-cats",
+          "Name": "dogs-cats",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "one-per-cloud-region"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "az-west-101",
+      "Name": "az-west-101",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "west",
+        "zone": "az-west",
+        "cloud": "az",
+        "domain": "az-west-101"
+      }
+    },
+    "az-west-102": {
+      "CoresAllocated": 2.5,
+      "MemoryAllocated": 5120,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "az-west-102",
+      "Name": "az-west-102",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "west",
+        "zone": "az-west",
+        "cloud": "az",
+        "domain": "az-west-102"
+      }
+    },
+    "az-west-103": {
+      "CoresAllocated": 2.5,
+      "MemoryAllocated": 5120,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "az-west-103",
+      "Name": "az-west-103",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "west",
+        "zone": "az-west",
+        "cloud": "az",
+        "domain": "az-west-103"
+      }
+    },
+    "gcp-east-101": {
+      "CoresAllocated": 7,
+      "MemoryAllocated": 14336,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "dogs-cats": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-east-101",
+            "az-west-101",
+            "gcp-central-101",
+            "gcp-east-101",
+            "gcp-west-101"
+          ],
+          "Apps": {},
+          "NamespaceId": "dogs-cats",
+          "Name": "dogs-cats",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "one-per-cloud-region"
+            }
+          ],
+          "Data": {}
+        },
+        "myapp": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "gcp-east-103",
+            "az-east-101",
+            "gcp-east-101"
+          ],
+          "Apps": {},
+          "NamespaceId": "myapp",
+          "Name": "myapp",
+          "Environment": "dev",
+          "CpuLimit": 4,
+          "MemoryLimit": 8192,
+          "Take": 3,
+          "SubGroups": [
+            {
+              "GroupId": "east"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "gcp-east-101",
+      "Name": "gcp-east-101",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "east",
+        "zone": "gcp-east",
+        "cloud": "gcp",
+        "domain": "gcp-east-101"
+      }
+    },
+    "gcp-east-102": {
+      "CoresAllocated": 10.5,
+      "MemoryAllocated": 21504,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "yourapp": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-102"
+          ],
+          "Apps": {},
+          "NamespaceId": "yourapp",
+          "Name": "yourapp",
+          "Environment": "dev",
+          "CpuLimit": 8,
+          "MemoryLimit": 16384,
+          "Take": 3,
+          "SubGroups": [
+            {
+              "GroupId": "east"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "gcp-east-102",
+      "Name": "gcp-east-102",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "east",
+        "zone": "gcp-east",
+        "cloud": "gcp",
+        "domain": "gcp-east-102"
+      }
+    },
+    "gcp-east-103": {
+      "CoresAllocated": 6.5,
+      "MemoryAllocated": 13312,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "myapp": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "gcp-east-103",
+            "az-east-101",
+            "gcp-east-101"
+          ],
+          "Apps": {},
+          "NamespaceId": "myapp",
+          "Name": "myapp",
+          "Environment": "dev",
+          "CpuLimit": 4,
+          "MemoryLimit": 8192,
+          "Take": 3,
+          "SubGroups": [
+            {
+              "GroupId": "east"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "gcp-east-103",
+      "Name": "gcp-east-103",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "east",
+        "zone": "gcp-east",
+        "cloud": "gcp",
+        "domain": "gcp-east-103"
+      }
+    },
+    "gcp-central-101": {
+      "CoresAllocated": 3,
+      "MemoryAllocated": 6144,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "dogs-cats": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-east-101",
+            "az-west-101",
+            "gcp-central-101",
+            "gcp-east-101",
+            "gcp-west-101"
+          ],
+          "Apps": {},
+          "NamespaceId": "dogs-cats",
+          "Name": "dogs-cats",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "one-per-cloud-region"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "gcp-central-101",
+      "Name": "gcp-central-101",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "central",
+        "zone": "gcp-central",
+        "cloud": "gcp",
+        "domain": "gcp-central-101"
+      }
+    },
+    "gcp-central-102": {
+      "CoresAllocated": 2.5,
+      "MemoryAllocated": 5120,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "imdb": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-102",
+            "gcp-central-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "imdb",
+          "Name": "imdb",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "Take": 4,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "gcp-central-102",
+      "Name": "gcp-central-102",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "central",
+        "zone": "gcp-central",
+        "cloud": "gcp",
+        "domain": "gcp-central-102"
+      }
+    },
+    "gcp-central-103": {
+      "CoresAllocated": 2.5,
+      "MemoryAllocated": 5120,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "imdb": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-102",
+            "gcp-central-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "imdb",
+          "Name": "imdb",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "Take": 4,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "gcp-central-103",
+      "Name": "gcp-central-103",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "central",
+        "zone": "gcp-central",
+        "cloud": "gcp",
+        "domain": "gcp-central-103"
+      }
+    },
+    "gcp-west-101": {
+      "CoresAllocated": 3,
+      "MemoryAllocated": 6144,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "dogs-cats": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-east-101",
+            "az-west-101",
+            "gcp-central-101",
+            "gcp-east-101",
+            "gcp-west-101"
+          ],
+          "Apps": {},
+          "NamespaceId": "dogs-cats",
+          "Name": "dogs-cats",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "one-per-cloud-region"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "gcp-west-101",
+      "Name": "gcp-west-101",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "west",
+        "zone": "gcp-west",
+        "cloud": "gcp",
+        "domain": "gcp-west-101"
+      }
+    },
+    "gcp-west-102": {
+      "CoresAllocated": 2.5,
+      "MemoryAllocated": 5120,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "gcp-west-102",
+      "Name": "gcp-west-102",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "west",
+        "zone": "gcp-west",
+        "cloud": "gcp",
+        "domain": "gcp-west-102"
+      }
+    },
+    "gcp-west-103": {
+      "CoresAllocated": 2.5,
+      "MemoryAllocated": 5120,
+      "IsDelete": false,
+      "Namespaces": {
+        "flux-system": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "flux-system",
+          "Name": "flux-system",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "redis": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "redis",
+          "Name": "redis",
+          "Environment": "dev",
+          "CpuLimit": 1,
+          "MemoryLimit": 2048,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        },
+        "heartbeat": {
+          "CpuAllocated": 0,
+          "MemoryAllocated": 0,
+          "IsDelete": false,
+          "Clusters": [
+            "az-central-101",
+            "az-central-102",
+            "az-central-103",
+            "gcp-central-101",
+            "gcp-central-102",
+            "gcp-central-103",
+            "az-east-101",
+            "az-east-102",
+            "az-east-103",
+            "gcp-east-101",
+            "gcp-east-102",
+            "gcp-east-103",
+            "az-west-101",
+            "az-west-102",
+            "az-west-103",
+            "gcp-west-101",
+            "gcp-west-102",
+            "gcp-west-103"
+          ],
+          "Apps": {},
+          "NamespaceId": "heartbeat",
+          "Name": "heartbeat",
+          "Environment": "dev",
+          "CpuLimit": 0.5,
+          "MemoryLimit": 1024,
+          "SubGroups": [
+            {
+              "GroupId": "all"
+            }
+          ],
+          "Data": {}
+        }
+      },
+      "ClusterId": "gcp-west-103",
+      "Name": "gcp-west-103",
+      "Environment": "dev",
+      "Cores": 32,
+      "Memory": 262144,
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Data": {
+        "country": "US",
+        "region": "west",
+        "zone": "gcp-west",
+        "cloud": "gcp",
+        "domain": "gcp-west-103"
+      }
+    }
+  },
+  "Namespaces": {
+    "flux-system": {
+      "CpuAllocated": 0,
+      "MemoryAllocated": 0,
+      "IsDelete": false,
+      "Clusters": [
+        "az-central-101",
+        "az-central-102",
+        "az-central-103",
+        "gcp-central-101",
+        "gcp-central-102",
+        "gcp-central-103",
+        "az-east-101",
+        "az-east-102",
+        "az-east-103",
+        "gcp-east-101",
+        "gcp-east-102",
+        "gcp-east-103",
+        "az-west-101",
+        "az-west-102",
+        "az-west-103",
+        "gcp-west-101",
+        "gcp-west-102",
+        "gcp-west-103"
+      ],
+      "Apps": {},
+      "NamespaceId": "flux-system",
+      "Name": "flux-system",
+      "Environment": "dev",
+      "CpuLimit": 1,
+      "MemoryLimit": 2048,
+      "SubGroups": [
+        {
+          "GroupId": "all"
+        }
+      ],
+      "Data": {}
+    },
+    "redis": {
+      "CpuAllocated": 0,
+      "MemoryAllocated": 0,
+      "IsDelete": false,
+      "Clusters": [
+        "az-central-101",
+        "az-central-102",
+        "az-central-103",
+        "gcp-central-101",
+        "gcp-central-102",
+        "gcp-central-103",
+        "az-east-101",
+        "az-east-102",
+        "az-east-103",
+        "gcp-east-101",
+        "gcp-east-102",
+        "gcp-east-103",
+        "az-west-101",
+        "az-west-102",
+        "az-west-103",
+        "gcp-west-101",
+        "gcp-west-102",
+        "gcp-west-103"
+      ],
+      "Apps": {},
+      "NamespaceId": "redis",
+      "Name": "redis",
+      "Environment": "dev",
+      "CpuLimit": 1,
+      "MemoryLimit": 2048,
+      "SubGroups": [
+        {
+          "GroupId": "all"
+        }
+      ],
+      "Data": {}
+    },
+    "heartbeat": {
+      "CpuAllocated": 0,
+      "MemoryAllocated": 0,
+      "IsDelete": false,
+      "Clusters": [
+        "az-central-101",
+        "az-central-102",
+        "az-central-103",
+        "gcp-central-101",
+        "gcp-central-102",
+        "gcp-central-103",
+        "az-east-101",
+        "az-east-102",
+        "az-east-103",
+        "gcp-east-101",
+        "gcp-east-102",
+        "gcp-east-103",
+        "az-west-101",
+        "az-west-102",
+        "az-west-103",
+        "gcp-west-101",
+        "gcp-west-102",
+        "gcp-west-103"
+      ],
+      "Apps": {},
+      "NamespaceId": "heartbeat",
+      "Name": "heartbeat",
+      "Environment": "dev",
+      "CpuLimit": 0.5,
+      "MemoryLimit": 1024,
+      "SubGroups": [
+        {
+          "GroupId": "all"
+        }
+      ],
+      "Data": {}
+    },
+    "dogs-cats": {
+      "CpuAllocated": 0,
+      "MemoryAllocated": 0,
+      "IsDelete": false,
+      "Clusters": [
+        "az-central-101",
+        "az-east-101",
+        "az-west-101",
+        "gcp-central-101",
+        "gcp-east-101",
+        "gcp-west-101"
+      ],
+      "Apps": {},
+      "NamespaceId": "dogs-cats",
+      "Name": "dogs-cats",
+      "Environment": "dev",
+      "CpuLimit": 0.5,
+      "MemoryLimit": 1024,
+      "SubGroups": [
+        {
+          "GroupId": "one-per-cloud-region"
+        }
+      ],
+      "Data": {}
+    },
+    "yourapp": {
+      "CpuAllocated": 0,
+      "MemoryAllocated": 0,
+      "IsDelete": false,
+      "Clusters": [
+        "az-east-102",
+        "az-east-103",
+        "gcp-east-102"
+      ],
+      "Apps": {},
+      "NamespaceId": "yourapp",
+      "Name": "yourapp",
+      "Environment": "dev",
+      "CpuLimit": 8,
+      "MemoryLimit": 16384,
+      "Take": 3,
+      "SubGroups": [
+        {
+          "GroupId": "east"
+        }
+      ],
+      "Data": {}
+    },
+    "myapp": {
+      "CpuAllocated": 0,
+      "MemoryAllocated": 0,
+      "IsDelete": false,
+      "Clusters": [
+        "gcp-east-103",
+        "az-east-101",
+        "gcp-east-101"
+      ],
+      "Apps": {},
+      "NamespaceId": "myapp",
+      "Name": "myapp",
+      "Environment": "dev",
+      "CpuLimit": 4,
+      "MemoryLimit": 8192,
+      "Take": 3,
+      "SubGroups": [
+        {
+          "GroupId": "east"
+        }
+      ],
+      "Data": {}
+    },
+    "imdb": {
+      "CpuAllocated": 0,
+      "MemoryAllocated": 0,
+      "IsDelete": false,
+      "Clusters": [
+        "az-central-102",
+        "az-central-103",
+        "gcp-central-102",
+        "gcp-central-103"
+      ],
+      "Apps": {},
+      "NamespaceId": "imdb",
+      "Name": "imdb",
+      "Environment": "dev",
+      "CpuLimit": 1,
+      "MemoryLimit": 2048,
+      "Take": 4,
+      "SubGroups": [
+        {
+          "GroupId": "all"
+        }
+      ],
+      "Data": {}
+    }
+  },
+  "Apps": {
+    "flux-system": {
+      "Clusters": [
+        "az-central-101",
+        "az-central-102",
+        "az-central-103",
+        "gcp-central-101",
+        "gcp-central-102",
+        "gcp-central-103",
+        "az-east-101",
+        "az-east-102",
+        "az-east-103",
+        "gcp-east-101",
+        "gcp-east-102",
+        "gcp-east-103",
+        "az-west-101",
+        "az-west-102",
+        "az-west-103",
+        "gcp-west-101",
+        "gcp-west-102",
+        "gcp-west-103"
+      ],
+      "AppId": "flux-system",
+      "Environment": "dev",
+      "Name": "flux-system",
+      "Namespace": "flux-system",
+      "CpuLimit": 1,
+      "MemoryLimit": 2048,
+      "Repo": "./apps/flux-system",
+      "Data": {}
+    },
+    "redis": {
+      "Clusters": [
+        "az-central-101",
+        "az-central-102",
+        "az-central-103",
+        "gcp-central-101",
+        "gcp-central-102",
+        "gcp-central-103",
+        "az-east-101",
+        "az-east-102",
+        "az-east-103",
+        "gcp-east-101",
+        "gcp-east-102",
+        "gcp-east-103",
+        "az-west-101",
+        "az-west-102",
+        "az-west-103",
+        "gcp-west-101",
+        "gcp-west-102",
+        "gcp-west-103"
+      ],
+      "AppId": "redis",
+      "Environment": "dev",
+      "Name": "redis",
+      "Namespace": "redis",
+      "CpuLimit": 1,
+      "MemoryLimit": 2048,
+      "Repo": "./apps/redis",
+      "Data": {}
+    },
+    "heartbeat": {
+      "Clusters": [
+        "az-central-101",
+        "az-central-102",
+        "az-central-103",
+        "gcp-central-101",
+        "gcp-central-102",
+        "gcp-central-103",
+        "az-east-101",
+        "az-east-102",
+        "az-east-103",
+        "gcp-east-101",
+        "gcp-east-102",
+        "gcp-east-103",
+        "az-west-101",
+        "az-west-102",
+        "az-west-103",
+        "gcp-west-101",
+        "gcp-west-102",
+        "gcp-west-103"
+      ],
+      "AppId": "heartbeat",
+      "Environment": "dev",
+      "Name": "heartbeat",
+      "Namespace": "heartbeat",
+      "CpuLimit": 0.5,
+      "MemoryLimit": 1024,
+      "Repo": "./apps/heartbeat",
+      "Data": {}
+    },
+    "imdb": {
+      "Clusters": [
+        "az-central-102",
+        "az-central-103",
+        "gcp-central-102",
+        "gcp-central-103"
+      ],
+      "AppId": "imdb",
+      "Environment": "dev",
+      "Name": "imdb",
+      "Namespace": "imdb",
+      "CpuLimit": 1,
+      "MemoryLimit": 2048,
+      "Repo": "./apps/imdb",
+      "Take": 4,
+      "Data": {}
+    },
+    "dogs-cats": {
+      "Clusters": [
+        "az-central-101",
+        "az-east-101",
+        "az-west-101",
+        "gcp-central-101",
+        "gcp-east-101",
+        "gcp-west-101"
+      ],
+      "AppId": "dogs-cats",
+      "Environment": "dev",
+      "Name": "dogs-cats",
+      "Namespace": "dogs-cats",
+      "CpuLimit": 0.5,
+      "MemoryLimit": 1024,
+      "Repo": "./apps/dogs-cats",
+      "Data": {}
+    },
+    "myapp": {
+      "Clusters": [
+        "gcp-east-103",
+        "az-east-101",
+        "gcp-east-101"
+      ],
+      "AppId": "myapp",
+      "Environment": "dev",
+      "Name": "myapp",
+      "Namespace": "myapp",
+      "CpuLimit": 4,
+      "MemoryLimit": 8192,
+      "Repo": "./apps/myapp",
+      "Take": 3,
+      "Data": {}
+    },
+    "yourapp": {
+      "Clusters": [
+        "az-east-102",
+        "az-east-103",
+        "gcp-east-102"
+      ],
+      "AppId": "yourapp",
+      "Environment": "dev",
+      "Name": "yourapp",
+      "Namespace": "yourapp",
+      "CpuLimit": 8,
+      "MemoryLimit": 16384,
+      "Repo": "./apps/myapp",
+      "Take": 3,
+      "Data": {}
+    }
+  },
+  "Groups": {
+    "all": {
+      "GroupId": "all",
+      "Name": "all",
+      "Environment": "dev",
+      "Clusters": [],
+      "SubGroups": [
+        {
+          "GroupId": "central"
+        },
+        {
+          "GroupId": "east"
+        },
+        {
+          "GroupId": "west"
+        }
+      ],
+      "Data": {}
+    },
+    "central": {
+      "GroupId": "central",
+      "Name": "central",
+      "Environment": "dev",
+      "Clusters": [],
+      "SubGroups": [
+        {
+          "GroupId": "az-central"
+        },
+        {
+          "GroupId": "gcp-central"
+        }
+      ],
+      "Data": {}
+    },
+    "east": {
+      "GroupId": "east",
+      "Name": "east",
+      "Environment": "dev",
+      "Clusters": [],
+      "SubGroups": [
+        {
+          "GroupId": "az-east"
+        },
+        {
+          "GroupId": "gcp-east"
+        }
+      ],
+      "Data": {}
+    },
+    "west": {
+      "GroupId": "west",
+      "Name": "west",
+      "Environment": "dev",
+      "Clusters": [],
+      "SubGroups": [
+        {
+          "GroupId": "az-west"
+        },
+        {
+          "GroupId": "gcp-west"
+        }
+      ],
+      "Data": {}
+    },
+    "one-per-cloud-region": {
+      "GroupId": "one-per-cloud-region",
+      "Name": "one-per-cloud-region",
+      "Environment": "dev",
+      "Clusters": [],
+      "SubGroups": [
+        {
+          "GroupId": "az-central",
+          "Take": 1
+        },
+        {
+          "GroupId": "az-east",
+          "Take": 1
+        },
+        {
+          "GroupId": "az-west",
+          "Take": 1
+        },
+        {
+          "GroupId": "gcp-central",
+          "Take": 1
+        },
+        {
+          "GroupId": "gcp-east",
+          "Take": 1
+        },
+        {
+          "GroupId": "gcp-west",
+          "Take": 1
+        }
+      ],
+      "Data": {}
+    },
+    "one-per-region": {
+      "GroupId": "one-per-region",
+      "Name": "one-per-region",
+      "Environment": "dev",
+      "Clusters": [],
+      "SubGroups": [
+        {
+          "GroupId": "central",
+          "Take": 1
+        },
+        {
+          "GroupId": "east",
+          "Take": 1
+        },
+        {
+          "GroupId": "west",
+          "Take": 1
+        }
+      ],
+      "Data": {}
+    },
+    "one-per-az-region": {
+      "GroupId": "one-per-az-region",
+      "Name": "one-per-az-region",
+      "Environment": "dev",
+      "Clusters": [],
+      "SubGroups": [
+        {
+          "GroupId": "az-central",
+          "Take": 1
+        },
+        {
+          "GroupId": "az-east",
+          "Take": 1
+        },
+        {
+          "GroupId": "az-west",
+          "Take": 1
+        }
+      ],
+      "Data": {}
+    },
+    "one-per-gcp-region": {
+      "GroupId": "one-per-gcp-region",
+      "Name": "one-per-gcp-region",
+      "Environment": "dev",
+      "Clusters": [],
+      "SubGroups": [
+        {
+          "GroupId": "gcp-central",
+          "Take": 1
+        },
+        {
+          "GroupId": "gcp-east",
+          "Take": 1
+        },
+        {
+          "GroupId": "gcp-west",
+          "Take": 1
+        }
+      ],
+      "Data": {}
+    },
+    "az-central": {
+      "GroupId": "az-central",
+      "Name": "az-central",
+      "Environment": "dev",
+      "Clusters": [
+        "az-central-101",
+        "az-central-102",
+        "az-central-103"
+      ],
+      "SubGroups": [],
+      "Data": {}
+    },
+    "az-east": {
+      "GroupId": "az-east",
+      "Name": "az-east",
+      "Environment": "dev",
+      "Clusters": [
+        "az-east-101",
+        "az-east-102",
+        "az-east-103"
+      ],
+      "SubGroups": [],
+      "Data": {}
+    },
+    "az-west": {
+      "GroupId": "az-west",
+      "Name": "az-west",
+      "Environment": "dev",
+      "Clusters": [
+        "az-west-101",
+        "az-west-102",
+        "az-west-103"
+      ],
+      "SubGroups": [],
+      "Data": {}
+    },
+    "gcp-central": {
+      "GroupId": "gcp-central",
+      "Name": "gcp-central",
+      "Environment": "dev",
+      "Clusters": [
+        "gcp-central-101",
+        "gcp-central-102",
+        "gcp-central-103"
+      ],
+      "SubGroups": [],
+      "Data": {}
+    },
+    "gcp-east": {
+      "GroupId": "gcp-east",
+      "Name": "gcp-east",
+      "Environment": "dev",
+      "Clusters": [
+        "gcp-east-101",
+        "gcp-east-102",
+        "gcp-east-103"
+      ],
+      "SubGroups": [],
+      "Data": {}
+    },
+    "gcp-west": {
+      "GroupId": "gcp-west",
+      "Name": "gcp-west",
+      "Environment": "dev",
+      "Clusters": [
+        "gcp-west-101",
+        "gcp-west-102",
+        "gcp-west-103"
+      ],
+      "SubGroups": [],
+      "Data": {}
+    }
+  }
+}
