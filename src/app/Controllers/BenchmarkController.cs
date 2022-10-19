@@ -12,7 +12,7 @@ namespace CSApp.Controllers
     /// <summary>
     /// Handle benchmark requests
     /// </summary>
-    [Route("csapp/api/[controller]")]
+    [Route("csapp/api/v1/[controller]")]
     public class BenchmarkController : Controller
     {
         private static readonly CseLog Logger = new ()
@@ -39,9 +39,9 @@ namespace CSApp.Controllers
             // validate size
             if (size < 1)
             {
-                List<CseLabs.Middleware.Validation.ValidationError> list = new ()
+                List<ValidationError> list = new ()
                 {
-                    new CseLabs.Middleware.Validation.ValidationError
+                    new()
                     {
                         Target = "size",
                         Message = "size must be > 0",
@@ -55,9 +55,9 @@ namespace CSApp.Controllers
 
             if (size > 1024 * 1024)
             {
-                List<CseLabs.Middleware.Validation.ValidationError> list = new ()
+                List<ValidationError> list = new ()
                 {
-                    new CseLabs.Middleware.Validation.ValidationError
+                    new()
                     {
                         Target = "size",
                         Message = $"size must be <= 1 MB ({1024 * 1024})",

@@ -96,7 +96,7 @@ namespace CSApp
             catch (Exception ex)
             {
                 // log and return unhealthy
-                logger.LogError($"{ex}\nException:Healthz:{ex.Message}");
+                logger.LogError("Exception:Healthz:{ex.Message}", ex);
 
                 data.Add("Exception", ex.Message);
 

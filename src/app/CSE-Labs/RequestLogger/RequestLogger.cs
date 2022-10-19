@@ -25,6 +25,7 @@ namespace CseLabs.Middleware
 
         // next action to Invoke
         private readonly RequestDelegate next;
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("CodeQuality", "IDE0052:Remove unread private members", Justification = "used by DI")]
         private readonly RequestLoggerOptions options;
 
         /// <summary>
@@ -38,11 +39,7 @@ namespace CseLabs.Middleware
             this.next = next;
             this.options = options?.Value;
 
-            if (this.options == null)
-            {
-                // use default
-                this.options = new RequestLoggerOptions();
-            }
+            this.options ??= new RequestLoggerOptions();
 
             requestHistogram = Metrics.CreateHistogram(
                         "CSAppDuration",

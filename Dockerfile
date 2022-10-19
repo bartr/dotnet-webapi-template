@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 ### copy the source and tests
 COPY src /src
 
-WORKDIR /src
+WORKDIR /src/app
 
 # build the app
 RUN dotnet publish -c Release -o /app
