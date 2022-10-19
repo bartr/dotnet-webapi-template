@@ -74,7 +74,7 @@ namespace ObjectModel
                 HealthStatus status = HealthStatus.Healthy;
 
                 // add version
-                data.Add("Version", App.Version);
+                data.Add("Version", VersionExtension.Version);
 
                 // Run each health check
                 GetGraphCheck(data);
