@@ -3,7 +3,7 @@ containerArgs: []
 cpuLimit: 500m
 cpuRequest: 300m
 environment: dev
-image: ghcr.io/cse-labs/csapp:latest
+image: ghcr.io/cse-labs/csapp:beta
 ingressPrefix: /csapp/
 livenessProbe: /csapp/healthz
 memoryLimit: 128Mi
