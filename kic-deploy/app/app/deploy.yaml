@@ -14,6 +14,7 @@ spec:
     metadata:
       labels:
         app: csapp
+        version: v-0-0-0
     spec:
       containers:
         - name: app
