@@ -19,7 +19,7 @@ public partial class Program
     private static void ConfigPrometheus(WebApplication app)
     {
         var requestHistogram = Metrics.CreateHistogram(
-                    "IstMockDuration",
+                    "CSAppDuration",
                     "Histogram of app request duration",
                     new HistogramConfiguration
                     {
@@ -28,7 +28,7 @@ public partial class Program
                     });
 
         var requestSummary = Metrics.CreateSummary(
-            "IstMockSummary",
+            "CSAppSummary",
             "Summary of app request duration",
             new SummaryConfiguration
             {
@@ -61,7 +61,7 @@ public partial class Program
         });
 
         //var cpuGauge = Metrics.CreateGauge(
-        //    "IstMockCpuPercent",
+        //    "CSAppCpuPercent",
         //    "CPU Percent Used",
         //    new GaugeConfiguration
         //    {
