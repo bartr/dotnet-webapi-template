@@ -1,22 +1,16 @@
-// Copyright (c) Microsoft Corporation. All rights reserved.
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
-using System;
-using System.Collections.Generic;
 using System.CommandLine;
 using System.CommandLine.Parsing;
-using System.Threading;
-using System.Threading.Tasks;
-using CseLabs.Middleware;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Logging;
+using MC.Middleware;
 
 namespace CSApp
 {
     /// <summary>
     /// Main application class
     /// </summary>
-    public sealed partial class App
+    public partial class Program
     {
         // capture parse errors from env vars
         private static readonly List<string> EnvVarErrors = new ();
@@ -28,24 +22,20 @@ namespace CSApp
         /// <returns>status</returns>
         public static async Task<int> RunApp(Config config)
         {
-            CseLog logger = new () { Name = typeof(App).FullName };
-
             // start collecting CPU usage
-            CpuCounter.Start();
+            // CpuCounter.Start();
 
             try
             {
                 // copy command line values
                 Config.SetConfig(config);
 
-                LoadSecrets();
+                // LoadSecrets();
 
-                SetLoggerConfig(Config);
+                WebApplication app = BuildHost();
+                ConfigApp(app);
 
-                // build the host
-                IWebHost host = BuildHost();
-
-                if (host == null)
+                if (app == null)
                 {
                     return -1;
                 }
@@ -57,13 +47,13 @@ namespace CSApp
                 }
 
                 // setup sigterm handler
-                CancellationTokenSource ctCancel = SetupSigTermHandler(host, logger);
+                CancellationTokenSource ctCancel = SetupSigTermHandler(app);
 
-                // log startup messages
-                LogStartup(logger);
+                // todo add or remove
+                // LogStartup(logger);
 
                 // start the webserver
-                Task w = host.RunAsync();
+                Task w = app.RunAsync();
 
                 // this doesn't return except on ctl-c or sigterm
                 await w.ConfigureAwait(false);
@@ -74,7 +64,7 @@ namespace CSApp
             catch (Exception ex)
             {
                 // end app on error
-                logger.LogError(nameof(RunApp), "Exception", ex: ex);
+                Console.WriteLine("Exception" + ex);
 
                 return -1;
             }
@@ -88,8 +78,8 @@ namespace CSApp
         {
             RootCommand root = new ()
             {
-                Name = "Test.App",
-                Description = "Test App",
+                Name = "CSApp",
+                Description = "CSApp",
                 TreatUnmatchedTokensAsErrors = true,
             };
 
@@ -99,7 +89,8 @@ namespace CSApp
             root.AddOption(EnvVarOption(new string[] { "--region", "-r" }, "Region for log", "dev"));
             root.AddOption(EnvVarOption(new string[] { "--log-level", "-l" }, "Log Level", LogLevel.Error));
             root.AddOption(EnvVarOption(new string[] { "--cache-duration" }, "Cache for duration (seconds)", 60, 1));
-            root.AddOption(EnvVarOption(new string[] { "--secrets-volume", "-v" }, "Secrets Volume Path", "secrets"));
+
+            // root.AddOption(EnvVarOption(new string[] { "--secrets-volume", "-v" }, "Secrets Volume Path", "secrets"));
             root.AddOption(new Option<bool>(new string[] { "--dry-run", "-d" }, "Validates configuration"));
 
             // validate dependencies
@@ -109,7 +100,7 @@ namespace CSApp
         }
 
         // validate combinations of parameters
-        private static string ValidateDependencies(CommandResult result)
+        private static void ValidateDependencies(CommandResult result)
         {
             string msg = string.Empty;
 
@@ -119,7 +110,7 @@ namespace CSApp
             }
 
             // return error message(s) or string.empty
-            return msg;
+            result.ErrorMessage = msg;
         }
 
         // insert env vars as default
@@ -207,7 +198,7 @@ namespace CSApp
                 {
                 }
 
-                return s;
+                res.ErrorMessage = s;
             });
 
             if (maxValue != null)
@@ -230,7 +221,7 @@ namespace CSApp
                     {
                     }
 
-                    return s;
+                    res.ErrorMessage = s;
                 });
             }
 
@@ -262,25 +253,12 @@ namespace CSApp
             return Environment.GetEnvironmentVariable(key);
         }
 
-        // set the logger config
-        private static void SetLoggerConfig(Config config)
-        {
-            RequestLogger.Zone = config.Zone;
-            RequestLogger.Region = config.Region;
-
-            CseLogger.Zone = config.Zone;
-            CseLogger.Region = config.Region;
-
-            CseLog.Zone = config.Zone;
-            CseLog.Region = config.Region;
-            CseLog.LogLevel = config.LogLevel;
-        }
-
         // Display the dry run message
         private static int DoDryRun()
         {
             Console.WriteLine($"Version            {VersionExtension.Version}");
-            Console.WriteLine($"Secrets Volume     {Config.Secrets.Volume}");
+
+            // Console.WriteLine($"Secrets Volume     {Config.Secrets.Volume}");
 
             Console.WriteLine($"Region             {Config.Region}");
             Console.WriteLine($"Zone               {Config.Zone}");
