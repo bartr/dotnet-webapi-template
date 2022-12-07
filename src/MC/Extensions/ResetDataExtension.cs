@@ -33,15 +33,7 @@ namespace MC.Middleware
                 // matches /api/v1/resetdata
                 if (context.Request.Path.ToString().Equals(path, StringComparison.OrdinalIgnoreCase))
                 {
-                    if (File.Exists(Path.Join("cadl", "sampleData.json")))
-                    {
-                        if (!Directory.Exists("data"))
-                        {
-                            Directory.CreateDirectory("data");
-                        }
-
-                        File.Copy(Path.Join("cadl", "sampleData.json"), Path.Join("data", "data.json"));
-                    }
+                    DataFile.Reset();
 
                     // return the version info
                     context.Response.ContentType = "text/plain";
@@ -62,7 +54,7 @@ namespace MC.Middleware
     [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:File may only contain a single type", Justification = "todo")]
     public class DataFile
     {
-        public static bool ResetDataFile()
+        public static bool Reset()
         {
             string src = Path.Join("cadl", "sampleData.json");
 
@@ -75,7 +67,7 @@ namespace MC.Middleware
                         Directory.CreateDirectory("data");
                     }
 
-                    File.Copy(src, Path.Join("data", "data.json"));
+                    File.Copy(src, Path.Join("data", "data.json"), true);
 
                     return true;
                 }
