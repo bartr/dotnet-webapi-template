@@ -1,0 +1,688 @@
+{
+  "Applications": {
+    "flux-system": {
+      "Id": "flux-system",
+      "Environment": "dev",
+      "Name": "flux-system",
+      "NamespaceId": "flux-system",
+      "Capacity": {
+        "CpuLimit": 1,
+        "MemoryLimit": 2048
+      },
+      "Repo": {
+        "Url": "https://github.com/cse-labs/project100k",
+        "Name": "flux-system",
+        "User": "gitops",
+        "Pat": "/gitops-pat"
+      },
+      "Path": "/apps/flux-system",
+      "Metadata": {},
+      "Tags": [ "arc" ]
+      },
+    "redis": {
+      "Id": "redis",
+      "Environment": "dev",
+      "Name": "redis",
+      "NamespaceId": "redis",
+      "Capacity": {
+        "CpuLimit": 1,
+        "MemoryLimit": 2048
+      },
+      "Repo": {
+        "Url": "https://github.com/cse-labs/project100k",
+        "Name": "redis",
+        "User": "gitops",
+        "Pat": "/gitops-pat"
+      },
+      "Path": "/apps/redis",
+      "Metadata": {},
+      "Tags": [ "bootstrap" ]
+    },
+    "heartbeat": {
+      "Id": "heartbeat",
+      "Environment": "dev",
+      "Name": "heartbeat",
+      "NamespaceId": "heartbeat",
+      "Capacity": {
+        "CpuLimit": 1,
+        "MemoryLimit": 2048
+      },
+      "Repo": {
+        "Url": "https://github.com/cse-labs/project100k",
+        "Name": "heartbeat",
+        "User": "gitops",
+        "Pat": "/gitops-pat"
+      },
+      "Path": "/apps/heartbeat",
+      "Metadata": {},
+      "Tags": [ "bootstrap" ]
+    },
+    "imdb": {
+      "Id": "imdb",
+      "Environment": "dev",
+      "Name": "imdb",
+      "NamespaceId": "imdb",
+      "Capacity": {
+        "CpuLimit": 1,
+        "MemoryLimit": 2048
+      },
+      "Repo": {
+        "Url": "https://github.com/cse-labs/project100k",
+        "Name": "imdb",
+        "User": "gitops",
+        "Pat": "/gitops-pat"
+      },
+      "Path": "/apps/imdb",
+      "Metadata": {}
+    },
+    "dogs-cats": {
+      "Id": "dogs-cats",
+      "Environment": "dev",
+      "Name": "dogs-cats",
+      "NamespaceId": "dogs-cats",
+      "Capacity": {
+        "CpuLimit": 1,
+        "MemoryLimit": 2048
+      },
+      "Repo": {
+        "Url": "https://github.com/cse-labs/project100k",
+        "Name": "dogs-cats",
+        "User": "gitops",
+        "Pat": "/gitops-pat"
+      },
+      "Path": "/apps/dogs-cats",
+      "Metadata": {}
+    },
+    "myapp": {
+      "Id": "myapp",
+      "Environment": "dev",
+      "Name": "myapp",
+      "NamespaceId": "myapp",
+      "Capacity": {
+        "CpuLimit": 1,
+        "MemoryLimit": 2048
+      },
+      "Repo": {
+        "Url": "https://github.com/cse-labs/project100k",
+        "Name": "myapp",
+        "User": "gitops",
+        "Pat": "/gitops-pat"
+      },
+      "Path": "/apps/myapp",
+      "Metadata": {}
+    }
+  },
+  "Clusters": {
+    "az-east-101": {
+      "Id": "az-east-101",
+      "Name": "az-east-101",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "east",
+        "zone": "az-east",
+        "cloud": "az",
+        "domain": "az-east-101"
+      },
+      "Tags": [ "azure" ]
+    },
+    "az-east-102": {
+      "Id": "az-east-102",
+      "Name": "az-east-102",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "east",
+        "zone": "az-east",
+        "cloud": "az",
+        "domain": "az-east-102"
+      },
+      "Tags": [ "azure" ]
+    },
+    "az-east-103": {
+      "Id": "az-east-103",
+      "Name": "az-east-103",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "east",
+        "zone": "az-east",
+        "cloud": "az",
+        "domain": "az-east-103"
+      },
+      "Tags": [ "azure" ]
+    },
+    "az-central-101": {
+      "Id": "az-central-101",
+      "Name": "az-central-101",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "central",
+        "zone": "az-central",
+        "cloud": "az",
+        "domain": "az-central-101"
+      },
+      "Tags": [ "azure" ]
+    },
+    "az-central-102": {
+      "Id": "az-central-102",
+      "Name": "az-central-102",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "central",
+        "zone": "az-central",
+        "cloud": "az",
+        "domain": "az-central-102"
+      },
+      "Tags": [ "azure" ]
+    },
+    "az-central-103": {
+      "Id": "az-central-103",
+      "Name": "az-central-103",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "central",
+        "zone": "az-central",
+        "cloud": "az",
+        "domain": "az-central-103"
+      },
+      "Tags": [ "azure" ]
+    },
+    "az-west-101": {
+      "Id": "az-west-101",
+      "Name": "az-west-101",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "west",
+        "zone": "az-west",
+        "cloud": "az",
+        "domain": "az-west-101"
+      },
+      "Tags": [ "azure" ]
+    },
+    "az-west-102": {
+      "Id": "az-west-102",
+      "Name": "az-west-102",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "west",
+        "zone": "az-west",
+        "cloud": "az",
+        "domain": "az-west-102"
+      },
+      "Tags": [ "azure" ]
+    },
+    "az-west-103": {
+      "Id": "az-west-103",
+      "Name": "az-west-103",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "west",
+        "zone": "az-west",
+        "cloud": "az",
+        "domain": "az-west-103"
+      },
+      "Tags": [ "azure" ]
+    },
+    "gcp-east-101": {
+      "Id": "gcp-east-101",
+      "Name": "gcp-east-101",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "east",
+        "zone": "gcp-east",
+        "cloud": "gcp",
+        "domain": "gcp-east-101"
+      },
+      "Tags": [ "gcp" ]
+    },
+    "gcp-east-102": {
+      "Id": "gcp-east-102",
+      "Name": "gcp-east-102",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "east",
+        "zone": "gcp-east",
+        "cloud": "gcp",
+        "domain": "gcp-east-102"
+      },
+      "Tags": [ "gcp" ]
+    },
+    "gcp-east-103": {
+      "Id": "gcp-east-103",
+      "Name": "gcp-east-103",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "east",
+        "zone": "gcp-east",
+        "cloud": "gcp",
+        "domain": "gcp-east-103"
+      },
+      "Tags": [ "gcp" ]
+    },
+    "gcp-central-101": {
+      "Id": "gcp-central-101",
+      "Name": "gcp-central-101",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "central",
+        "zone": "gcp-central",
+        "cloud": "gcp",
+        "domain": "gcp-central-101"
+      },
+      "Tags": [ "gcp" ]
+    },
+    "gcp-central-102": {
+      "Id": "gcp-central-102",
+      "Name": "gcp-central-102",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "central",
+        "zone": "gcp-central",
+        "cloud": "gcp",
+        "domain": "gcp-central-102"
+      },
+      "Tags": [ "gcp" ]
+    },
+    "gcp-central-103": {
+      "Id": "gcp-central-103",
+      "Name": "gcp-central-103",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "central",
+        "zone": "gcp-central",
+        "cloud": "gcp",
+        "domain": "gcp-central-103"
+      },
+      "Tags": [ "gcp" ]
+    },
+    "gcp-west-101": {
+      "Id": "gcp-west-101",
+      "Name": "gcp-west-101",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "west",
+        "zone": "gcp-west",
+        "cloud": "gcp",
+        "domain": "gcp-west-101"
+      },
+      "Tags": [ "gcp" ]
+    },
+    "gcp-west-102": {
+      "Id": "gcp-west-102",
+      "Name": "gcp-west-102",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "west",
+        "zone": "gcp-west",
+        "cloud": "gcp",
+        "domain": "gcp-west-102"
+      },
+      "Tags": [ "gcp" ]
+    },
+    "gcp-west-103": {
+      "Id": "gcp-west-103",
+      "Name": "gcp-west-103",
+      "Environment": "dev",
+      "Capacity": {
+        "CpuLimit": 32,
+        "MemoryLimit": 262144
+      },
+      "GitOpsRepo": "retaildevcrews/ist",
+      "GitOpsBranch": "goa",
+      "Metadata": {
+        "country": "US",
+        "region": "west",
+        "zone": "gcp-west",
+        "cloud": "gcp",
+        "domain": "gcp-west-103"
+      },
+      "Tags": [ "gcp" ]
+    }
+  },
+  "Namespaces": {
+    "flux-system": {
+      "Id": "flux-system",
+      "Name": "flux-system",
+      "Environment": "dev",
+      "Policies": [ "NoIngress"],
+      "Capacity": {
+        "CpuLimit": 1,
+        "MemoryLimit": 2048
+      },
+      "SubGroups": [
+        "all"
+      ],
+      "Metadata": {},
+      "Tags": [ "Arc" ]
+    },
+    "redis": {
+      "Id": "redis",
+      "Name": "redis",
+      "Environment": "dev",
+      "Policies": [ "NoIngress" ],
+      "Capacity": {
+        "CpuLimit": 1,
+        "MemoryLimit": 2048
+      },
+      "SubGroups": [
+        "all"
+      ],
+      "Metadata": {},
+      "Tags": [ "bootstrap" ]
+    },
+    "heartbeat": {
+      "Id": "heartbeat",
+      "Name": "heartbeat",
+      "Environment": "dev",
+      "Policies": [ "PathIngress" ],
+      "Capacity": {
+        "CpuLimit": 1,
+        "MemoryLimit": 2048
+      },
+      "SubGroups": [
+        "all"
+      ],
+      "Metadata": {},
+      "Tags": [ "bootstrap" ]
+    },
+    "imdb": {
+      "Id": "imdb",
+      "Name": "imdb",
+      "Environment": "dev",
+      "Policies": [ "PathIngress" ],
+      "Capacity": {
+        "CpuLimit": 1,
+        "MemoryLimit": 2048
+      },
+      "SubGroups": [
+        "all"
+      ],
+      "Metadata": {}
+    },
+    "dogs-cats": {
+      "Id": "dogs-cats",
+      "Name": "dogs-cats",
+      "Environment": "dev",
+      "Policies": [ "PathIngress" ],
+      "Capacity": {
+        "CpuLimit": 1,
+        "MemoryLimit": 2048
+      },
+      "SubGroups": [
+        "one-per-cloud-region"
+      ],
+      "Metadata": {}
+    },
+    "myapp": {
+      "Id": "myapp",
+      "Name": "myapp",
+      "Environment": "dev",
+      "Policies": [ "PathIngress" ],
+      "Capacity": {
+        "CpuLimit": 1,
+        "MemoryLimit": 2048
+      },
+      "SubGroups": [
+        "east"
+      ],
+      "Metadata": {}
+    }
+  },
+  "Groups": {
+    "all": {
+      "Id": "all",
+      "Name": "all",
+      "Type": "group",
+      "Environment": "dev",
+      "Clusters": [],
+      "SubGroups": [
+        "central",
+        "east",
+        "west"
+      ],
+      "Metadata": {}
+    },
+    "central": {
+      "Id": "central",
+      "Name": "central",
+      "Type": "group",
+      "Environment": "dev",
+      "Clusters": [],
+      "SubGroups": [
+        "az-central",
+        "gcp-central"
+      ],
+      "Metadata": {}
+    },
+    "east": {
+      "Id": "east",
+      "Name": "east",
+      "Type": "group",
+      "Environment": "dev",
+      "Clusters": [],
+      "SubGroups": [
+        "az-east",
+        "gcp-east"
+      ],
+      "Metadata": {}
+    },
+    "west": {
+      "Id": "west",
+      "Name": "west",
+      "Type": "group",
+      "Environment": "dev",
+      "Clusters": [],
+      "SubGroups": [
+        "az-west",
+        "gcp-west"
+      ],
+      "Metadata": {}
+    },
+    "az-central": {
+      "Id": "az-central",
+      "Name": "az-central",
+      "Type": "label",
+      "Environment": "dev",
+      "Clusters": [
+        "az-central-101",
+        "az-central-102",
+        "az-central-103"
+      ],
+      "Metadata": {}
+    },
+    "az-east": {
+      "Id": "az-east",
+      "Name": "az-east",
+      "Type": "label",
+      "Environment": "dev",
+      "Clusters": [
+        "az-east-101",
+        "az-east-102",
+        "az-east-103"
+      ],
+      "Metadata": {}
+    },
+    "az-west": {
+      "Id": "az-west",
+      "Name": "az-west",
+      "Type": "label",
+      "Environment": "dev",
+      "Clusters": [
+        "az-west-101",
+        "az-west-102",
+        "az-west-103"
+      ],
+      "Metadata": {}
+    },
+    "gcp-central": {
+      "Id": "gcp-central",
+      "Name": "gcp-central",
+      "Type": "label",
+      "Environment": "dev",
+      "Clusters": [
+        "gcp-central-101",
+        "gcp-central-102",
+        "gcp-central-103"
+      ],
+      "Metadata": {}
+    },
+    "gcp-east": {
+      "Id": "gcp-east",
+      "Name": "gcp-east",
+      "Type": "label",
+      "Environment": "dev",
+      "Clusters": [
+        "gcp-east-101",
+        "gcp-east-102",
+        "gcp-east-103"
+      ],
+      "Metadata": {}
+    },
+    "gcp-west": {
+      "Id": "gcp-west",
+      "Name": "gcp-west",
+      "Type": "label",
+      "Environment": "dev",
+      "Clusters": [
+        "gcp-west-101",
+        "gcp-west-102",
+        "gcp-west-103"
+      ],
+      "Metadata": {}
+    }
+  },
+  "Policies": {
+    "NoIngress": {
+      "Id": "NoIngress",
+      "Name": "No Ingress",
+      "Path": "/policies/noingress.pol"
+    },
+    "UrlIngress": {
+      "Id": "UrlIngress",
+      "Name": "URL Ingress",
+      "Path": "/policies/urlingress.pol"
+    },
+    "HostIngress": {
+      "Id": "HostIngress",
+      "Name": "Host Ingress",
+      "Path": "/policies/hostingress.pol"
+    }
+  }
+}
