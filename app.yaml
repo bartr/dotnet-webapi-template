@@ -1,14 +1,13 @@
+id: csapp
+name: csapp
 app: csapp
 containerArgs: []
-cpuLimit: 500m
-cpuRequest: 300m
 environment: dev
 image: ghcr.io/cse-labs/csapp:latest
 ingressPrefix: /csapp/
 livenessProbe: /csapp/healthz
-memoryLimit: 128Mi
-memoryRequest: 64Mi
 namespace: csapp
+namespaceId: csapp
 nodePort: {{nodePort}}
 port: 8080
 readinessProbe: /csapp/readyz
