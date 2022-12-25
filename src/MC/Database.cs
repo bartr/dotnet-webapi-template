@@ -4,7 +4,7 @@
 namespace CSApp.Model
 {
     /// <summary>
-    /// Database class (singleton)
+    /// Database class
     /// </summary>
     public sealed partial class Database
     {

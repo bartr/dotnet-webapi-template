@@ -56,11 +56,10 @@ public partial class Program
         {
             ReadOnlySpan<string> cmd = new (args);
 
-            if (cmd.Length == 0 ||
-                (!cmd.Contains("--version") &&
+            if (!cmd.Contains("--version") &&
                 (cmd.Contains("-h") ||
                 cmd.Contains("--help") ||
-                cmd.Contains("--dry-run"))))
+                cmd.Contains("--dry-run")))
             {
                 string file = "ascii-art.txt";
 

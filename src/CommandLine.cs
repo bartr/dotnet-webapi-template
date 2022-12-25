@@ -3,6 +3,7 @@
 
 using System.CommandLine;
 using System.CommandLine.Parsing;
+using CSApp.Model;
 using MC.Middleware;
 
 namespace CSApp
@@ -30,6 +31,15 @@ namespace CSApp
                 // copy command line values
                 Config.SetConfig(config);
 
+                // copy data file
+                DataFile.Reset();
+
+                if (new Database() == null)
+                {
+                    Console.WriteLine("Error: Unable to read database");
+                    return 1;
+                }
+
                 // LoadSecrets();
 
                 WebApplication app = BuildHost();
@@ -49,17 +59,16 @@ namespace CSApp
                 // setup sigterm handler
                 CancellationTokenSource ctCancel = SetupSigTermHandler(app);
 
-                // todo add or remove
-                // LogStartup(logger);
-
                 // start the webserver
                 Task w = app.RunAsync();
+
+                Console.WriteLine($"Listening on port {config.Port}");
 
                 // this doesn't return except on ctl-c or sigterm
                 await w.ConfigureAwait(false);
 
-                // if not cancelled, app exit -1
-                return ctCancel.IsCancellationRequested ? 0 : -1;
+                // if not cancelled, app exit 1
+                return ctCancel.IsCancellationRequested ? 0 : 1;
             }
             catch (Exception ex)
             {

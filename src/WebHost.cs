@@ -82,7 +82,8 @@ public partial class Program
         // MC middleware
         app.UseVersion()
             .UseHealthz()
-            .UseReadyz();
+            .UseReadyz()
+            .UseResetData();
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
