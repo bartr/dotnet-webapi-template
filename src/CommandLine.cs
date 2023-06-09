@@ -3,8 +3,7 @@
 
 using System.CommandLine;
 using System.CommandLine.Parsing;
-using CSApp.Model;
-using MC.Middleware;
+using KiC.Middleware;
 
 namespace CSApp
 {
@@ -30,15 +29,6 @@ namespace CSApp
             {
                 // copy command line values
                 Config.SetConfig(config);
-
-                // copy data file
-                DataFile.Reset();
-
-                if (new Database() == null)
-                {
-                    Console.WriteLine("Error: Unable to read database");
-                    return 1;
-                }
 
                 // LoadSecrets();
 

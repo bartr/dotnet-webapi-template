@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace MC.Middleware
+namespace KiC.Middleware
 {
     /// <summary>
     /// Health Check that supports IETF json

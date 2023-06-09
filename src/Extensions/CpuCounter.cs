@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Timers;
 
-namespace MC.Middleware
+namespace KiC.Middleware
 {
     /// <summary>
     /// Encapsulates CPU percentage

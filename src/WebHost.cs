@@ -3,7 +3,8 @@
 
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using MC.Middleware;
+using KiC.Middleware;
+using Microsoft.AspNetCore.StaticFiles;
 using Prometheus;
 using Serilog;
 using Serilog.Templates;
@@ -82,8 +83,7 @@ public partial class Program
         // MC middleware
         app.UseVersion()
             .UseHealthz()
-            .UseReadyz()
-            .UseResetData();
+            .UseReadyz();
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
@@ -113,19 +113,20 @@ public partial class Program
             }
         });
 
+        // Set yaml MIME type
+        FileExtensionContentTypeProvider provider = new();
+        provider.Mappings[".yaml"] = "text/yaml";
+
+        // use static files
+        app.UseStaticFiles(new StaticFileOptions { ContentTypeProvider = provider });
+
         // add middleware handlers
         app.UseRouting()
-
-            //.UseEndpoints(ep =>
-            //{
-            //    ep.MapControllers();
-            //})
-            .UseStaticFiles()
             .UseCors()
             .UseSwagger()
             .UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/v1/openapi.json", "Iventory Service (mock)");
+                c.SwaggerEndpoint("/v1/openapi.yaml", "CSApp");
                 c.RoutePrefix = string.Empty;
             });
 

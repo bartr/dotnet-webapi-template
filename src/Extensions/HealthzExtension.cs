@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 
-namespace MC.Middleware
+namespace KiC.Middleware
 {
     /// <summary>
     /// Registers aspnet middleware handler that handles /healthz

@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: CSApp
+  version: 0.0.1
+tags: []
+paths:
+  /healthz:
+    get:
+      operationId: healthz
+      summary: Get Health Status (used by K8s and obervability)
+      tags:
+        - App Status
+      parameters: []
+      responses:
+        '200':
+          description: Health Status
+          content:
+            text/plain:
+              schema:
+                type: string
+  /readyz:
+    get:
+      operationId: readyz
+      summary: Get Ready Status (used by K8s)
+      tags:
+        - App Status
+      parameters: []
+      responses:
+        '200':
+          description: Ready Status
+          content:
+            text/plain:
+              schema:
+                type: string
+  /version:
+    get:
+      operationId: version
+      summary: Get Application Version
+      tags:
+        - App Status
+      parameters: []
+      responses:
+        '200':
+          description: Application Version
+          content:
+            text/plain:
+              schema:
+                type: string
+  /metrics:
+    get:
+      operationId: metrics
+      summary: Get Prometheus Metrics
+      tags:
+        - App Metrics
+      parameters: []
+      responses:
+        '200':
+          description: Prometheus Metrics
+          content:
+            text/plain:
+              schema:
+                type: string
+components:
+  schemas: {}

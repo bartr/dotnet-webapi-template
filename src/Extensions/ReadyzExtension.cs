@@ -4,7 +4,7 @@
 using System;
 using Microsoft.AspNetCore.Builder;
 
-namespace MC.Middleware
+namespace KiC.Middleware
 {
     /// <summary>
     /// Registers aspnet middleware handler that handles /readyz
