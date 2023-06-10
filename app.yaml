@@ -1,15 +1,2 @@
 id: csapp
 name: csapp
-app: csapp
-containerArgs: []
-environment: dev
-image: ghcr.io/cse-labs/csapp:latest
-ingressPrefix: /csapp/
-livenessProbe: /csapp/healthz
-namespace: csapp
-namespaceId: csapp
-nodePort: {{nodePort}}
-port: 8080
-readinessProbe: /csapp/readyz
-targets: []
-template: pib-service

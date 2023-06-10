@@ -1,11 +1,11 @@
-# PiB Application Template
+# KiC Application Template
 
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
 ## Do not use this repo directly
 
-- Follow the Pilot-in-a-Box instructions here: <https://github.com/retaildevcrews/pib-dev>
+- Follow the Kubernetes in Codespaces instructions here: <https://github.com/cse-labs/res-edge-labs>
 
 ## Support
 
