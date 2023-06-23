@@ -5,7 +5,7 @@
 
 ## Introduction
 
-- todo - add application info here
+- todo - add your application info here
 
 ## Support
 

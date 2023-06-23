@@ -5,7 +5,7 @@ using System;
 using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 
-namespace CseLabs.Middleware
+namespace KiC.Middleware
 {
     /// <summary>
     /// Registers aspnet middleware handler that handles /version
@@ -62,7 +62,7 @@ namespace CseLabs.Middleware
             // implement the middleware
             builder.Use(async (context, next) =>
             {
-                string path = "/csapp/version";
+                string path = "/version";
 
                 // matches /version
                 if (context.Request.Path.StartsWithSegments(path, StringComparison.OrdinalIgnoreCase))

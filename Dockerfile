@@ -1,5 +1,5 @@
 ### Build and Test the App
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 
 ### copy the source and tests
 COPY src /src
@@ -13,7 +13,7 @@ RUN dotnet publish -c Release -o /app
 
 
 ### Build the runtime container
-FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine AS release
+FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine AS release
 
 ### if port is changed, also update value in Config
 EXPOSE 8080

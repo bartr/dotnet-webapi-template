@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace CseLabs.Middleware
+namespace KiC.Middleware
 {
     /// <summary>
     /// Custom TimeSpan Converter

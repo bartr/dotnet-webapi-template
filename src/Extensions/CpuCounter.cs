@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Timers;
 
-namespace CseLabs.Middleware
+namespace KiC.Middleware
 {
     /// <summary>
     /// Encapsulates CPU percentage
@@ -17,7 +17,7 @@ namespace CseLabs.Middleware
         private static long lastTicks = Environment.TickCount64;
         private static long lastCpu = Proc.TotalProcessorTime.Ticks;
         private static int cpu = 0;
-        private static Timer timer = null;
+        private static System.Timers.Timer timer = null;
         private static int procCount = Environment.ProcessorCount;
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace CseLabs.Middleware
             lastTicks = Environment.TickCount64;
             lastCpu = Proc.TotalProcessorTime.Ticks;
 
-            timer = new Timer(1000);
+            timer = new System.Timers.Timer(1000);
             timer.Elapsed += TimerEvent;
             timer.Start();
         }
@@ -85,8 +85,14 @@ namespace CseLabs.Middleware
             long nowTicks = Environment.TickCount64;
             long nowCpu = Proc.TotalProcessorTime.Ticks;
 
-            // compute CPU percentage
-            cpu = (int)Math.Round((nowCpu - lastCpu) / (procCount * (nowTicks - lastTicks)) / 100.0, 0);
+            try
+            {
+                // compute CPU percentage
+                cpu = (int)Math.Round((nowCpu - lastCpu) / (procCount * (nowTicks - lastTicks)) / 100.0, 0);
+            }
+            catch
+            {
+            }
 
             // update last reading
             lastCpu = nowCpu;

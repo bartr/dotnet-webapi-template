@@ -175,26 +175,26 @@ dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
 
 dotnet_naming_symbols.interface.applicable_kinds = interface
 dotnet_naming_symbols.interface.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.interface.required_modifiers = 
+dotnet_naming_symbols.interface.required_modifiers =
 
 dotnet_naming_symbols.types.applicable_kinds = class, struct, interface, enum
 dotnet_naming_symbols.types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.types.required_modifiers = 
+dotnet_naming_symbols.types.required_modifiers =
 
 dotnet_naming_symbols.non_field_members.applicable_kinds = property, event, method
 dotnet_naming_symbols.non_field_members.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.non_field_members.required_modifiers = 
+dotnet_naming_symbols.non_field_members.required_modifiers =
 
 # Naming styles
 
-dotnet_naming_style.pascal_case.required_prefix = 
-dotnet_naming_style.pascal_case.required_suffix = 
-dotnet_naming_style.pascal_case.word_separator = 
+dotnet_naming_style.pascal_case.required_prefix =
+dotnet_naming_style.pascal_case.required_suffix =
+dotnet_naming_style.pascal_case.word_separator =
 dotnet_naming_style.pascal_case.capitalization = pascal_case
 
 dotnet_naming_style.begins_with_i.required_prefix = I
-dotnet_naming_style.begins_with_i.required_suffix = 
-dotnet_naming_style.begins_with_i.word_separator = 
+dotnet_naming_style.begins_with_i.required_suffix =
+dotnet_naming_style.begins_with_i.word_separator =
 dotnet_naming_style.begins_with_i.capitalization = pascal_case
 
 # SA0001: XML comment analysis
@@ -202,6 +202,9 @@ dotnet_diagnostic.SA0001.severity = none
 
 # CA1002: Do not expose generic lists
 dotnet_diagnostic.CA1002.severity = none
+
+# SA1000: The keyword 'new' should be followed by a space
+dotnet_diagnostic.SA1000.severity = none
 
 # SA1005: Single line comment should begin with a space
 dotnet_diagnostic.SA1005.severity = none
@@ -236,6 +239,9 @@ dotnet_diagnostic.SA1413.severity = suggestion
 # SA1502: Element should not be on a single line
 dotnet_diagnostic.SA1502.severity = suggestion
 
+# SA1505: An opening brace should not be followed by a blank line
+dotnet_diagnostic.SA1505.severity = suggestion
+
 # SA1507: Code should not contain multiple blank lines in a row
 dotnet_diagnostic.SA1507.severity = suggestion
 
@@ -260,8 +266,14 @@ dotnet_diagnostic.SA1602.severity = suggestion
 # SA1629: Documentation text should end with a period
 dotnet_diagnostic.SA1629.severity = none
 
+# SA1636: The file header copyright text should match the copyright text from the settings
+dotnet_diagnostic.SA1636.severity = none
+
 # SA1642: Constructor summary documentation should begin with standard text
 dotnet_diagnostic.SA1642.severity = suggestion
+
+# CS0108: Hide inherited member
+dotnet_diagnostic.CS0108.severity = none
 
 # CS0162: Unreachable code
 dotnet_diagnostic.CS0162.severity = suggestion

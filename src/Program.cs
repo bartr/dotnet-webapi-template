@@ -1,143 +1,87 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
-using System;
 using System.CommandLine;
-using System.CommandLine.Invocation;
-using System.CommandLine.Parsing;
-using System.IO;
-using System.Threading;
-using CseLabs.Middleware;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Logging;
+using System.CommandLine.NamingConventionBinder;
 
-namespace CSApp
+namespace CSApp;
+
+/// <summary>
+/// Main application class
+/// </summary>
+public partial class Program
 {
-    /// <summary>
-    /// Main application class
-    /// </summary>
-    public sealed partial class App
+    public static Config Config { get; } = new Config();
+
+    // main entry point
+    public static int Main(string[] args)
     {
-        // App configuration values
-        public static Config Config { get; } = new Config();
+        DisplayAsciiArt(args);
 
-        /// <summary>
-        /// Main entry point
-        /// </summary>
-        /// <param name="args">command line args</param>
-        /// <returns>0 == success</returns>
-        public static int Main(string[] args)
+        // build the System.CommandLine.RootCommand
+        RootCommand root = BuildRootCommand();
+        root.Handler = CommandHandler.Create<Config>(RunApp);
+
+        // run the app
+        return root.Invoke(args);
+    }
+
+    // create a CancellationTokenSource that cancels on ctl-c or sigterm
+    private static CancellationTokenSource SetupSigTermHandler(WebApplication host)
+    {
+        CancellationTokenSource ctCancel = new ();
+
+        Console.CancelKeyPress += async (sender, e) =>
         {
-            DisplayAsciiArt(args);
+            e.Cancel = true;
+            ctCancel.Cancel();
 
-            // build the System.CommandLine.RootCommand
-            RootCommand root = BuildRootCommand();
-            root.Handler = CommandHandler.Create<Config>(RunApp);
+            // logger.LogInformation("Shutdown", "Shutting Down ...");
 
-            // run the app
-            return root.Invoke(args);
-        }
+            // trigger graceful shutdown for the webhost
+            // force shutdown after timeout, defined in UseShutdownTimeout within BuildHost() method
+            await host.StopAsync().ConfigureAwait(false);
 
-        // load secrets from volume
-        private static void LoadSecrets()
+            // end the app
+            Environment.Exit(0);
+        };
+
+        return ctCancel;
+    }
+
+    // display Ascii Art
+    private static void DisplayAsciiArt(string[] args)
+    {
+        if (args != null)
         {
-            Config.Secrets = new () { Volume = Config.SecretsVolume };
-        }
+            ReadOnlySpan<string> cmd = new (args);
 
-        // display Ascii Art
-        private static void DisplayAsciiArt(string[] args)
-        {
-            if (args != null)
+            if (!cmd.Contains("--version") &&
+                (cmd.Contains("-h") ||
+                cmd.Contains("--help") ||
+                cmd.Contains("--dry-run")))
             {
-                ReadOnlySpan<string> cmd = new (args);
+                string file = "ascii-art.txt";
 
-                if (!cmd.Contains("--version") &&
-                    (cmd.Contains("-h") ||
-                    cmd.Contains("--help") ||
-                    cmd.Contains("--dry-run")))
+                try
                 {
-                    string file = "ascii-art.txt";
-
-                    try
+                    if (File.Exists(file))
                     {
-                        if (File.Exists(file))
-                        {
-                            string txt = File.ReadAllText(file);
+                        string txt = File.ReadAllText(file);
 
-                            if (!string.IsNullOrWhiteSpace(txt))
-                            {
-                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                Console.WriteLine(txt);
-                                Console.ResetColor();
-                            }
+                        if (!string.IsNullOrWhiteSpace(txt))
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                            Console.WriteLine(txt);
+                            Console.ResetColor();
                         }
                     }
-                    catch
-                    {
-                        // ignore any errors
-                    }
+                }
+                catch
+                {
+                    // ignore any errors
                 }
             }
-        }
-
-        // Create a CancellationTokenSource that cancels on ctl-c or sigterm
-        private static CancellationTokenSource SetupSigTermHandler(IWebHost host, CseLog logger)
-        {
-            CancellationTokenSource ctCancel = new ();
-
-            Console.CancelKeyPress += async (sender, e) =>
-            {
-                e.Cancel = true;
-                ctCancel.Cancel();
-
-                logger.LogInformation("Shutdown", "Shutting Down ...");
-
-                // trigger graceful shutdown for the webhost
-                // force shutdown after timeout, defined in UseShutdownTimeout within BuildHost() method
-                await host.StopAsync().ConfigureAwait(false);
-
-                // end the app
-                Environment.Exit(0);
-            };
-
-            return ctCancel;
-        }
-
-        // Log startup messages
-        private static void LogStartup(CseLog logger)
-        {
-            logger.LogInformation($"CSApp Started", VersionExtension.Version);
-        }
-
-        // Build the web host
-        private static IWebHost BuildHost()
-        {
-            // configure the web host builder
-            IWebHostBuilder builder = WebHost.CreateDefaultBuilder()
-                .UseUrls($"http://*:{Config.Port}/")
-                .UseStartup<Startup>()
-                .UseShutdownTimeout(TimeSpan.FromSeconds(10))
-                .ConfigureLogging(logger =>
-                {
-                    // log to XML
-                    // this can be replaced when the dotnet XML logger is available
-                    logger.ClearProviders();
-                    logger.AddJsonLogger(config => { config.LogLevel = Config.LogLevel; });
-
-                    // if you specify the --log-level option, it will override the appsettings.json options
-                    // remove any or all of the code below that you don't want to override
-                    if (Config.IsLogLevelSet)
-                    {
-                        logger.AddFilter("Microsoft", Config.LogLevel)
-                        .AddFilter("System", Config.LogLevel)
-                        .AddFilter("Default", Config.LogLevel)
-                        .AddFilter("CSApp", Config.LogLevel);
-                    }
-                });
-
-            // build the host
-            return builder.Build();
         }
     }
 }

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace CSApp.Model
+namespace KiC.Middleware
 {
     /// <summary>
     /// Health Check that supports IETF json
@@ -67,7 +67,7 @@ namespace CSApp.Model
             {
                 HealthStatus.Healthy => "pass",
                 HealthStatus.Degraded => "warn",
-                _ => "fail"
+                _ => "fail",
             };
         }
     }
