@@ -3,7 +3,7 @@
   [
     {"path":"/version","perfTarget":{"category":"static"}},
     {"path":"/index.html","perfTarget":{"category":"static"},"validation":{"contentType":"text/html","contains":["<div id=\"swagger-ui\">"]}},
-    {"path":"//v1/openapi.yaml","perfTarget":{"category":"healthz"},"validation":{"contentType":"text/yaml"}},
+    {"path":"/v1/openapi.yaml","perfTarget":{"category":"healthz"},"validation":{"contentType":"text/yaml"}},
     {"path":"/readyz","perfTarget":{"category":"healthz"},"validation":{"contentType":"text/plain","exactMatch":"ready"}},
     {"path":"/healthz","perfTarget":{"category":"healthz"},"validation":{"contentType":"text/plain","notContains":["fail"]}},
     {"path":"/metrics","perfTarget":{"category":"metrics"},"validation":{"contentType":"text/plain","contains":["CSAppSummary", "CSAppDuration"]}}
