@@ -1,7 +1,0 @@
-id: myapp
-name: myapp
-app: myapp
-environment: Prod
-namespace: myapp
-targets: []
-template: ./gitops
