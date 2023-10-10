@@ -35,8 +35,8 @@
   </ItemGroup>
 
   <ItemGroup>
-	<AdditionalFiles Include="stylecop.json" />
-	<None Include=".editorconfig" />
+	<AdditionalFiles Include="..\stylecop.json" />
+	<None Include="..\.editorconfig" />
 
 	<Content Update="appsettings.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
