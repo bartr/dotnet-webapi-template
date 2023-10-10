@@ -57,21 +57,3 @@ spec:
       #       secretName: app-secrets
       #       defaultMode: 444
       #       optional: true
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: csapp
-  namespace: csapp
-spec:
-  type: NodePort
-  ports:
-    - port: 8080
-      nodePort: {{nodePort}}
-      targetPort: http
-      protocol: TCP
-      name: http
-  selector:
-    app: csapp
